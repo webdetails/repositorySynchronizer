@@ -319,7 +319,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -425,7 +425,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "16",
       "type": "Integer"
      },
      {
@@ -819,6 +819,44 @@
     ]
    },
    {
+    "id": "396a60c3-6100-b6bf-23a7-892512fe9bea",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "ab8191e2-3576-38d6-70b4-f680c62ab780",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteActivationButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "65e854e2-2de6-51fb-0f12-5540329641f2",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -831,7 +869,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "4",
       "type": "Integer"
      },
      {
@@ -957,7 +995,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell dataCell2",
+      "value": "WDdataCell dataCell2 collapsed",
       "type": "String"
      }
     ]
@@ -1124,7 +1162,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "4",
+      "value": "2",
       "type": "Integer"
      },
      {
@@ -1381,7 +1419,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "16",
+      "value": "20",
       "type": "Integer"
      },
      {
@@ -1558,7 +1596,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.log(\"Synchronize JCR with File System...\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1636,7 +1674,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.log(\"Export differences from JCR...\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1714,7 +1752,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.log(\"Import differences to JCR...\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1754,7 +1792,7 @@
      },
      {
       "name": "preChange",
-      "value": "",
+      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
       "type": "JavaScript"
      },
      {
@@ -1792,7 +1830,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.log(\"Validating sync operation...\");    \n}",
+      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1870,7 +1908,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.log(\"Aborting sync operation...\");    \n}",
+      "value": "function f(){\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1943,7 +1981,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:updateTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -1953,7 +1991,7 @@
      },
      {
       "name": "parameters",
-      "value": "[]",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"deleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
       "type": "ValuesArray"
      },
      {
@@ -1973,7 +2011,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[]",
+      "value": "[\"40%\",\"10%\",\"50%\"]",
       "type": "Array"
      },
      {
@@ -2033,7 +2071,7 @@
      },
      {
       "name": "dataSource",
-      "value": "diffTableDummyQuery",
+      "value": "diffTableQuery",
       "type": "Datasource"
      },
      {
@@ -2088,7 +2126,7 @@
      },
      {
       "name": "postFetch",
-      "value": "",
+      "value": "function f(data){\n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -2120,6 +2158,328 @@
       "name": "clickAction",
       "value": "",
       "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "SELECTORS",
+    "name": "Selects",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Selects",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "ec54cbd4-185a-3f09-580b-f9d227c08b5a",
+    "type": "Componentscheck",
+    "typeDesc": "Check Component",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteActivationButton",
+      "type": "Id"
+     },
+     {
+      "name": "separator",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:deleteParam}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Y\",\"Delete enabled\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:deleteActivationButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "function (value) {\n    if(_.isEmpty(value)){\n        return \"N\";\n    } else { \n        return \"Y\";\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "496255df-c96d-10ad-aa1f-58f738067bc5",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "N",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "f582a321-5d9a-5df3-04f2-93ca80a3e08d",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "originRepoLocationParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "6fc716a2-6fb4-36be-ce45-15b2107f7e40",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "destinationRepoLocationParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8fa2427f-3092-112c-4eaa-62c328e69145",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "selectedActionParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "\"E\"",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "31443857-9b7e-b72d-ac26-7320a4ae0ce6",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcrLocationParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "/Users/bruno/Documents/testKettle/testBruno/test1",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8647086b-9579-ab8c-3360-f7d1edd30522",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "filesystemLocationParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "/Users/bruno/Documents/testKettle/testBruno/test2",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "18c4a03f-ceda-67b4-ecd8-d49644dcfec7",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "updateTableEvent",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
      }
     ]
    }
@@ -2291,6 +2651,36 @@
     "meta": "CDA",
     "meta_conntype": "scripting.scripting",
     "meta_datype": "scriptable"
+   },
+   {
+    "id": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
+    "name": "REPOSITORYSYNCHRONIZER Endpoints",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "REPOSITORYSYNCHRONIZER Endpoints",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "468f9189-3d30-048b-3e8c-12cba61aa5d4",
+    "type": "Componentsrepositorysynchronizer_previewDifferences_CPKENDPOINT",
+    "typeDesc": "previewDifferences Endpoint",
+    "parent": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "diffTableQuery",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "repositorysynchronizer",
+    "meta_endpoint": "previewDifferences"
    }
   ]
  },

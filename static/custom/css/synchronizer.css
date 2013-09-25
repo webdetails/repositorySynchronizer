@@ -269,10 +269,13 @@ div.container *{
 
 /* Data Cells */
 .WDdataCell {
-  height: 300px;
+  height: 500px;
 } 
 .WDdataCell.dataCell1 * {
   height: 100%;
+}
+.WDdataCell.dataCell2 {
+  height: auto;
 }
 
 /* Data Cells header*/
@@ -290,7 +293,7 @@ div.container *{
 
 .WDdataCellBody .dataCell1Column{
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   color: #555555;
   vertical-align: middle;
 }
@@ -301,27 +304,59 @@ div.container *{
   background-color: #BBBBBB;
 }
 .WDdataCellBody .dataCell1Column .mainButtonsRow{
-  height: 33%;
+  height: 30%;
 }
 .WDdataCellBody .dataCell1Column .mainButtonsRow button{
   height: 100%;
   width: 100%;
+  font-size: 30px;
+  color: #BBBBBB;
 }
-.dataCell2 .WDdataCellBody{
-  padding: 20px 0px 20px 0px;
+.WDdataCellBody .dataCell1Column .deleteButton{
+  height: 10%;
+  font-size: 15px;
+  color: #BBBBBB;
 }
+.WDdataCellBody .dataCell1Column .deleteButton label{
+  position: relative;
+  top: -9px;
+}
+.WDdataCellBody .dataCell1Column .deleteButton label input{
+
+}
+
+.WDdataCell{
+
+  -webkit-transition: all 600ms ease-out;
+  -moz-transition:    all 600ms ease-out;
+  -ms-transition:     all 600ms ease-out;
+  -o-transition:      all 600ms ease-out;
+  transition:         all 600ms ease-out;
+
+  overflow:hidden;
+}
+.WDdataCell.collapsed{
+  height: 0px;
+}
+
 .WDdataCellBody .dataCell2Column{
   float: right;
 }
-.WDdataCellBody .dataCell2Column .confirmationCont{
-  padding-left: 10px;
-/*  position: absolute;
-  top: 33%;
-  height: 33%;
-*/}
-.WDdataCellBody .dataCell2Column .confirmationCont button{
-  width: 50%;
+
+/* Data Cells footer */
+.WDdataCell.dataCell1 .WDdataCellFooter{
+  height: 10%;
+  width: 100%;
 }
+.WDdataCellFooter .deleteButton{
+  margin-right: 20px;
+  float: right;
+}
+.WDdataCellFooter .deleteButton input{
+  position: relative;
+  top: 9px;
+}
+
 /* =============================================================================
    5. TABLES
    ========================================================================== */
@@ -354,11 +389,14 @@ div.container *{
   background: #FFFFFF;
 }
 .WDdataCellBody  tbody td{
+  text-align: center;
+}
+.WDdataCellBody  tbody td:first-child{
+  text-align: left;
 }
 .WDdataCellBody  tbody td,
   .WDdataCellBody  tbody td.numeric, 
   .WDdataCellBody  tbody td.string {
-  text-align: center;
 }
 
 /* Footer */
