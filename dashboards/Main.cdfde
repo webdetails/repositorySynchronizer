@@ -995,7 +995,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell dataCell2 collapsed",
+      "value": "WDdataCell dataCell2",
       "type": "String"
      }
     ]
@@ -1596,7 +1596,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1674,7 +1674,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1752,7 +1752,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1830,7 +1830,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1908,7 +1908,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -2384,7 +2384,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "\"E\"",
+      "value": "E",
       "type": "String"
      },
      {
@@ -2412,7 +2412,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "/Users/bruno/Documents/testKettle/testBruno/test1",
+      "value": "jcr-solution:http://admin:password@localhost:8082/pentaho!/home/admin/test3",
       "type": "String"
      },
      {
@@ -2681,6 +2681,22 @@
     "meta": "CPK",
     "meta_pluginId": "repositorysynchronizer",
     "meta_endpoint": "previewDifferences"
+   },
+   {
+    "id": "8a006870-6d7c-e9c4-b510-2d86e5713be0",
+    "type": "Componentsrepositorysynchronizer_previewDifferences2_CPKENDPOINT",
+    "typeDesc": "previewDifferences2 Endpoint",
+    "parent": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dummy",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "repositorysynchronizer",
+    "meta_endpoint": "previewDifferences2"
    }
   ]
  },

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>previewDifferences</name>
+    <name>previewDifferences2</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -26,7 +26,7 @@
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>&#x2f;Users&#x2f;bruno&#x2f;Documents&#x2f;testKettle&#x2f;testBruno&#x2f;test1</default_value>
+            <default_value>jcr-solution&#x3a;http&#x3a;&#x2f;&#x2f;admin&#x3a;password&#x40;localhost&#x3a;8082&#x2f;pentaho&#x21;&#x2f;home&#x2f;admin&#x2f;test3</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -285,46 +285,8 @@
   <hop> <from>Replace in string 2</from><to>Sort rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2</from><to>Get Variables 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Get File Names in &#x24;&#x7b;destinationRepoLocation&#x7d;</from><to>Replace in string 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables 2 2</from><to>Get File Names in &#x24;&#x7b;originRepoLocation&#x7d;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables 2 2</from><to>Get File Names in &#x24;&#x7b;destinationRepoLocation&#x7d;</to><enabled>Y</enabled> </hop>
   <hop> <from>OUTPUT</from><to>Text file output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Data Grid</from><to>Get Variables 2 2</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Data Grid</name>
-    <type>DataGrid</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>regexp</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <data>
-      <line> <item>.&#x2a;</item> </line>
-    </data>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>43</xloc>
-      <yloc>265</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Get File Names in &#x24;&#x7b;destinationRepoLocation&#x7d;</name>
     <type>GetFileNames</type>
@@ -342,7 +304,7 @@
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
     <isaddresult>N</isaddresult>
-    <filefield>Y</filefield>
+    <filefield>N</filefield>
     <rownum_field/>
     <filename_Field>destinationRepoLocation</filename_Field>
     <wildcard_Field>regexp</wildcard_Field>
@@ -381,7 +343,7 @@
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
     <isaddresult>N</isaddresult>
-    <filefield>Y</filefield>
+    <filefield>N</filefield>
     <rownum_field/>
     <filename_Field>originRepoLocation</filename_Field>
     <wildcard_Field>regexp</wildcard_Field>
@@ -561,87 +523,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>339</xloc>
       <yloc>263</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get Variables 2 2</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>delete</name>
-        <variable>&#x24;&#x7b;delete&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>destinationRepoLocation</name>
-        <variable>&#x24;&#x7b;destinationRepoLocation&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>originRepoLocation</name>
-        <variable>&#x24;&#x7b;originRepoLocation&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>operation_type</name>
-        <variable>&#x24;&#x7b;operation_type&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>selectedAction</name>
-        <variable>&#x24;&#x7b;selectedAction&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>42</xloc>
-      <yloc>83</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1692,7 +1573,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <separator>&#x7c;</separator>
+    <separator>&#x3b;</separator>
     <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -1700,7 +1581,7 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding>MacRoman</encoding>
+    <encoding/>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
@@ -1727,8 +1608,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1070</xloc>
-      <yloc>527</yloc>
+      <xloc>1091</xloc>
+      <yloc>522</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

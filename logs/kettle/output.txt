@@ -1,0 +1,2 @@
+file;modification_status;direction
+/test.txt;to_be_copied  ;jcr-solution:http://admin:password@localhost:8082/pentaho!/home/admin/test3
