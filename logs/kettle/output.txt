@@ -1,2 +1,7 @@
-file;modification_status;direction
-/test.txt;to_be_copied  ;jcr-solution:http://admin:password@localhost:8082/pentaho!/home/admin/test3
+file|modification_status|direction
+/file10.txt                                                                                         |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test1
+/file20.txt                                                                                         |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test2
+/folder1B                                                                                           |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test1
+/folder1B/file12.txt                                                                                |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test1
+/folder2B                                                                                           |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test2
+/folder2B/file22.txt                                                                                |to_be_copied  |/Users/bruno/Documents/testKettle/testBruno/test2

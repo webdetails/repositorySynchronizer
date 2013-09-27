@@ -2412,7 +2412,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "jcr-solution:http://admin:password@localhost:8082/pentaho!/home/admin/test3",
+      "value": "/Users/bruno/Documents/testKettle/testBruno/test1",
       "type": "String"
      },
      {
