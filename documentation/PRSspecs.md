@@ -25,6 +25,11 @@ The dashboard must give user access to the differences between the actual disk-b
 
 ![PRS Original Mockup](img/prs_mockup.png "PRS Original Mockup")
 
+### Original hand-made Mock-up
+
+![PRS NO-UX Dashboard](img/synchronizerNoUXDash.png "PRS NO-UX Dashboard")
+
+
 ### UX Mock-up 
 
 (not implemented yet)
@@ -43,10 +48,13 @@ and one *global option*:
 
 * _delete_: a checkbox stating if non-existing files on the origin repository should be deleted on the destination repository.
 
-The dashboard also contains a *table*, which will be shown when the user chooses one of the previous three actions, listing the existing differences to be committed. This table should contain the *Id*, the *location* and the *modification status* (*to be deleted*, *to be modified* or *to be created*) for each item (file or directory) listed. It should also contain a column with a visual insight about the *direction of modifications migration* (i.e. if the specific item is being copied from JCR to the file system or vice-versa). this last column should be relevant in case the user has chosen to "synchronize" the repositories).
+The dashboard also contains a *table*, which will be shown when the user chooses one of the previous three actions, listing the existing differences to be committed. This table should contain the *Id* (path starting on repo location + filename), the *modification status* (*to be deleted*, *to be modified* or *to be created*) for each item (file or directory) listed. It should also contain a column with a visual insight about the *direction of modifications migration* (i.e. if the specific item is being copied from JCR to the file system or vice-versa). this last column should be relevant in case the user has chosen to "synchronize" the repositories).
 
-_Remark_: the items in the table for which the corresponding modification status is *to be deleted* should be displayed on the table and processed by the endpoint only in the case the delete checkbox (see above) is ticked.
+Additionally, when the table is shown, two confirmation buttons should appear: _"Ok"_ and _"cancel"_.
 
+_Remark 1_: the items in the table for which the corresponding modification status is *to be deleted* should be displayed on the table and processed by the endpoint only in the case the delete checkbox (see above) is ticked.
+
+_Remark 2_: the three main buttons (_Export from JCR_, _Import to JCR_ and _Synchronize JCR with File System_), should have a visual insight on the direction of the modification (e.g..: an arrow from JCR to File System for the export button, and arrow from the File System to JCR for the import button and a bidirectional arrow linking both JCR and FS).
 
 ### Navigation
 
@@ -62,8 +70,7 @@ _Remark_: the items in the table for which the corresponding modification status
 The set of Endpoints for the PRS dashboard are:
 
 * previewDifferences;
-* sync;
-* origin2destination.	
+* sync.
 
 
 
@@ -76,16 +83,12 @@ These endpoints were mentioned in the previous section. Here, we have a
 * previewDifferences
 	* Description: List the differences on the origin repository in relation to the destination repository. _Remark_: as mentioned earlier, the items in the list for which the corresponding modification status is *to be deleted* should be displayed only in the case the parameter deleteBoolean (see below) is set to true;
 	* Parameters: originRepoLocation, destinationRepoLocation, deleteBoolean (stating if files on the destination repo that do not exist on the origin repo should be deleted or not), selectedAction (stating if the selected action was "Synchronize JCR with File System", "Export from JCR" or "Import to JCR");
-	* Output: table containing all changed files/directories. Should contain the *Id*, the *location* and the *modification status* (*to be modified*, *to be deleted* or *to be created*), for each item on the list. Additionally some kind of *"direction status"* information, stating from which repository to which repository the changes are being mirrored for each item, should be present. 
+	* Output: table containing all changed files/directories. Should contain the *Id* (path starting on repo location + filename), the *modification status* (*to be deleted*, *to be modified* or *to be created*) for each item (file or directory) listed. Additionally some kind of *"direction status"* information, stating from which repository to which repository the changes are being mirrored for each item, should be present (e.g..: the data from kettle could be the originRepoLocation value);
+
 	
 * sync
-	* Description: Synchronize both repositories (JCR and File System), doing a merge of their status and updating them with this merged verison;
-	* Parameters: repo1Location, repo2Location;
-	* Output: (operation status)
-	
-* origin2destination
-	* Description: Copy the origin repository status to the destination repository. Attention should be paid to the deleteBoolean parameter status (see remark above); 
-	* Parameters: originRepoLocation, destinationRepoLocation, deleteBoolean (stating if files on the destination repository that do not exist on the origin repository should be deleted or not);
-	* Output: (operation status)
+	* Description: Copy the origin repository status to the destination repository or merge the repositories (depending on the chosen action). Attention should be paid to the deleteBoolean parameter status (see remark above); 
+	* Parameters: originRepoLocation, destinationRepoLocation, deleteBoolean (stating if files on the destination repository that do not exist on the origin repository should be deleted or not) and selectedAction (stating if the selected action was "Synchronize JCR with File System", "Export from JCR" or "Import to JCR");
+	* Output: (operation status).
 	
 	
