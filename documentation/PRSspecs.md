@@ -86,9 +86,10 @@ These endpoints were mentioned in the previous section. Here, we have a
 	* Output: table containing all changed files/directories. Should contain the *Id* (path starting on repo location + filename), the *modification status* (*to be deleted*, *to be modified* or *to be created*) for each item (file or directory) listed. Additionally some kind of *"direction status"* information, stating from which repository to which repository the changes are being mirrored for each item, should be present (e.g..: the data from kettle could be the originRepoLocation value);
 
 	
-* sync
+* syncRepositories
 	* Description: Copy the origin repository status to the destination repository or merge the repositories (depending on the chosen action). Attention should be paid to the deleteBoolean parameter status (see remark above); 
 	* Parameters: originRepoLocation, destinationRepoLocation, deleteBoolean (stating if files on the destination repository that do not exist on the origin repository should be deleted or not) and selectedAction (stating if the selected action was "Synchronize JCR with File System", "Export from JCR" or "Import to JCR");
 	* Output: (operation status).
 	
+_Remark_: At the moment a third endpoint named _previewDifferences2_ can be found in the folder "/endpoints/kettle". This endpoint uses the real JCR location and can be tested on Pentaho 5.0.
 	
