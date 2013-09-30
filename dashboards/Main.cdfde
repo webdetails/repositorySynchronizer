@@ -1596,7 +1596,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1674,7 +1674,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -1752,7 +1752,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",Dashboards.getParameterValue(\"${p:filesystemLocationParam}\"));\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",Dashboards.getParameterValue(\"${p:jcrLocationParam}\"));\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
       "type": "JavaScript"
      },
      {
@@ -2328,7 +2328,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "",
+      "value": "JCR",
       "type": "String"
      },
      {
@@ -2356,7 +2356,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "",
+      "value": "File System",
       "type": "String"
      },
      {
@@ -2385,62 +2385,6 @@
      {
       "name": "propertyValue",
       "value": "E",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "31443857-9b7e-b72d-ac26-7320a4ae0ce6",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "jcrLocationParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "/Users/bruno/Documents/testKettle/testBruno/test1",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "8647086b-9579-ab8c-3360-f7d1edd30522",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "filesystemLocationParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "/Users/bruno/Documents/testKettle/testBruno/test2",
       "type": "String"
      },
      {
