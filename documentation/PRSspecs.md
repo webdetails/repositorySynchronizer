@@ -21,18 +21,10 @@ Dashboard
 
 The dashboard must give user access to the differences between the actual disk-based Pentaho solution and the JCR. Mainly it consists on a table listing the different items (files changed, new files and deleted files) and a few action buttons to control the synchronization. 
 
-### Original hand-made Mock-up
-
-![PRS Original Mockup](img/prs_mockup.png "PRS Original Mockup")
-
-### Original hand-made Mock-up
-
-![PRS NO-UX Dashboard](img/synchronizerNoUXDash.png "PRS NO-UX Dashboard")
-
 
 ### UX Mock-up 
 
-(not implemented yet)
+![PRS UX Mockup](img/prs-a2.png "PRS UX Mockup")
 
 ### Actions
 
