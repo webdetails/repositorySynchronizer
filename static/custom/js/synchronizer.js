@@ -53,6 +53,11 @@ var synchronizer = {};
 	          		colIndex: 2,
 	          		colType: 'String',
 	          		colName: 'direction'
+	        	},
+	        	{
+	          		colIndex: 3,
+	          		colType: 'String',
+	          		colName: 'type'
 	        	}
       		],
 	      	queryInfo:{

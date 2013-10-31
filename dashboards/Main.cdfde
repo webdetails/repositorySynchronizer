@@ -2011,7 +2011,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"40%\",\"10%\",\"50%\"]",
+      "value": "[\"30%\",\"10%\",\"50%\",\"10%\"]",
       "type": "Array"
      },
      {
@@ -2126,7 +2126,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
+      "value": "function f(data){   \n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -2627,20 +2627,20 @@
     "meta_endpoint": "previewDifferences"
    },
    {
-    "id": "8a006870-6d7c-e9c4-b510-2d86e5713be0",
-    "type": "Componentsrepositorysynchronizer_previewDifferences2_CPKENDPOINT",
-    "typeDesc": "previewDifferences2 Endpoint",
+    "id": "801797da-eeeb-308e-be80-08e26d24510d",
+    "type": "Componentsrepositorysynchronizer_previewDifferences_noFileFolderFlag_CPKENDPOINT",
+    "typeDesc": "previewDifferences_noFileFolderFlag Endpoint",
     "parent": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
     "properties": [
      {
       "name": "name",
-      "value": "dummy",
+      "value": "diffTableQuery_tempStop",
       "type": "Id"
      }
     ],
     "meta": "CPK",
     "meta_pluginId": "repositorysynchronizer",
-    "meta_endpoint": "previewDifferences2"
+    "meta_endpoint": "previewDifferences_noFileFolderFlag"
    }
   ]
  },

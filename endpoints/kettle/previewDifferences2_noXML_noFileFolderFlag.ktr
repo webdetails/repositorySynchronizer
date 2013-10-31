@@ -26,7 +26,7 @@
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>jcr-solution&#x3a;http&#x3a;&#x2f;&#x2f;admin&#x3a;password&#x40;localhost&#x3a;8082&#x2f;pentaho&#x21;&#x2f;home&#x2f;admin&#x2f;test3</default_value>
+            <default_value>jcr-solution&#x3a;http&#x3a;&#x2f;&#x2f;admin&#x3a;password&#x40;localhost&#x3a;8082&#x2f;pentaho&#x21;&#x2f;home&#x2f;admin&#x2f;test3&#x2f;testA</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -727,7 +727,7 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>MacRoman</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
