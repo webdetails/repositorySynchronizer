@@ -99,7 +99,7 @@
      },
      {
       "name": "html",
-      "value": "Pentaho Repository Synchronizer ",
+      "value": "Repository Synchronizer ",
       "type": "Html"
      },
      {
@@ -120,7 +120,7 @@
     ]
    },
    {
-    "id": "b4dc36ae-1d39-af66-0395-844ab60367a3",
+    "id": "71dc77b7-efe9-924c-f95e-552962b6b735",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -152,7 +152,121 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell dataCell1",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7602073e-6c3d-b912-d72a-0afd83b5415b",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a25773b7-1907-c29f-42c4-4745e21f257c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b4dc36ae-1d39-af66-0395-844ab60367a3",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dataCell1_OLD",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCell dataCell1 WDhidden",
       "type": "String"
      }
     ]
@@ -970,7 +1084,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "dataCell2",
+      "value": "dataCell_OLD",
       "type": "Id"
      },
      {
@@ -995,7 +1109,7 @@
      },
      {
       "name": "cssClass",
-      "value": "WDdataCell dataCell2",
+      "value": "WDdataCell dataCell2 WDhidden",
       "type": "String"
      }
     ]
