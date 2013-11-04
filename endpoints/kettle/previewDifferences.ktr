@@ -228,7 +228,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     </notepad>
   </notepads>
   <order>
-  <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>  <hop> <from>delete filter</from><to>operation_type</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>  <hop> <from>delete files info</from><to>delete fields</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_deleted</from><to>delete files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy fields</from><to>output_copy</to><enabled>Y</enabled> </hop>  <hop> <from>delete fields</from><to>output_delete</to><enabled>Y</enabled> </hop>  <hop> <from>preview fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders fields</from><to>output_delete folder</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders info</from><to>delete folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_deleted</from><to>delete folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders fields</from><to>output_copy folders</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders info</from><to>copy folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_copied</from><to>copy folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>flagfield --&gt; status</to><enabled>Y</enabled> </hop>  <hop> <from>flagfield --&gt; status</from><to>source&amp;dest</to><enabled>Y</enabled> </hop>  <hop> <from>source&amp;dest</from><to>delete filter</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get origin</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get destination</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location destination</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>destinationRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>originRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>getLastSynchDate</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>lastmodifiedtime to number</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Rows (diff)</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>lk lastmodifiedtime</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>not identical</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>lastmodifiedtime to number</from><to>synchronize?</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>Synchronize</to><enabled>Y</enabled> </hop>  <hop> <from>Synchronize</from><to>operation_type</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>  <hop> <from>delete filter</from><to>operation_type</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>  <hop> <from>delete files info</from><to>delete fields</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_deleted</from><to>delete files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy fields</from><to>output_copy</to><enabled>Y</enabled> </hop>  <hop> <from>delete fields</from><to>output_delete</to><enabled>Y</enabled> </hop>  <hop> <from>preview fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders fields</from><to>output_delete folder</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders info</from><to>delete folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_deleted</from><to>delete folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders fields</from><to>output_copy folders</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders info</from><to>copy folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_copied</from><to>copy folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>flagfield --&gt; status</to><enabled>Y</enabled> </hop>  <hop> <from>flagfield --&gt; status</from><to>source&amp;dest</to><enabled>Y</enabled> </hop>  <hop> <from>source&amp;dest</from><to>delete filter</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get origin</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get destination</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location destination</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>destinationRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>originRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>getLastSynchDate</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>lastmodifiedtime to number</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Rows (diff)</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>lk lastmodifiedtime</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>not identical</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>lastmodifiedtime to number</from><to>synchronize?</to><enabled>Y</enabled> </hop>  <hop> <from>Synchronize</from><to>operation_type</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>Synchronize</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get File Names in destination</name>
     <type>GetFileNames</type>
@@ -554,20 +554,20 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
 var source;
 var dest;
 
-if (flagfield ==&apos;new&apos;) {
+status = &apos;&apos;;
+source = &apos;&apos;;
+dest = &apos;&apos;;
+
+if (flagfield ==&quot;new&quot;) {
 	if ((lastmodifiedtime_destination &lt; last_synch) &amp;&amp; (delete_flag == &apos;Y&apos;)) { status = &apos;to_be_deleted&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
 	if (lastmodifiedtime_destination &gt; last_synch) { status = &apos;to_be_copied&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
-} else if (flagfield == &apos;deleted&apos;) {
+} else if (flagfield == &quot;deleted&quot;) {
 	if ((lastmodifiedtime_origin &lt; last_synch) &amp;&amp; (delete_flag == &apos;Y&apos;)) { status = &apos;to_be_deleted&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
 	if (lastmodifiedtime_origin &gt; last_synch) { status = &apos;to_be_copied&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
-} else if (flagfield == &apos;changed&apos;) {
+} else if (flagfield == &quot;changed&quot;) {
 	if ((lastmodifiedtime_origin &lt; last_synch) &amp;&amp; (lastmodifiedtime_destination &gt; last_synch)) { status = &apos;to_be_copied&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
 	if ((lastmodifiedtime_origin &gt; last_synch) &amp;&amp; (lastmodifiedtime_destination &lt; last_synch)) { status = &apos;to_be_copied&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
-} else {
-	status = &apos;&apos;;
-	source = &apos;&apos;;
-	dest = &apos;&apos;;
-	}
+}
 
 </jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>status</name>
@@ -737,6 +737,24 @@ if (flagfield ==&apos;new&apos;) {
     </step>
 
   <step>
+    <name>default - nothing</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>852</xloc>
+      <yloc>1077</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>delete fields</name>
     <type>SelectValues</type>
     <description/>
@@ -774,7 +792,7 @@ if (flagfield ==&apos;new&apos;) {
            <schema_name/>
            </partitioning>
        <formula><field_name>file_to_be_deleted</field_name>
-<formula_string>destinationRepoLocation + filename_without_location</formula_string>
+<formula_string>dest + filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -869,7 +887,7 @@ if (flagfield ==&apos;new&apos;) {
            <schema_name/>
            </partitioning>
        <formula><field_name>folders_to_be_deleted</field_name>
-<formula_string>destinationRepoLocation + filename_without_location</formula_string>
+<formula_string>dest + filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1459,24 +1477,6 @@ if (flagfield ==&apos;new&apos;) {
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>570</xloc>
       <yloc>433</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>default - nothing</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>852</xloc>
-      <yloc>1077</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

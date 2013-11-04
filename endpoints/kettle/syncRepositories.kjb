@@ -18,12 +18,12 @@
         </parameter>
         <parameter>
             <name>destinationRepoLocation</name>
-            <default_value>&#47;Users&#47;bruno&#47;Documents&#47;testKettle&#47;test-folders&#47;test2</default_value>
+            <default_value>JCR</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>&#47;Users&#47;bruno&#47;Documents&#47;testKettle&#47;test-folders&#47;test1</default_value>
+            <default_value>File System</default_value>
             <description/>
         </parameter>
         <parameter>
