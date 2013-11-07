@@ -84,16 +84,8 @@ div.container *{
   font-size: 15px;
   color: #1973BC;
   text-align: left;
-  margin-bottom: 10px;
-  display: inline;
-}
-.WDheader .headerTitle{
-  width: 30%;
-  padding-bottom: 5px;
-  border-bottom: solid 4px #F2CE16;  
-}
-.WDheader .headerEmptyWidth{
-  width: 70%;
+  border-bottom: solid 4px #F2CE16;
+  line-height: 40px;
 }
 
 .WDh1 {}
@@ -279,83 +271,58 @@ div.container *{
 
 /* Data Cells */
 .WDdataCell {
-  margin: 20px 0px 20px 0px;
-  border: solid 1px #CBDDE8;
+  border: 1px solid #CBDDE8;
 } 
-.WDdataCell.active{
-  background: #FFFFFF;
-}
-
 
 /* Data Cells header*/
 .WDdataCellHeader{
-  height: 40px;
-  color: #1973BC;
-  padding-left: 80px;
-  line-height: 40px;
-  display: inline-block;
-  width: 100%;
+
 }
 .no-svg   .WDdataCellHeader {
 }
 .svg   .WDdataCellHeader {
 }
-.WDdataCellHeader *{
-  height: 100%;
-  width: 100%;
-}
-.WDdataCellHeader.jcr2fs{
-  background: url('../img/transfer-1.png') no-repeat 10px center transparent;
-}
-.WDdataCellHeader.synch{
-  background: url('../img/synch.png') no-repeat 10px center transparent;
-}
-.WDdataCellHeader.fs2jcr{
-  background: url('../img/transfer-2.png') no-repeat 10px center transparent;
-}
-.WDdataCellHeader .cellTitle{
-  width: 50%;
-  float: left;
-}
-.WDdataCellHeader .fileCounterBlock{
-  width: 50%;
-  float: left;
-  display: inline-block;
-
-}
-.fileCounterBlock .fileCounter{
-  width: 50%;
-  float: right;
-  text-align: right;
-}
-.fileCounterBlock .cellActivationButton{
-  width:  10%;
-  float: right;
-}
-.WDdataCell .cellActivationButton button{
-  background: url('../img/drop.png') no-repeat center center transparent;
-  border: none;
-  box-shadow: none;
-  height: 100%;
-  width: 100%;
-}
-.WDdataCell.active .cellActivationButton button{
-  background: url('../img/up.png') no-repeat center center transparent;
-}
-
 
 /* Data Cells body */
-.WDdataCellBody{
+.WDdataCellBody {
+}
+
+.WDdataCellBody .dataCell1Column{
+  text-align: center;
+  font-size: 30px;
+  color: #555555;
+  vertical-align: middle;
+}
+.WDdataCellBody .dataCell1Column.JCR{
+  background-color: #0098C4;
+}
+.WDdataCellBody .dataCell1Column.FileSystem{
+  background-color: #BBBBBB;
+}
+.WDdataCellBody .dataCell1Column .mainButtonsRow{
+  height: 30%;
+}
+.WDdataCellBody .dataCell1Column .mainButtonsRow button{
+  height: 100%;
   width: 100%;
-  height: 0px;
-  padding: 0px 10px 0px 10px;
-  z-index: 3000;
-/*  position: absolute;
-  top: 30px;
-  background: #EAEAEA;
-  color: #4F5354;
-  font-size: 18px;
-*/
+  font-size: 30px;
+  color: #BBBBBB;
+}
+.WDdataCellBody .dataCell1Column .deleteButton{
+  height: 10%;
+  font-size: 15px;
+  color: #BBBBBB;
+}
+.WDdataCellBody .dataCell1Column .deleteButton label{
+  position: relative;
+  top: -9px;
+}
+.WDdataCellBody .dataCell1Column .deleteButton label input{
+
+}
+
+.WDdataCell{
+
   -webkit-transition: all 600ms ease-out;
   -moz-transition:    all 600ms ease-out;
   -ms-transition:     all 600ms ease-out;
@@ -364,43 +331,35 @@ div.container *{
 
   overflow:hidden;
 }
-.WDdataCellBody.active{
-  height: auto;
-}
-.WDdataCellBody .tableInfoBox{
-  margin: 10px 0px 3px 0px;
-}
-.WDdataCellBody .tableInfoBox{
-  background: #D7F1FC;
-  min-height: 30px;
-  padding: 10px 10px 10px 10px;
-}
-.WDdataCellBody .tableInfoBox .iconColumn{
-  width: 30px;
-  height: 30px;
-  background: url('../img/info.png') no-repeat center center transparent;
-  float: left;
-}
-.WDdataCellBody .tableInfoBox .textColumn{
-  color: #333333;
-  font-size: 10px;
-  padding-left: 10px;
-  padding-top: 5px;
-  float: left;
-}
-.WDdataCellBody .tableInfoBox .textColumn .textRow{
-  padding: 3px 0px 3px 0px;
+.WDdataCell.collapsed{
+  height: 0px;
 }
 
-.WDdataCellBody .tablePH{
-  margin-bottom: 10px;
+.WDdataCellBody .dataCell2Column{
+  float: right;
 }
+
+/* Data Cells footer */
+.WDdataCell.dataCell1 .WDdataCellFooter{
+  height: 10%;
+  width: 100%;
+}
+.WDdataCellFooter .deleteButton{
+  margin-right: 20px;
+  float: right;
+}
+.WDdataCellFooter .deleteButton input{
+  position: relative;
+  top: 9px;
+}
+
 /* =============================================================================
    5. TABLES
    ========================================================================== */
 
 .WDdataCellBody table {
-  font-size: 10px;
+  border: 1px solid #555555;
+  color: #555555;
 }
 
 
@@ -409,15 +368,7 @@ div.container *{
 .WDdataCellBody thead tr {
 }
 .WDdataCellBody  thead th {
-  background: #8AB3C6;
-  color: #FFFFFF;
-  font-weight: normal;
-  padding-left: 10px;
-  text-align: left;
-  height: 12px;
-}
-.WDdataCellBody  thead th:first-child {
-  border-right: solid 10px #FFFFFF;
+  background: #FFFFFF;
 }
 .WDdataCellBody thead th.sorting{
 }
@@ -432,14 +383,12 @@ div.container *{
 .WDdataCellBody  tbody {}
 .WDdataCellBody  tbody tr {
   background: #FFFFFF;
-  height: 12px;
 }
 .WDdataCellBody  tbody td{
-  padding-left: 35px;
-  text-align: left;
-  background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
+  text-align: center;
 }
 .WDdataCellBody  tbody td:first-child{
+  text-align: left;
 }
 .WDdataCellBody  tbody td,
   .WDdataCellBody  tbody td.numeric, 

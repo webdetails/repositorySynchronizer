@@ -87,10 +87,83 @@
     ]
    },
    {
-    "id": "179f257e-4228-d471-a533-117350ad27a1",
+    "id": "c6d2a679-e7d5-c855-0c2c-0648dc7c33f4",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c28bdefb-0beb-d3e5-774b-979210880161",
+    "properties": [
+     {
+      "name": "name",
+      "value": "title",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "headerTitle",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1cce8d7e-ce50-f9cb-9b82-f5541520c883",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "c28bdefb-0beb-d3e5-774b-979210880161",
+    "parent": "c6d2a679-e7d5-c855-0c2c-0648dc7c33f4",
     "properties": [
      {
       "name": "name",
@@ -115,6 +188,79 @@
      {
       "name": "cssClass",
       "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c4965529-7bae-e471-0dcc-59631fa694bc",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c28bdefb-0beb-d3e5-774b-979210880161",
+    "properties": [
+     {
+      "name": "name",
+      "value": "emptyWidth",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "headerEmptyWidth",
       "type": "String"
      }
     ]
@@ -152,7 +298,1178 @@
      },
      {
       "name": "cssClass",
+      "value": "WDdataCell",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5252807e-11c6-72d5-264e-665c69cc4731",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "71dc77b7-efe9-924c-f95e-552962b6b735",
+    "properties": [
+     {
+      "name": "name",
       "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "857be825-99fd-2a42-8e9c-f32e1f69fe83",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "5252807e-11c6-72d5-264e-665c69cc4731",
+    "properties": [
+     {
+      "name": "name",
+      "value": "headerDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader jcr2fs",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2e31946c-06f1-52b0-bff1-18c9128fec52",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "857be825-99fd-2a42-8e9c-f32e1f69fe83",
+    "properties": [
+     {
+      "name": "name",
+      "value": "titleDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellTitle",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4fbd7b92-e04c-f0b3-3782-683b2ffab81f",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2e31946c-06f1-52b0-bff1-18c9128fec52",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Transfer from <b>JCR</b> to <b>File System</b> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "29a1e879-a2d6-6d5b-c76d-49858404b50d",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "857be825-99fd-2a42-8e9c-f32e1f69fe83",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fileCounterDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounterBlock",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cea544a9-ac6e-7b33-cd6e-34bded053f81",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "29a1e879-a2d6-6d5b-c76d-49858404b50d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "992b98d6-8428-1a69-1fe3-073f8a0484f9",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "cea544a9-ac6e-7b33-cd6e-34bded053f81",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell1ActivationBtnObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellActivationButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c0044fd3-d44e-4356-61ce-7ea895a5879b",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "cea544a9-ac6e-7b33-cd6e-34bded053f81",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell1FileCounterObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounter",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "98aa178e-8573-f435-98fc-2da6f6ef190f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "5252807e-11c6-72d5-264e-665c69cc4731",
+    "properties": [
+     {
+      "name": "name",
+      "value": "bodyDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "fe4ea23d-d003-2ced-12b2-03c05838e3fa",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "98aa178e-8573-f435-98fc-2da6f6ef190f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "785d1b81-d484-5503-087b-22992e9120f3",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "fe4ea23d-d003-2ced-12b2-03c05838e3fa",
+    "properties": [
+     {
+      "name": "name",
+      "value": "actionRowDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "actionRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ccc1dfa0-d94b-92c5-13b5-d08b46859a53",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "785d1b81-d484-5503-087b-22992e9120f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteButtonDataCell1Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "02645d45-293c-5453-6ad0-ebda8e524819",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "785d1b81-d484-5503-087b-22992e9120f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "transferButtonDataCell1Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "10888663-1236-6e1d-b49d-eac11a404a9f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "fe4ea23d-d003-2ced-12b2-03c05838e3fa",
+    "properties": [
+     {
+      "name": "name",
+      "value": "tableHeaderPlaceHolder",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "tableHeaderPH",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d21037fd-e6aa-7729-a863-27971f5e8799",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "fe4ea23d-d003-2ced-12b2-03c05838e3fa",
+    "properties": [
+     {
+      "name": "name",
+      "value": "tableInfoBoxDataCell1",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "tableInfoBox",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7f045fbb-909c-6384-1fd2-7dcbee110633",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "d21037fd-e6aa-7729-a863-27971f5e8799",
+    "properties": [
+     {
+      "name": "name",
+      "value": "iconCol",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "iconColumn",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "44952b8a-fa70-5f6a-8123-4912f817cb02",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "d21037fd-e6aa-7729-a863-27971f5e8799",
+    "properties": [
+     {
+      "name": "name",
+      "value": "textCol",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "textColumn",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cd352161-3fba-9533-ba83-971156fe8b3e",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "44952b8a-fa70-5f6a-8123-4912f817cb02",
+    "properties": [
+     {
+      "name": "name",
+      "value": "textRow1",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "textRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c43a39b9-83c5-c3a3-f5dd-649dfb34a6fa",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "cd352161-3fba-9533-ba83-971156fe8b3e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "The files marked as <font color=\"red\">red</font> will be deleted ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "702582ff-a8ca-c3cd-8ef4-c2d74a07308e",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "44952b8a-fa70-5f6a-8123-4912f817cb02",
+    "properties": [
+     {
+      "name": "name",
+      "value": "textRow2",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "textRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e8692f24-e51e-88f2-4a4a-bab5700df4bf",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "702582ff-a8ca-c3cd-8ef4-c2d74a07308e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "The files marked as <font color=\"green\">green</font> will be updated by the latest version ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d60e69a1-4760-1462-89f3-fc2e06f32190",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "fe4ea23d-d003-2ced-12b2-03c05838e3fa",
+    "properties": [
+     {
+      "name": "name",
+      "value": "tableDataCell1Obj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "tablePH",
       "type": "String"
      }
     ]
@@ -190,7 +1507,519 @@
      },
      {
       "name": "cssClass",
+      "value": "WDdataCell",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bcde3b70-629f-b2af-79b5-bf03bda148e4",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "7602073e-6c3d-b912-d72a-0afd83b5415b",
+    "properties": [
+     {
+      "name": "name",
       "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "03f8cd11-9777-a821-17b0-a978e0871018",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "bcde3b70-629f-b2af-79b5-bf03bda148e4",
+    "properties": [
+     {
+      "name": "name",
+      "value": "headerDataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader synch",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "78f8debf-c5b7-d46d-1c7f-a5b2336c021a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "03f8cd11-9777-a821-17b0-a978e0871018",
+    "properties": [
+     {
+      "name": "name",
+      "value": "titleDataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellTitle",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "dee92e6e-84fa-b2e5-ecc6-506bdde4e73a",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "78f8debf-c5b7-d46d-1c7f-a5b2336c021a",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Synchronize <b>JCR</b> with <b>File System</b> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "8bbe536f-e1a1-76c1-d519-36206f739aa0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "03f8cd11-9777-a821-17b0-a978e0871018",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fileCounterDataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounterBlock",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "343aea78-6b26-d792-cd89-7eff0624888d",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "8bbe536f-e1a1-76c1-d519-36206f739aa0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "be384a99-0681-bfbb-4ec5-6376359f641e",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "343aea78-6b26-d792-cd89-7eff0624888d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell2ActivationBtnObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellActivationButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2970f46b-8a15-8cd0-f153-c9a0fd68953c",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "343aea78-6b26-d792-cd89-7eff0624888d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell2FileCounterObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounter",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6a6fd105-6bc0-6e42-caab-ff7933ca24e1",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "bcde3b70-629f-b2af-79b5-bf03bda148e4",
+    "properties": [
+     {
+      "name": "name",
+      "value": "bodyDataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
       "type": "String"
      }
     ]
@@ -228,7 +2057,519 @@
      },
      {
       "name": "cssClass",
+      "value": "WDdataCell",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d4310aa8-0551-773f-039e-776cb55569e5",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "a25773b7-1907-c29f-42c4-4745e21f257c",
+    "properties": [
+     {
+      "name": "name",
       "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "da21b1ba-0a6d-4bb1-04ba-f6c8378e94b3",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d4310aa8-0551-773f-039e-776cb55569e5",
+    "properties": [
+     {
+      "name": "name",
+      "value": "headerDataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellHeader fs2jcr",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "09c10d56-8b61-1070-54c8-2d7d6e83bbb0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "da21b1ba-0a6d-4bb1-04ba-f6c8378e94b3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "titleDataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellTitle",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "068fb2bb-9a66-4c2e-2864-11607b1d2c2f",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "09c10d56-8b61-1070-54c8-2d7d6e83bbb0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Transfer to <b>JCR</b> from <b>File System</b> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d3d52c97-24b1-f35f-0997-db6d4490f63e",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "da21b1ba-0a6d-4bb1-04ba-f6c8378e94b3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fileCounterDataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounterBlock",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5b81e643-8ba4-e542-a885-3b6ab2f83d44",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d3d52c97-24b1-f35f-0997-db6d4490f63e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3e4f99fe-226a-22b7-9447-7e5987bf3019",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "5b81e643-8ba4-e542-a885-3b6ab2f83d44",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell3ActivationBtnObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "cellActivationButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d3dc8f22-d0e6-f693-3e5d-0d927f12eac2",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "5b81e643-8ba4-e542-a885-3b6ab2f83d44",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell3FileCounterObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fileCounter",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b7dd37b0-4472-642e-f8ae-83ec79915378",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d4310aa8-0551-773f-039e-776cb55569e5",
+    "properties": [
+     {
+      "name": "name",
+      "value": "bodyDataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDdataCellBody",
       "type": "String"
      }
     ]
@@ -1688,240 +4029,6 @@
     ]
    },
    {
-    "id": "56c33446-996d-1cd3-1827-ad024661ce15",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "syncButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Synchronize",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:syncButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "e90ece87-2ee8-9c5b-b11b-6d41a762d346",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "exportButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Export from JCR",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:exportButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "3787103a-ae94-75f9-c456-ee4d58c57e86",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "importButton",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Import to JRC",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:importButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "9c433ae7-e3c8-bf35-cf2e-efb3f6fceb89",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -2078,6 +4185,240 @@
     ]
    },
    {
+    "id": "e90ece87-2ee8-9c5b-b11b-6d41a762d346",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsTransferButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Export from JCR",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:exportButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "56c33446-996d-1cd3-1827-ad024661ce15",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchTransferButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Synchronize",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:syncButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "3787103a-ae94-75f9-c456-ee4d58c57e86",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrTransferButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Import to JRC",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:importButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "71013a99-8556-e550-690d-169a7e0689d3",
     "type": "ComponentsTable",
     "typeDesc": "table Component",
@@ -2085,7 +4426,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "diffTable",
+      "value": "jcr2fsTable",
       "type": "Id"
      },
      {
@@ -2220,7 +4561,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:diffTableObj}",
+      "value": "${p:tableDataCell1Obj}",
       "type": "HtmlObject"
      },
      {
@@ -2245,7 +4586,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    \nvar bruno;\n\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\"),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
       "type": "JavaScript"
      },
      {
@@ -2272,6 +4613,414 @@
       "name": "clickAction",
       "value": "",
       "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "58f6a12a-6e81-b534-58cd-843ab13747ce",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell1ActivationBtn",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "open",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell1ActivationBtnObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "8205bcc8-7d14-1f1b-018a-401a31872c3a",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell2ActivationBtn",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "open",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell2ActivationBtnObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "d972ce36-c886-413a-efc3-a0f1ba18c88b",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cell3ActivationBtn",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "open",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell3ActivationBtnObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "9139dae4-dd5d-3eff-b606-1ca50af358ce",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsFileCounter",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:jcr2fsFileCounterParam}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var fileCount = Dashboards.getParameterValue(\"${p:jcr2fsFileCounterParam}\");\n    $(\"#\" + this.htmlObject).empty().text(\"(\"+fileCount+\")\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell1FileCounterObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "b82b60c2-7126-f728-1c39-57ee399f882d",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchFileCounter",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:synchFileCounterParam}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var fileCount = Dashboards.getParameterValue(\"${p:synchFileCounterParam}\");\n    $(\"#\" + this.htmlObject).empty().text(\"(\"+fileCount+\")\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell2FileCounterObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "4bb6bd5c-0053-f81b-fd75-492a54ce339a",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrFileCounter",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:fs2jcrFileCounterParam}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var fileCount = Dashboards.getParameterValue(\"${p:fs2jcrFileCounterParam}\");\n    $(\"#\" + this.htmlObject).empty().text(\"(\"+fileCount+\")\");\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:cell3FileCounterObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -2527,6 +5276,90 @@
      {
       "name": "propertyValue",
       "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "c893e9a5-4471-e0a3-8908-52034584c005",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsFileCounterParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "123",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "06b81254-5e85-4040-4cc2-a4b43b2f6a52",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchFileCounterParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "234",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "7f67b992-a7a5-4f34-d7ba-40467dda681f",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrFileCounterParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "345",
       "type": "String"
      },
      {
