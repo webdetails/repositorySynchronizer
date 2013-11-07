@@ -281,6 +281,7 @@ div.container *{
 .WDdataCell {
   margin: 20px 0px 20px 0px;
   border: solid 1px #CBDDE8;
+  font-size: 10px;
 } 
 .WDdataCell.active{
   background: #FFFFFF;
@@ -366,6 +367,32 @@ div.container *{
 }
 .WDdataCellBody.active{
   height: auto;
+  min-height: 10px;
+}
+
+.WDdataCellBody .actionRow{
+  height: 30px;
+  padding: 15px 0px 15px 0px;
+}
+.WDdataCellBody .actionRow .transferButton{
+  height: 100%;
+  width: 30%;
+}
+.WDdataCellBody .actionRow .transferButton button{
+  float: right;
+  color: #FFFFFF;
+  height: 100%;
+  background: #0C6F93;
+  box-shadow: none;
+  border: none;
+}
+.WDdataCellBody .actionRow{
+}
+.WDdataCellBody .actionRow .deleteCont{
+}
+.WDdataCellBody .actionRow .deleteCont .deleteText{
+}
+.WDdataCellBody .actionRow .deleteCont .deleteButton button{
 }
 .WDdataCellBody .tableInfoBox{
   margin: 10px 0px 3px 0px;
@@ -464,6 +491,7 @@ div.container *{
 
 /* DataTables */
 .WDdataCellBody  .dataTables_wrapper{
+  min-height: 1px;
 }
 .WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
   .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
