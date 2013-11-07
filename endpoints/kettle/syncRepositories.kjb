@@ -5,55 +5,33 @@
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#x2f;</directory>
+  <directory>&#47;</directory>
   <created_user/>
-  <created_date>2013&#x2f;09&#x2f;21 11&#x3a;49&#x3a;22.258</created_date>
+  <created_date>2013&#47;09&#47;21 11:49:22.258</created_date>
   <modified_user/>
-  <modified_date>2013&#x2f;09&#x2f;21 11&#x3a;49&#x3a;22.258</modified_date>
+  <modified_date>2013&#47;09&#47;21 11:49:22.258</modified_date>
     <parameters>
         <parameter>
             <name>delete</name>
             <default_value>N</default_value>
-            <description>Y&#x2f;N</description>
+            <description>Y&#47;N</description>
         </parameter>
         <parameter>
             <name>destinationRepoLocation</name>
-            <default_value>&#x2f;Users&#x2f;bruno&#x2f;Documents&#x2f;testKettle&#x2f;test-folders&#x2f;test2</default_value>
+            <default_value>JCR</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>&#x2f;Users&#x2f;bruno&#x2f;Documents&#x2f;testKettle&#x2f;test-folders&#x2f;test1</default_value>
+            <default_value>File System</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>selectedAction</name>
             <default_value>S</default_value>
-            <description>S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import</description>
+            <description>S: synch | E: export | I: import</description>
         </parameter>
     </parameters>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -62,7 +40,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_JOB</id><enabled>N</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>N</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>N</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>START_JOB_ENTRY</id><enabled>N</enabled><name>START_JOB_ENTRY</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></job-log-table>
+<field><id>ID_JOB</id><enabled>N</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>N</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>N</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></job-log-table>
 <jobentry-log-table><connection/>
 <schema/>
 <table/>
@@ -73,17 +51,6 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
-<checkpoint-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<max_nr_retries/>
-<run_retry_period/>
-<namespace_parameter/>
-<save_parameters/>
-<save_result_rows/>
-<save_result_files/>
-<field><id>ID_JOB_RUN</id><enabled>Y</enabled><name>ID_JOB_RUN</name></field><field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>NAMESPACE</id><enabled>Y</enabled><name>NAMESPACE</name></field><field><id>CHECKPOINT_NAME</id><enabled>Y</enabled><name>CHECKPOINT_NAME</name></field><field><id>CHECKPOINT_COPYNR</id><enabled>Y</enabled><name>CHECKPOINT_COPYNR</name></field><field><id>ATTEMPT_NR</id><enabled>Y</enabled><name>ATTEMPT_NR</name></field><field><id>JOB_RUN_START_DATE</id><enabled>Y</enabled><name>JOB_RUN_START_DATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>RESULT_XML</id><enabled>Y</enabled><name>RESULT_XML</name></field><field><id>PARAMETER_XML</id><enabled>Y</enabled><name>PARAMETER_XML</name></field></checkpoint-log-table>
    <pass_batchid>N</pass_batchid>
    <shared_objects_file/>
   <entries>
@@ -105,29 +72,45 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>109</xloc>
-      <yloc>176</yloc>
+      <yloc>108</yloc>
       </entry>
     <entry>
-      <name>Delete files</name>
+      <name>previewDiffAndSynch</name>
       <description/>
-      <type>DELETE_FILES</type>
-      <arg_from_previous>Y</arg_from_previous>
-      <include_subfolders>Y</include_subfolders>
-      <fields>
-      </fields>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Job.Filename.Directory}&#47;_previewDiffAndSynch.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>591</xloc>
-      <yloc>219</yloc>
+      <xloc>287</xloc>
+      <yloc>108</yloc>
       </entry>
     <entry>
-      <name>previewDifferences &#x28;copy files&#x29;</name>
+      <name>LastSynchDate = now</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;previewDifferences.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;_setLastSynchDate.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -146,272 +129,40 @@
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>destinationRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;destinationRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>operation_type</name>
-            <stream_name/>
-            <value>C</value>
-            </parameter>            <parameter>            <name>originRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;originRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>selectedAction</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;selectedAction&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
+      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>392</xloc>
-      <yloc>61</yloc>
+      <xloc>643</xloc>
+      <yloc>108</yloc>
       </entry>
     <entry>
-      <name>previewDifferences &#x28;delete folders&#x29;</name>
+      <name>Is synch?</name>
       <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;previewDifferences.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>delete</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;delete&#x7d;</value>
-            </parameter>            <parameter>            <name>destinationRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;destinationRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>operation_type</name>
-            <stream_name/>
-            <value>DF</value>
-            </parameter>            <parameter>            <name>originRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;originRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>selectedAction</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;selectedAction&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>392</xloc>
-      <yloc>298</yloc>
-      </entry>
-    <entry>
-      <name>previewDifferences &#x28;merge&#x29; &#x28;&#x3f;&#x3f;&#x3f;&#x29;</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;previewDifferences.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>delete</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;delete&#x7d;</value>
-            </parameter>            <parameter>            <name>destinationRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;destinationRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>operation_type</name>
-            <stream_name/>
-            <value>M</value>
-            </parameter>            <parameter>            <name>originRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;originRepoLocation&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>109</xloc>
-      <yloc>354</yloc>
-      </entry>
-    <entry>
-      <name>Delete folders</name>
-      <description/>
-      <type>DELETE_FOLDERS</type>
-      <arg_from_previous>Y</arg_from_previous>
-      <success_condition>success_if_no_errors</success_condition>
-      <limit_folders>10</limit_folders>
-      <fields>
-      </fields>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>variable</valuetype>
+      <fieldname/>
+      <variablename>${selectedAction}</variablename>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>S</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>equal</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>591</xloc>
-      <yloc>298</yloc>
-      </entry>
-    <entry>
-      <name>previewDifferences &#x28;delete files&#x29;</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;previewDifferences.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>delete</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;delete&#x7d;</value>
-            </parameter>            <parameter>            <name>destinationRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;destinationRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>operation_type</name>
-            <stream_name/>
-            <value>D</value>
-            </parameter>            <parameter>            <name>originRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;originRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>selectedAction</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;selectedAction&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>392</xloc>
-      <yloc>219</yloc>
-      </entry>
-    <entry>
-      <name>Copy Files</name>
-      <description/>
-      <type>COPY_FILES</type>
-      <copy_empty_folders>Y</copy_empty_folders>
-      <arg_from_previous>Y</arg_from_previous>
-      <overwrite_files>N</overwrite_files>
-      <include_subfolders>Y</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>Y</destination_is_a_file>
-      <create_destination_folder>Y</create_destination_folder>
-      <fields>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>591</xloc>
-      <yloc>61</yloc>
-      </entry>
-    <entry>
-      <name>previewDifferences &#x28;copy folders&#x29;</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>filename</specification_method>
-      <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;previewDifferences.ktr</filename>
-      <transname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>destinationRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;destinationRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>operation_type</name>
-            <stream_name/>
-            <value>CF</value>
-            </parameter>            <parameter>            <name>originRepoLocation</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;originRepoLocation&#x7d;</value>
-            </parameter>            <parameter>            <name>selectedAction</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;selectedAction&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>392</xloc>
-      <yloc>140</yloc>
-      </entry>
-    <entry>
-      <name>Copy Folders</name>
-      <description/>
-      <type>COPY_FILES</type>
-      <copy_empty_folders>Y</copy_empty_folders>
-      <arg_from_previous>Y</arg_from_previous>
-      <overwrite_files>N</overwrite_files>
-      <include_subfolders>Y</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>N</destination_is_a_file>
-      <create_destination_folder>Y</create_destination_folder>
-      <fields>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>590</xloc>
-      <yloc>140</yloc>
+      <xloc>465</xloc>
+      <yloc>108</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>previewDifferences &#x28;copy files&#x29;</to>
+      <to>previewDiffAndSynch</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -419,26 +170,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>previewDifferences &#x28;merge&#x29; &#x28;&#x3f;&#x3f;&#x3f;&#x29;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>previewDifferences &#x28;delete folders&#x29;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>previewDifferences &#x28;delete folders&#x29;</from>
-      <to>Delete folders</to>
+      <from>previewDiffAndSynch</from>
+      <to>Is synch?</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -446,44 +179,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>previewDifferences &#x28;delete files&#x29;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>previewDifferences &#x28;delete files&#x29;</from>
-      <to>Delete files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>previewDifferences &#x28;copy files&#x29;</from>
-      <to>Copy Files</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>previewDifferences &#x28;copy folders&#x29;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>previewDifferences &#x28;copy folders&#x29;</from>
-      <to>Copy Folders</to>
+      <from>Is synch?</from>
+      <to>LastSynchDate = now</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -493,9 +190,4 @@
   </hops>
   <notepads>
   </notepads>
-<attributes><group><name>JobRestart</name>
-<attribute><key>UniqueConnections</key>
-<value>N</value>
-</attribute></group></attributes>
-
 </job>
