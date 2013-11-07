@@ -27,6 +27,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>overwrite</name>
+            <default_value>N</default_value>
+            <description>Y&#47;N</description>
+        </parameter>
+        <parameter>
             <name>selectedAction</name>
             <default_value>S</default_value>
             <description>S: synch | E: export | I: import</description>
@@ -126,6 +131,9 @@
             </parameter>            <parameter>            <name>selectedAction</name>
             <stream_name/>
             <value>${selectedAction}</value>
+            </parameter>            <parameter>            <name>overwrite</name>
+            <stream_name/>
+            <value>${overwrite}</value>
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -299,6 +307,9 @@
             </parameter>            <parameter>            <name>selectedAction</name>
             <stream_name/>
             <value>${selectedAction}</value>
+            </parameter>            <parameter>            <name>overwrite</name>
+            <stream_name/>
+            <value>${overwrite}</value>
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>

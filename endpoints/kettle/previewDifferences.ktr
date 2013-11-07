@@ -30,6 +30,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>overwrite</name>
+            <default_value>N</default_value>
+            <description>Y&#47;N</description>
+        </parameter>
+        <parameter>
             <name>selectedAction</name>
             <default_value>S</default_value>
             <description>S: synch | E: export | I: import</description>
@@ -352,6 +357,18 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
+      <field>
+        <name>overwrite_flag</name>
+        <variable>${overwrite}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -554,7 +571,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
 var source;
 var dest;
 
-status = &apos;&apos;;
+status = &apos;nothing_to_be_updated&apos;;
 source = &apos;&apos;;
 dest = &apos;&apos;;
 
@@ -567,6 +584,12 @@ if (flagfield ==&quot;new&quot;) {
 } else if (flagfield == &quot;changed&quot;) {
 	if ((lastmodifiedtime_origin &lt; last_synch) &amp;&amp; (lastmodifiedtime_destination &gt; last_synch)) { status = &apos;to_be_copied&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
 	if ((lastmodifiedtime_origin &gt; last_synch) &amp;&amp; (lastmodifiedtime_destination &lt; last_synch)) { status = &apos;to_be_copied&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
+
+	if ((lastmodifiedtime_origin &gt; last_synch) &amp;&amp; (lastmodifiedtime_destination &gt; last_synch) &amp;&amp; (overwrite_flag == &quot;Y&quot;)) {
+		status = &apos;to_be_copied&apos;;
+		if (lastmodifiedtime_origin &gt; lastmodifiedtime_destination) { source = originRepoLocation; dest = destinationRepoLocation;}
+		else { source = destinationRepoLocation; dest = originRepoLocation;}
+		}
 }
 
 </jsScript_script>
