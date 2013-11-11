@@ -6214,7 +6214,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"E\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:jcr2fsToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted in the File System\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = deleteStatus;\n    endpointOpts.params[\"selectedAction\"] = \"E\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n\n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6292,7 +6292,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"S\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:synchToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"S\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n            }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6370,7 +6370,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"I\";\n    endpointOpts.params[\"originRepoLocation\"] = \"File System\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"JCR\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:fs2jcrToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted in JCR\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"I\";\n    endpointOpts.params[\"originRepoLocation\"] = \"File System\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"JCR\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6463,7 +6463,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6473,7 +6473,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"30%\",\"10%\",\"50%\",\"10%\"]",
+      "value": "[\"80%\",\"20%\"]",
       "type": "Array"
      },
      {
@@ -6528,7 +6528,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "function f(){\n/*    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n}",
       "type": "JavaScript"
      },
      {
@@ -6588,12 +6588,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){   \n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
+      "value": "function f(data){\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        fsPath = data.resultset[0][directionIdx];\n    Dashboards.setParameter(\"${p:fileSystemAddressParam}\",fsPath);\n    return synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6661,7 +6661,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6671,7 +6671,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"30%\",\"10%\",\"50%\",\"10%\"]",
+      "value": "[\"80%\",\"20%\"]",
       "type": "Array"
      },
      {
@@ -6726,7 +6726,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -6786,12 +6786,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){   \n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
+      "value": "function f(data){\n    return synchronizer.tablePostChangeProcedure(data,\"${p:synchFileCounterParam}\",\"${p:synchToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6859,7 +6859,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[]",
+      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6869,7 +6869,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"30%\",\"10%\",\"50%\",\"10%\"]",
+      "value": "[\"80%\",\"20%\"]",
       "type": "Array"
      },
      {
@@ -6924,7 +6924,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -6984,12 +6984,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){   \n    if(_.isEmpty(data)){\n        data = synchronizer.createTableEmptyRawData();\n        return data;\n    }\n}",
+      "value": "function f(data){\n    return synchronizer.tablePostChangeProcedure(data,\"${p:fs2jcrFileCounterParam}\",\"${p:fs2jcrToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -7679,7 +7679,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    /* tranfering dialog(open/close) to component's method */  \n    this.open = function (opts){\n        \n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: false,\n            title: \"Confirmation Message\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $( this ).dialog( \"close\" );\n                    }\n                },\n                {\n                    cancel: \"Cancel\",\n                    click: function(){\n                        $( this ).dialog( \"close\" );    \n                    }\n                }\n            ]\n        };\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n        /*method's action*/\n        $( \"#\" + this.htmlObject ).dialog(dialogOpts);\n        $( \"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts){\n        $( \"#\" + this.htmlObject ).dialog('close');\n    };\n}",
+      "value": "function f(){\n    /* tranfering dialog(open/close) to component's method */  \n    this.open = function (opts){\n        \n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: false,\n            title: \"Confirm action\",\n            buttons: [\n                {\n                    text: \"Cancel\",\n                    click: function() {\n                        $( this ).dialog( \"close\" );\n                    }\n                },\n                {\n                    cancel: \"Ok\",\n                    click: function(){\n                        $( this ).dialog( \"close\" );    \n                    }\n                }\n            ]\n        };\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n        /*method's action*/\n        $( \"#\" + this.htmlObject ).dialog(dialogOpts);\n        $( \"#\" + this.htmlObject).empty().append(dialogOpts.content);\n    };\n    \n    this.close = function (opts){\n        $( \"#\" + this.htmlObject ).dialog('close');\n    };\n}",
       "type": "JavaScript"
      },
      {
@@ -7942,7 +7942,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "123",
+      "value": "",
       "type": "String"
      },
      {
@@ -7970,7 +7970,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "234",
+      "value": "",
       "type": "String"
      },
      {
@@ -7998,7 +7998,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "345",
+      "value": "",
       "type": "String"
      },
      {
@@ -8022,6 +8022,118 @@
      {
       "name": "name",
       "value": "deleteParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "bc5a13f3-e709-1438-e43b-ef04f494a01e",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsToBeDeletedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "86cbb096-2d27-3a23-91b9-a6aac6c1f6d2",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchToBeDeletedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "00ff5f91-5e0f-8ed1-8bc9-8c7120ffac90",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrToBeDeletedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "e4f39f5e-5a45-7ce7-949b-00a3e43eae97",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fileSystemAddressParam",
       "type": "Id"
      },
      {

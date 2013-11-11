@@ -394,9 +394,7 @@ div.container *{
   -o-border-radius:5px;
   -ms-border-radius:5px;
   border-radius:5px;
-}
-.WDdataCellBody .actionRow .transferButton button:hover{
-  cursor: pointer;
+  cursor: pointer;  
 }
 .WDdataCellBody .actionRow .deleteCont{
   height: 100%;
@@ -430,8 +428,6 @@ div.container *{
 }
 .WDdataCellBody .actionRow .deleteCont.checked .deleteButton button{
   background: url('../img/checked.png') no-repeat center center transparent;
-}
-.WDdataCellBody .actionRow .deleteCont .deleteButton button:hover{
   cursor: pointer;
 }
 .WDdataCellBody .tableInfoBox{
@@ -773,8 +769,108 @@ button span {
    Other 
    ========================================================================== */
 
+/***** Dialog native-css customization  *****/
 
+.ui-dialog{
+}
+.ui-dialog.ui-widget.ui-corner-all.confirmationDialog{
+  border-radius: 0px;
+  padding: 0px 15px 0px 15px;
+}
+.ui-dialog.ui-widget.ui-widget-content.confirmationDialog{
+  background: #EAF2F5;
+}
+.ui-dialog.confirmationDialog .ui-dialog-titlebar.ui-widget-header{
+  height: 40px;
+  border-radius: 0px;
+  border: none;
+  background: url('../img/Confirmation.png') no-repeat left center transparent;
+  padding-left: 40px;
+  color: #408AC6;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 40px;
+}
+.ui-dialog.confirmationDialog .ui-dialog-titlebar.ui-widget-header a{
+  display: none;
+}
+/*
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a{
+  display: inline;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover{
+  background: #25B9ED;
+  border: none;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
+  background: url('../img/x.png') -45px -10px no-repeat #25B9ED;
+}
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
+.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span{
+  background: url('../img/x.png') -11px -9px no-repeat #25B9ED;
+}
+*/
+.ui-dialog.confirmationDialog .ui-dialog-content{
+  color: #F84F50;
+  font-size: 10px;
+  min-height: 0px;
+  padding: 0px 40px;
+}
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane{
+  background: transparent;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane button{
+  font-size: 10px;
+  height: 30px;
+  font-weight: normal;
+  color: #FFFFFF;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background: #C6000E;
+}
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane button.cancel{
+  background: #C6000E;
+  width: 65px;
+}
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane button.ok{
+  background: #0B6788;
+  width: 85px;
+}
+.ui-widget-overlay{
+  background: #537C8E;
+  opacity: 0.9;
+}
 
+/* Dialog custom content css definition */
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer{
+  background: transparent;
+  width: 100%;
+  float: left;
+}
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogMessage{
+  height: 25px;
+  width: 100%;
+  max-width: 230px;
+  text-align: left;
+}
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogTable{
+  background: #FFFFFF;
+  width: 100%;
+  max-height: 155px;
+  padding: 5px 3px 4px 10px;
+  border: solid 1px #D3E2EB;
+  margin-bottom: 15px;
+}
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogTable .dialogTableRow{
+  text-align: left;
+  padding: 4px 0px 5px 18px;
+  background: url('../img/file-red.png') no-repeat left center transparent;
+}
 /* =============================================================================
    Project Specific Items 
    ========================================================================== */
