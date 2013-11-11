@@ -1111,6 +1111,39 @@
     ]
    },
    {
+    "id": "7c5caf2a-818b-3429-269f-7c71f3b60ed0",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "07b9ab3c-64c8-c92f-fd9a-734c14c9d173",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Delete files on <b>File System</b> that do not exist on <b>JCR</b> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "fa1010e5-cc21-db50-3cf7-4d65047e6a5b",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -1511,7 +1544,7 @@
      },
      {
       "name": "cssClass",
-      "value": "textRow",
+      "value": "textRow delete",
       "type": "String"
      }
     ]
@@ -2320,6 +2353,369 @@
     ]
    },
    {
+    "id": "04f3d1e5-8942-1b38-a5e7-1001169b67de",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c496473d-0828-e2c2-f1b0-127e9db04a89",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteContDataCell2",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteCont",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "60a2d7e7-0e0e-a204-80a5-fb70f6fff6cb",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "04f3d1e5-8942-1b38-a5e7-1001169b67de",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "39d29bed-1ed9-e0c2-08f3-55ac01389fec",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "60a2d7e7-0e0e-a204-80a5-fb70f6fff6cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteTextDataCell2Cont",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteText",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3878420e-0dfa-8768-551a-c8b5193d7407",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "39d29bed-1ed9-e0c2-08f3-55ac01389fec",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Delete files that were deleted from one site and not changed on the other ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b04c19ca-5128-6fb0-9289-089bc7790bab",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "60a2d7e7-0e0e-a204-80a5-fb70f6fff6cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteButtonDataCell2Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cc8c92fa-34e8-765a-e06a-b8246b2f7fee",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "c496473d-0828-e2c2-f1b0-127e9db04a89",
+    "properties": [
+     {
+      "name": "name",
+      "value": "transferButtonDataCell2Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "transferButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "eeacfd06-80da-dd57-9dd9-2df544fdb360",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -2542,7 +2938,7 @@
     ]
    },
    {
-    "id": "6b24e769-0afe-f99a-7c50-2b03d074821f",
+    "id": "97b9b9c6-9ea6-4f53-15bd-a9ac42a1a987",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "52db30cf-2f96-ad5b-04c6-82d400269d4a",
@@ -2574,16 +2970,16 @@
      },
      {
       "name": "cssClass",
-      "value": "textRow",
+      "value": "textRow delete",
       "type": "String"
      }
     ]
    },
    {
-    "id": "629d69a9-5b61-d5f1-617c-4b2d050ac328",
+    "id": "881091d9-8bd0-07a4-8f95-0ce19b537c10",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "6b24e769-0afe-f99a-7c50-2b03d074821f",
+    "parent": "97b9b9c6-9ea6-4f53-15bd-a9ac42a1a987",
     "properties": [
      {
       "name": "name",
@@ -3383,6 +3779,369 @@
     ]
    },
    {
+    "id": "0433140a-3caa-7dc7-a8ed-03f39e27e09d",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e07ac585-6d63-52ce-59aa-fe82cec1a420",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteContDataCell3",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteCont",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ccf2805e-48fc-2f40-70c1-fec5106ad308",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "0433140a-3caa-7dc7-a8ed-03f39e27e09d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b4ae143b-76c4-ae74-4517-4fe7e93d69fc",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "ccf2805e-48fc-2f40-70c1-fec5106ad308",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteTextDataCell3Cont",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteText",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b1f9afca-d1da-b2dc-b223-ecab06c8693c",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "b4ae143b-76c4-ae74-4517-4fe7e93d69fc",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Delete files on <b>JCR</b> that do not exist on <b>File System</b> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "84819553-4678-8c8d-aba9-08c5a423994d",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "ccf2805e-48fc-2f40-70c1-fec5106ad308",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteButtonDataCell3Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "deleteButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f2594ffc-de18-4485-d73d-073761b1c1c0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e07ac585-6d63-52ce-59aa-fe82cec1a420",
+    "properties": [
+     {
+      "name": "name",
+      "value": "transferButtonDataCell3Obj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "transferButton",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "4b5a8049-4db1-70aa-594b-d8742b75621f",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -3637,7 +4396,7 @@
      },
      {
       "name": "cssClass",
-      "value": "textRow",
+      "value": "textRow delete",
       "type": "String"
      }
     ]
@@ -5219,6 +5978,44 @@
       "type": "String"
      }
     ]
+   },
+   {
+    "id": "64a7a5fb-0e79-71df-cbc0-17d2727e81d9",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dialogComponentObj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
    }
   ]
  },
@@ -5246,7 +6043,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "okButton",
+      "value": "okButton_OLD",
       "type": "Id"
      },
      {
@@ -5261,7 +6058,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n    synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n\n}",
       "type": "JavaScript"
      },
      {
@@ -5324,7 +6121,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "cancelButton",
+      "value": "cancelButton_OLD",
       "type": "Id"
      },
      {
@@ -5417,7 +6214,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"E\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -5495,7 +6292,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"S\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -5515,7 +6312,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:syncButtonObj}",
+      "value": "${p:transferButtonDataCell2Obj}",
       "type": "HtmlObject"
      },
      {
@@ -5563,7 +6360,7 @@
      },
      {
       "name": "label",
-      "value": "Import to JRC",
+      "value": "Transfer",
       "type": "String"
      },
      {
@@ -5573,7 +6370,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");\n    var count = parseInt(Dashboards.getParameterValue(\"${p:updateTableEvent}\")) + 1;\n    Dashboards.fireChange(\"${p:updateTableEvent}\",count.toString());\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\");\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"I\";\n    endpointOpts.params[\"originRepoLocation\"] = \"File System\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"JCR\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        message:\"You are about to do something, be wise. Please, press OK to continue...\",\n        buttons:[\n            { text: \"OK\", click: okCallback },\n            { text: \"Cancel\", click: cancelCallback }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -5593,7 +6390,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:importButtonObj}",
+      "value": "${p:transferButtonDataCell3Obj}",
       "type": "HtmlObject"
      },
      {
@@ -5613,7 +6410,7 @@
      },
      {
       "name": "preChange",
-      "value": "function (value) {\n    return !_.isEmpty(value)\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -5646,7 +6443,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateTableEvent}']",
+      "value": "['${p:jcr2fsDeleteParam}','${p:updateAllTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -5656,7 +6453,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"deleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"jcr2fsDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
       "type": "ValuesArray"
      },
      {
@@ -5786,7 +6583,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"E\");    \n}",
+      "value": "function f(){\n    Dashboards.setParameter(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.setParameter(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.setParameter(\"${p:selectedActionParam}\",\"E\");   \n}",
       "type": "JavaScript"
      },
      {
@@ -5796,7 +6593,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -5844,7 +6641,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateTableEvent}']",
+      "value": "['${p:synchDeleteParam}','${p:updateAllTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -5854,7 +6651,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"deleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"synchDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
       "type": "ValuesArray"
      },
      {
@@ -5984,7 +6781,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"S\");    \n}",
+      "value": "function f(){\n    Dashboards.setParameter(\"${p:originRepoLocationParam}\",\"JCR\");\n    Dashboards.setParameter(\"${p:destinationRepoLocationParam}\",\"File System\");\n    Dashboards.setParameter(\"${p:selectedActionParam}\",\"S\");    \n}",
       "type": "JavaScript"
      },
      {
@@ -5994,7 +6791,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6042,7 +6839,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:updateTableEvent}']",
+      "value": "['${p:fs2jcrDeleteParam}','${p:updateAllTableEvent}']",
       "type": "Listeners"
      },
      {
@@ -6052,7 +6849,7 @@
      },
      {
       "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"deleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"fs2jcrDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
       "type": "ValuesArray"
      },
      {
@@ -6182,7 +6979,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    Dashboards.fireChange(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.fireChange(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.fireChange(\"${p:selectedActionParam}\",\"I\");    \n}",
+      "value": "function f(){\n    Dashboards.setParameter(\"${p:originRepoLocationParam}\",\"File System\");\n    Dashboards.setParameter(\"${p:destinationRepoLocationParam}\",\"JCR\");\n    Dashboards.setParameter(\"${p:selectedActionParam}\",\"I\");    \n}",
       "type": "JavaScript"
      },
      {
@@ -6192,7 +6989,7 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n}",
+      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n    \n    var $deleteMessagePh = $tableHTMLObj.siblings(\".tableInfoBox\").find(\".textRow.delete\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    $deleteMessagePh.removeClass(\"WDhidden\");\n    if(deleteStatus !== \"Y\"){\n        $deleteMessagePh.addClass(\"WDhidden\");\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6631,39 +7428,20 @@
     ]
    },
    {
-    "id": "SELECTORS",
-    "name": "Selects",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Selects",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "ec54cbd4-185a-3f09-580b-f9d227c08b5a",
-    "type": "Componentscheck",
-    "typeDesc": "Check Component",
-    "parent": "SELECTORS",
+    "id": "363fc6f8-3ec0-eb05-dd67-5c9682ad68f6",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "deleteActivationButton",
+      "value": "jcr2fsDeleteActivationButton",
       "type": "Id"
      },
      {
-      "name": "separator",
-      "value": "",
+      "name": "label",
+      "value": "Delete",
       "type": "String"
-     },
-     {
-      "name": "parameter",
-      "value": "${p:deleteParam}",
-      "type": "Parameter"
      },
      {
       "name": "listeners",
@@ -6671,24 +7449,9 @@
       "type": "Listeners"
      },
      {
-      "name": "parameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "dataSource",
-      "value": "",
-      "type": "Datasource"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[[\"Y\",\"Delete enabled\"]]",
-      "type": "ValuesArray"
+      "name": "expression",
+      "value": "function f(){\n    var $deleteOverallCont =$('#' + this.htmlObject).parents(\".deleteCont\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n    $deleteOverallCont.toggleClass('checked');    \n    deleteStatus = synchronizer.toggleDeleteStatus(deleteStatus);\n    Dashboards.fireChange('${p:jcr2fsDeleteParam}', deleteStatus);\n}",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -6701,8 +7464,13 @@
       "type": "Integer"
      },
      {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
       "name": "htmlObject",
-      "value": "${p:deleteActivationButtonObj}",
+      "value": "${p:deleteButtonDataCell1Obj}",
       "type": "HtmlObject"
      },
      {
@@ -6716,22 +7484,231 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\" + this.htmlObject).find(\"button\").empty();  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "0956033f-c1bb-2732-1777-47e0996002d7",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchDeleteActivationButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Delete",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var $deleteOverallCont =$('#' + this.htmlObject).parents(\".deleteCont\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    $deleteOverallCont.toggleClass('checked');    \n    deleteStatus = synchronizer.toggleDeleteStatus(deleteStatus);\n    Dashboards.fireChange('${p:synchDeleteParam}', deleteStatus);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:deleteButtonDataCell2Obj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    $(\"#\" + this.htmlObject).find(\"button\").empty();  \n}",
       "type": "JavaScript"
      },
      {
       "name": "preChange",
-      "value": "function (value) {\n    if(_.isEmpty(value)){\n        return \"N\";\n    } else { \n        return \"Y\";\n    }\n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
       "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "8b9538a5-8fb7-9af7-5bf5-c4adb092731e",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrDeleteActivationButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Delete",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var $deleteOverallCont =$('#' + this.htmlObject).parents(\".deleteCont\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    $deleteOverallCont.toggleClass('checked');    \n    deleteStatus = synchronizer.toggleDeleteStatus(deleteStatus);\n    Dashboards.fireChange('${p:fs2jcrDeleteParam}', deleteStatus);\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:deleteButtonDataCell3Obj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\" + this.htmlObject).find(\"button\").empty();  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "3545e28d-cc2d-91ad-5da8-907165fffc85",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dialogComponent",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    /* tranfering dialog(open/close) to component's method */  \n    this.open = function (opts){\n        \n        /*default opts*/\n        var dialogOpts = {\n            dialogClass: \"confirmationDialog\",\n            modal:true,\n            resizable: false,\n            draggable: false,\n            title: \"Confirmation Message\",\n            buttons: [\n                {\n                    text: \"OK\",\n                    click: function() {\n                        $( this ).dialog( \"close\" );\n                    }\n                },\n                {\n                    cancel: \"Cancel\",\n                    click: function(){\n                        $( this ).dialog( \"close\" );    \n                    }\n                }\n            ]\n        };\n        /*merge of defaults with user custom opts*/\n        $.extend( dialogOpts, opts); \n        /*method's action*/\n        $( \"#\" + this.htmlObject ).dialog(dialogOpts);\n        $( \"#\" + this.htmlObject).empty().append($(\"<span>\"+dialogOpts.message+\"</span>\"));\n    };\n    \n    this.close = function (opts){\n        $( \"#\" + this.htmlObject ).dialog('close');\n    };\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:dialogComponentObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
@@ -6757,6 +7734,62 @@
     ]
    },
    {
+    "id": "0c850adb-804b-0263-2d83-56bb7c578f7a",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsDeleteParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "N",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "ffdc00be-a43d-52eb-221c-2b2a92569dd0",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchDeleteParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "N",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
     "id": "496255df-c96d-10ad-aa1f-58f738067bc5",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
@@ -6764,7 +7797,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "deleteParam",
+      "value": "fs2jcrDeleteParam",
       "type": "Id"
      },
      {
@@ -6869,14 +7902,14 @@
     ]
    },
    {
-    "id": "18c4a03f-ceda-67b4-ecd8-d49644dcfec7",
+    "id": "c8e19561-7fb1-b005-9f64-caacdbbee7f6",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "updateTableEvent",
+      "value": "updateAllTableEvent",
       "type": "Id"
      },
      {
@@ -6966,6 +7999,34 @@
      {
       "name": "propertyValue",
       "value": "345",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "250542b9-b336-ca30-95bd-87254e293be9",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "deleteParam",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
       "type": "String"
      },
      {

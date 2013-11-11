@@ -371,28 +371,68 @@ div.container *{
 }
 
 .WDdataCellBody .actionRow{
-  height: 30px;
+  height: 60px;
   padding: 15px 0px 15px 0px;
 }
 .WDdataCellBody .actionRow .transferButton{
   height: 100%;
-  width: 30%;
+  width: 85px;
+  float: right;
 }
 .WDdataCellBody .actionRow .transferButton button{
   float: right;
   color: #FFFFFF;
   height: 100%;
-  background: #0C6F93;
-  box-shadow: none;
+  width: 100%;
+  font-size: 10px;
+  font-weight: normal;
+  background: #0C7094;
   border: none;
+  box-shadow: none;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -o-border-radius:5px;
+  -ms-border-radius:5px;
+  border-radius:5px;
 }
-.WDdataCellBody .actionRow{
+.WDdataCellBody .actionRow .transferButton button:hover{
+  cursor: pointer;
 }
 .WDdataCellBody .actionRow .deleteCont{
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.WDdataCellBody .actionRow .deleteCont div{
+  float: left;
 }
 .WDdataCellBody .actionRow .deleteCont .deleteText{
+  line-height: 30px;
+}
+.WDdataCellBody .actionRow .deleteCont.checked .deleteText{
+  color: #FF3F3F;
+}
+.WDdataCellBody .actionRow .deleteCont .deleteButton{
+  height: 100%;
+  padding-left: 10px;
+  position: absolute;
+  left: 100%;
 }
 .WDdataCellBody .actionRow .deleteCont .deleteButton button{
+  border: none;
+  box-shadow: none;
+  height: 15px;
+  width: 15px;
+  padding: 0px;
+  background: url('../img/unchecked.png') no-repeat center center transparent;
+  position: absolute;
+  top: 25%;
+}
+.WDdataCellBody .actionRow .deleteCont.checked .deleteButton button{
+  background: url('../img/checked.png') no-repeat center center transparent;
+}
+.WDdataCellBody .actionRow .deleteCont .deleteButton button:hover{
+  cursor: pointer;
 }
 .WDdataCellBody .tableInfoBox{
   margin: 10px 0px 3px 0px;

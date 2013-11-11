@@ -121,6 +121,14 @@ var synchronizer = {};
 
 	    $.ajax(ajaxOpts)
 	}
+	myself.incUpdateEvent = function( eventName ){
+	    var updateCnt = parseInt(Dashboards.getParameterValue(eventName));
+	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());		
+	}
+
+	myself.toggleDeleteStatus = function( status ){
+		return (status == "N" ? "Y" : "N");
+	}
 
 	myself.getEndpointCaller = function( pluginId, endpoint, opts ){
 	    var myself = this;
