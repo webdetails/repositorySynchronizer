@@ -6463,7 +6463,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
+      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6473,7 +6473,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"80%\",\"20%\"]",
+      "value": "[\"80%\",\"20%\",\"0%\",\"0%\",\"0%\"]",
       "type": "Array"
      },
      {
@@ -6588,7 +6588,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        fsPath = data.resultset[0][directionIdx];\n    Dashboards.setParameter(\"${p:fileSystemAddressParam}\",fsPath);\n    return synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
+      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        typeColIdx: directionIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6661,7 +6661,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
+      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6671,7 +6671,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"80%\",\"20%\"]",
+      "value": "[\"80%\",\"20%\",\"0%\",\"0%\",\"0%\"]",
       "type": "Array"
      },
      {
@@ -6859,7 +6859,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"hidden\",\"hidden\"]",
+      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6869,7 +6869,7 @@
      },
      {
       "name": "colWidths",
-      "value": "[\"80%\",\"20%\"]",
+      "value": "[\"80%\",\"20%\",\"0%\",\"0%\",\"0%\"]",
       "type": "Array"
      },
      {
@@ -8138,7 +8138,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "",
+      "value": "/Users/bruno/Documents/testKettle/testFolders/test2",
       "type": "String"
      },
      {

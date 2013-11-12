@@ -497,11 +497,73 @@ div.container *{
   background: #FFFFFF;
   height: 12px;
 }
+.WDdataCellBody  tbody tr.toBeCreated {
+  color: #333333;
+}
+.WDdataCellBody  tbody tr.toBeUpdated {
+  color: #39B54A;
+  background: #F5FBF6;
+}
+.WDdataCellBody  tbody tr.toBeDeleted {
+  color: #FF0000;
+  background: #FFF2F2;
+}
+.WDdataCellBody  tbody tr.willNotBeUpdated {
+  color: #808080;
+}
+
 .WDdataCellBody  tbody td{
   padding-left: 35px;
+  border-top: solid 1px #FFFFFF;
+  border-bottom: solid 2px #FFFFFF;
   text-align: left;
-  background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
+  background: transparent;
 }
+.WDdataCellBody  tbody .toBeCreated.jcr2fs td.synchModification{
+  background: url('../img/status-transfer-from.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.jcr2fs  td.synchModification{
+  background: url('../img/status-update-from.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.jcr2fs  td.synchModification{
+  background: url('../img/status-delete-from.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .willNotBeUpdated td.synchModification{
+  background: url('../img/status-wont.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeCreated.fs2jcr td.synchModification{
+  background: url('../img/status-transfer-to.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.fs2jcr  td.synchModification{
+  background: url('../img/status-update-to.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.fs2jcr  td.synchModification{
+  background: url('../img/status-delete-to.png') no-repeat 10px center transparent;
+}
+
+.WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn{
+  background: url('../img/folder-open-blue.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.folder  td.synchMainColumn{
+  background: url('../img/folder-open-green.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.folder  td.synchMainColumn{
+  background: url('../img/folder-open-red.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .willNotBeUpdated td.synchMainColumn{
+  background: url('../img/file-gray.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn{
+  background: url('../img/file-blue.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.file  td.synchMainColumn{
+  background: url('../img/file-green.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.file  td.synchMainColumn{
+  background: url('../img/file-red.png') no-repeat 10px center transparent;
+}
+
+
 .WDdataCellBody  tbody td:first-child{
 }
 .WDdataCellBody  tbody td,

@@ -4,38 +4,47 @@ var synchronizer = {};
 
 (function(myself){
 
-	/*myself.pluginId = "repositorysynchronizer";*/
+	myself.settings = {};
+	
+	myself.settings.statusDictionary = {
+		"to_be_copied":"to be created",
+		"to_be_deleted":"to be deleted",
+		"to_be_modified":"to be updated",
+		"nothing_to_be_updated":"will not be updated"
+	};
 
-/*	myself.prepareAndLaunchSyncEndpoint = function (){
-	    var pluginId = "repositorysynchronizer",
-	    var endpoint = "syncRepositories",
-	        endpointOpts = {
-	            params:{}    
-	        };
-
-	    if(Dashboards.getParameterValue("${p:deleteActivationParam}")){
-	        endpointOpts.params["delete"]="Y";
-	    } else {
-	        endpointOpts.params["delete"]="N";        
-	    }
-	    
-	    if(Dashboards.getParameterValue("${p:selectedActionParam}") === "I"){
-	        endpointOpts.params["originRepoLocation"]=Dashboards.getParameterValue("${p:destinationRepoLocationParam}");    
-	        endpointOpts.params["destinationRepoLocation"]=Dashboards.getParameterValue("${p:originRepoLocationParam}");            
-	    } else {
-	        endpointOpts.params["originRepoLocation"]=Dashboards.getParameterValue("${p:originRepoLocationParam}");    
-	        endpointOpts.params["destinationRepoLocation"]=Dashboards.getParameterValue("${p:destinationRepoLocationParam}");
-	    }
-	    
-	    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);
-	    var count = parseInt(Dashboards.getParameterValue("${p:updateTableParam}"));
-	    count ++;
-	    Dashboards.setParameter("${p:updateTableParam}",count.toString());
-
-	    $("#dataCell1").toggleClass("collapsed");    
-	    $("#dataCell2").toggleClass("collapsed");
+/*	myself.getParentFolderPath = function(fullPath,sep,type) {
+		var levelsArray = fullPath.split(sep);
+		if(type !== "folder"){
+			levelsArray.splice(-1);
+		}
+		return levelsArray.join(sep);
 	}
-*/
+
+	myself.getParentFolderLevel = function(fullPath,sep,type) {
+		var levels = (fullPath.split(sep)).length;
+		if(type !== "folder"){
+			levels -= 1;
+		}		
+		return levels - 1;
+	}
+*/	
+	myself.getParentFolderPath = function(fullPath,sep) {
+		var levelsArray = fullPath.split(sep);
+		levelsArray.splice(-1);
+		return levelsArray.join(sep);
+	}
+
+	myself.getParentFolderLevel = function(fullPath,sep) {
+		var levels = (fullPath.split(sep)).length;	
+		return levels - 2;
+	}
+	myself.getParentFolderInfo = function(fullPath,sep) {
+		var infoObj = {};
+		infoObj.path = synchronizer.getParentFolderPath(fullPath,sep);
+		infoObj.level = synchronizer.getParentFolderLevel(fullPath,sep);
+		return infoObj;
+	}
 
   	myself.createTableEmptyRawData = function() {
     	var emptyData = {
@@ -59,7 +68,13 @@ var synchronizer = {};
 	          		colIndex: 3,
 	          		colType: 'String',
 	          		colName: 'type'
-	        	}
+	        	},
+	        	/* Dashboard-made auxiliar column*/
+	        	{
+	          		colIndex: 4,
+	          		colType: 'String',
+	          		colName: 'isOpen'
+	          	}
       		],
 	      	queryInfo:{
 	        	totalRows: 0
@@ -122,6 +137,7 @@ var synchronizer = {};
 
 	    $.ajax(ajaxOpts)
 	}
+
 	myself.incUpdateEvent = function( eventName ){
 	    var updateCnt = parseInt(Dashboards.getParameterValue(eventName));
 	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());		
@@ -140,10 +156,37 @@ var synchronizer = {};
 		});
 		return colIndex;
 	}
+
+	myself.getCamelCase = function( string , sep ) {
+		var capitalizeString = function( string ) {
+				return (string.substring(0,1).toUpperCase()).concat(string.substring(1)); 
+			},
+			workedPartsArr = $.map( string.split(sep) , function(ele,idx){
+				return (idx === 0 ? ele : capitalizeString(ele));
+			});
+		return workedPartsArr.join("");
+	}
+
+	myself.addAuxIsOpenColumn = function(data) {
+		var newColIndex = data.metadata.length;
+		/* metadata update */
+		data.metadata.push({
+			colIndex: newColIndex,
+			colName: "isOpen",
+			colType: "String"
+		});
+
+		/* resultset update */
+		var typeColIdx = synchronizer.getColIndexFromColName(data.metadata,"type");
+		$.each(data.resultset,function(idx,ele){
+			var val = (ele[typeColIdx] === "folder" ? "Y" : "");
+			data.resultset[idx].push(val);
+		});
+	
+		return data;
+	}
+
 	myself.tablePostChangeProcedure = function( data, fileCounterParam , files2deleteParam , destinationRepoLocation) {
-
-		/* actionName should be one of the following: jcr2fs , synch , fs2jcr */
-
 	    if(_.isEmpty(data)){
 	        data = synchronizer.createTableEmptyRawData();
 	    } else {
@@ -152,6 +195,9 @@ var synchronizer = {};
 		        statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
 		        fileIdx = synchronizer.getColIndexFromColName(data.metadata,"file"),
 		        typeIdx = synchronizer.getColIndexFromColName(data.metadata,"type");
+		    /* Add auxiliar column to test if folder is open */
+		    data = synchronizer.addAuxIsOpenColumn(data);
+
 		    /* Update respective ToBeDeletedList and FileCounterParam */
 		    $.each(data.resultset,function(idx,ele){
 		        if(ele[typeIdx] === "file"){
@@ -170,16 +216,105 @@ var synchronizer = {};
 	    }
 	    return data;
 	};
-/*	myself.getEndpointCaller = function( pluginId, endpoint, opts ){
-	    var myself = this;
-	    
-	    return function (callback, errorCallback, params){
-	      	var _opts = $.extend({}, opts);
-	      	_opts.params = params || _opts.params;
-	      	_opts.success = callback || _opts.success;
-	      	_opts.error = errorCallback || _opts.error;
-	      	myself.runEndpoint(pluginId, endpoint, _opts);
-	    }
-	};
-*/
+
 })(synchronizer);
+
+
+/************************************  AddIns ************************************/
+
+;(function (){
+
+   	var synchModification = {
+      	name: "synchModification",
+      	label: "Synchronizer Row Modification Status",
+      	defaults: {
+        	textFormat: function(v, st) {
+	        	return st.colFormat ? sprintf(st.colFormat,v) : v;
+         	},
+         	fsAddress: "",
+         	dirColIdx: 0,
+         	sep: " "
+      	},
+
+      	init: function(){
+        	$.fn.dataTableExt.oSort[this.name+'-asc'] = $.fn.dataTableExt.oSort['string-asc'];
+        	$.fn.dataTableExt.oSort[this.name+'-desc'] = $.fn.dataTableExt.oSort['string-desc'];
+      	},
+
+      	implementation: function(tgt, st, opt){
+      		var text = synchronizer.settings.statusDictionary[st.value],
+        		cssClass = synchronizer.getCamelCase(text,opt.sep),
+        		dirValue = st.tableData[st.rowIdx][opt.dirColIdx],
+        		dirClass = ( dirValue === opt.fsAddress ? "fs2jcr" : "jcr2fs" );
+        
+            $(tgt).parent().addClass(cssClass+" "+dirClass);
+         	$(tgt).empty().append(text);      
+    	}
+	};
+	Dashboards.registerAddIn("Table", "colType", new AddIn(synchModification));
+
+  	var synchMainColumn = {
+	    name: "synchMainColumn",
+	    label: "Open-close Cell",
+	    defaults: {
+	    	typeColIdx: 0,
+	    	isOpenColIdx: 0,
+	    	sep: "/"
+	    },
+
+	    init: function(){
+	        $.fn.dataTableExt.oSort[this.name+'-asc'] = $.fn.dataTableExt.oSort['string-asc'];
+	        $.fn.dataTableExt.oSort[this.name+'-desc'] = $.fn.dataTableExt.oSort['string-desc'];
+	    },
+    
+	    implementation: function(tgt, st, opt){
+	    	var type = st.tableData[st.rowIdx][opt.typeColIdx],
+	    		parentFolderFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
+
+	    	var elementsArr = parentFolderFullPath.split("/"),
+		      	label = elementsArr[(elementsArr.length-1)];
+	    	st.value = "/"+label;
+	    	//$(tgt).empty().text("/"+label);
+	    	$(tgt).parent().addClass(type);
+
+	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
+	    		$(tgt).click(function(){
+	    			/* toggle row isOpen status */
+	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleDeleteStatus(st.tableData[st.rowIdx][opt.isOpenColIdx]);
+
+	    			var thisRowIdx = st.rowIdx+1,
+	    				thisValue = st.rawData.resultset[thisRowIdx][st.colIdx],
+	    				$thisTgtRow = $(tgt).parent().next();
+	    			while( synchronizer.getParentFolderPath(thisValue,opt.sep) === parentFolderFullPath  ){
+
+	    				/* toggle Next Row visibility */
+	    				$nextTgtRow.toggleClass("WDhidden");
+
+	    				/* increment iterator variables */
+	    				thisRowIdx += 1,
+	    				nextValue = st.rawData.resultset[thisRowIdx][st.colIdx],
+	    				$nextTgtRow = $nextTgtRow.parent().next();
+	    			}
+	    		});
+	    	}
+
+
+
+/*		      	var $cellContainer = $('<div/>').addClass('mainCellContainer'),
+		      		$button = $("<button/>").addClass('mainCellButton'),
+		      		elementsArr = st.value.split("/");
+		      	label = elementsArr[(elementsArr.length-1)];
+		      	var $label = $("div/").text(label).addClass('mainCellLabel');
+		        $button.click(function(){
+		            //el.action(st.value, st);
+
+		        });
+		       	$buttonContainer.append($button);
+		       	$buttonContainer.append($label);
+		      	$(tgt).empty().append($buttonContainer);
+*/	      	
+	    }
+    };
+    Dashboards.registerAddIn("Table", "colType", new AddIn(synchMainColumn));
+  
+})();
