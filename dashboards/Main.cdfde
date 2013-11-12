@@ -639,7 +639,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "cell1ActivationBtnObj",
+      "value": "cell1ActivationCompObj",
       "type": "Id"
      },
      {
@@ -699,7 +699,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cellActivationButton",
+      "value": "cellActivationComp",
       "type": "String"
      }
     ]
@@ -2065,7 +2065,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "cell2ActivationBtnObj",
+      "value": "cell2ActivationCompObj",
       "type": "Id"
      },
      {
@@ -2125,7 +2125,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cellActivationButton",
+      "value": "cellActivationComp",
       "type": "String"
      }
     ]
@@ -2549,7 +2549,7 @@
      },
      {
       "name": "html",
-      "value": "Delete files that were deleted from one site and not changed on the other ",
+      "value": "Delete files on destination ",
       "type": "Html"
      },
      {
@@ -3491,7 +3491,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "cell3ActivationBtnObj",
+      "value": "cell3ActivationCompObj",
       "type": "Id"
      },
      {
@@ -3551,7 +3551,7 @@
      },
      {
       "name": "cssClass",
-      "value": "cellActivationButton",
+      "value": "cellActivationComp",
       "type": "String"
      }
     ]
@@ -6463,7 +6463,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
+      "value": "[\"synchMainColumn\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6588,7 +6588,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        typeColIdx: directionIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
+      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6661,7 +6661,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
+      "value": "[\"synchMainColumn\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6786,7 +6786,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    return synchronizer.tablePostChangeProcedure(data,\"${p:synchFileCounterParam}\",\"${p:synchToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
+      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:synchFileCounterParam}\",\"${p:synchToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6859,7 +6859,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
+      "value": "[\"synchMainColumn\",\"synchModification\",\"hidden\",\"hidden\",\"hidden\"]",
       "type": "colTypesCustom"
      },
      {
@@ -6984,7 +6984,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    return synchronizer.tablePostChangeProcedure(data,\"${p:fs2jcrFileCounterParam}\",\"${p:fs2jcrToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n}",
+      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:fs2jcrFileCounterParam}\",\"${p:fs2jcrToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;}",
       "type": "JavaScript"
      },
      {
@@ -7020,20 +7020,15 @@
     ]
    },
    {
-    "id": "58f6a12a-6e81-b534-58cd-843ab13747ce",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
+    "id": "efe1f13a-71f1-f6d0-7c56-9a0a77ed1a2c",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "cell1ActivationBtn",
+      "value": "cell1ActivationComponent",
       "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "open",
-      "type": "String"
      },
      {
       "name": "listeners",
@@ -7042,7 +7037,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -7056,13 +7051,8 @@
       "type": "Integer"
      },
      {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
       "name": "htmlObject",
-      "value": "${p:cell1ActivationBtnObj}",
+      "value": "${p:cell1ActivationCompObj}",
       "type": "HtmlObject"
      },
      {
@@ -7077,16 +7067,6 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
       "value": "",
       "type": "JavaScript"
      },
@@ -7098,20 +7078,15 @@
     ]
    },
    {
-    "id": "8205bcc8-7d14-1f1b-018a-401a31872c3a",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
+    "id": "4b12b636-d500-617c-067a-ba96aa5663fc",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "cell2ActivationBtn",
+      "value": "cell2ActivationComponent",
       "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "open",
-      "type": "String"
      },
      {
       "name": "listeners",
@@ -7120,7 +7095,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -7134,13 +7109,8 @@
       "type": "Integer"
      },
      {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
       "name": "htmlObject",
-      "value": "${p:cell2ActivationBtnObj}",
+      "value": "${p:cell2ActivationCompObj}",
       "type": "HtmlObject"
      },
      {
@@ -7155,16 +7125,6 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
       "value": "",
       "type": "JavaScript"
      },
@@ -7176,20 +7136,15 @@
     ]
    },
    {
-    "id": "d972ce36-c886-413a-efc3-a0f1ba18c88b",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
+    "id": "3e25bc60-932a-1dee-3481-89127e099272",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "cell3ActivationBtn",
+      "value": "cell3ActivationComponent",
       "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "open",
-      "type": "String"
      },
      {
       "name": "listeners",
@@ -7198,7 +7153,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var myself = this,\n        $dataCell = $(\"#\"+myself.htmlObject).parents(\".WDdataCell\");\n    $dataCell.toggleClass(\"active\");\n    $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -7212,13 +7167,8 @@
       "type": "Integer"
      },
      {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
       "name": "htmlObject",
-      "value": "${p:cell3ActivationBtnObj}",
+      "value": "${p:cell3ActivationCompObj}",
       "type": "HtmlObject"
      },
      {
@@ -7233,16 +7183,6 @@
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    $(\"#\"+this.htmlObject).find('button').empty();\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
       "value": "",
       "type": "JavaScript"
      },

@@ -287,7 +287,6 @@ div.container *{
   background: #FFFFFF;
 }
 
-
 /* Data Cells header*/
 .WDdataCellHeader{
   height: 40px;
@@ -296,6 +295,7 @@ div.container *{
   line-height: 40px;
   display: inline-block;
   width: 100%;
+  cursor: pointer;
 }
 .no-svg   .WDdataCellHeader {
 }
@@ -329,18 +329,12 @@ div.container *{
   float: right;
   text-align: right;
 }
-.fileCounterBlock .cellActivationButton{
+.fileCounterBlock .cellActivationComp{
   width:  10%;
   float: right;
-}
-.WDdataCell .cellActivationButton button{
   background: url('../img/drop.png') no-repeat center center transparent;
-  border: none;
-  box-shadow: none;
-  height: 100%;
-  width: 100%;
 }
-.WDdataCell.active .cellActivationButton button{
+.WDdataCell.active .cellActivationComp{
   background: url('../img/up.png') no-repeat center center transparent;
 }
 
@@ -425,6 +419,7 @@ div.container *{
   background: url('../img/unchecked.png') no-repeat center center transparent;
   position: absolute;
   top: 25%;
+  cursor: pointer;
 }
 .WDdataCellBody .actionRow .deleteCont.checked .deleteButton button{
   background: url('../img/checked.png') no-repeat center center transparent;
@@ -539,6 +534,10 @@ div.container *{
 }
 .WDdataCellBody  tbody .toBeDeleted.fs2jcr  td.synchModification{
   background: url('../img/status-delete-to.png') no-repeat 10px center transparent;
+}
+
+.WDdataCellBody  tbody tr.folder {
+  cursor: pointer;
 }
 
 .WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn{

@@ -268,13 +268,14 @@ var synchronizer = {};
 	    },
     
 	    implementation: function(tgt, st, opt){
+var bruno;
 	    	var type = st.tableData[st.rowIdx][opt.typeColIdx],
 	    		parentFolderFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
 
 	    	var elementsArr = parentFolderFullPath.split("/"),
 		      	label = elementsArr[(elementsArr.length-1)];
-	    	st.value = "/"+label;
-	    	//$(tgt).empty().text("/"+label);
+	    	//st.value = "/"+label;
+	    	$(tgt).empty().text("/"+label);
 	    	$(tgt).parent().addClass(type);
 
 	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
