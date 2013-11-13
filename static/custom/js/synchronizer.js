@@ -145,7 +145,7 @@ var synchronizer = {};
 	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());		
 	}
 
-	myself.toggleDeleteStatus = function ( status ){
+	myself.toggleStringifiedBoolean = function ( status ){
 		return (status == "N" ? "Y" : "N");
 	}
 
@@ -271,31 +271,28 @@ var synchronizer = {};
     
 	    implementation: function(tgt, st, opt){
 	    	var type = st.tableData[st.rowIdx][opt.typeColIdx],
-	    		parentFolderFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
+	    		mainFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
 
-	    	var elementsArr = parentFolderFullPath.split("/"),
-		      	label = elementsArr[(elementsArr.length-1)];
-	    	//st.value = "/"+label;
-	    	$(tgt).empty().text("/"+label);
+	    	var elementsArr = mainFullPath.split(opt.sep),
+		      	label = elementsArr[(elementsArr.length-1)],
+		      	$cont = $("<div class='cellCont' /div>").text(opt.sep+label);
+	    	$(tgt).empty().append($cont);
+	    	var level = synchronizer.getParentFolderLevel(mainFullPath,opt.sep)
+	    	$(tgt).css("padding-left",level * 20);
 	    	$(tgt).parent().addClass(type);
-
-	    	var closeFolder = function ( $row , st ){
-
-	    	}
 
 	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
 	    		$(tgt).click(function(){
 	    			/* toggle row isOpen value */
 	    			var isOpen = st.tableData[st.rowIdx][opt.isOpenColIdx];
-	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleDeleteStatus(isOpen);
+	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleStringifiedBoolean(isOpen);
 	    			/* toggle row close css-class*/
 	    			$(tgt).parent().toggleClass("closed");
 	    			var thisRowIdx = st.rowIdx+1,
 	    				$thisTgtRow = $(tgt).parent().next(),
 	    				rowsQty = st.rawData.resultset.length,
 	    				thisValue = ( thisRowIdx < rowsQty ? st.rawData.resultset[thisRowIdx][st.colIdx] : "dummy" );
-var bruno;
-	    			while( synchronizer.checkIfInside(thisValue,parentFolderFullPath,opt.sep) && thisRowIdx < rowsQty ){
+	    			while( synchronizer.checkIfInside(thisValue,mainFullPath,opt.sep) && thisRowIdx < rowsQty ){
 	    				/* toggle Next Row visibility */
 	    				if(isOpen === "Y"){
 	    					$thisTgtRow.addClass("WDhidden");

@@ -490,7 +490,7 @@ div.container *{
 .WDdataCellBody  tbody {}
 .WDdataCellBody  tbody tr {
   background: #FFFFFF;
-  height: 12px;
+  height: 17px;
 }
 .WDdataCellBody  tbody tr.toBeCreated {
   color: #333333;
@@ -508,12 +508,20 @@ div.container *{
 }
 
 .WDdataCellBody  tbody td{
-  padding-left: 35px;
   border-top: solid 1px #FFFFFF;
   border-bottom: solid 2px #FFFFFF;
   text-align: left;
   background: transparent;
 }
+.WDdataCellBody  tbody td.synchModification{
+  padding-left: 40px;
+}
+.WDdataCellBody  tbody td.synchMainColumn .cellCont{
+  min-height: 17px;
+  padding-left: 35px;
+  line-height: 17px;
+}
+
 .WDdataCellBody  tbody .toBeCreated.jcr2fs td.synchModification{
   background: url('../img/status-transfer-from.png') no-repeat 10px center transparent;
 }
@@ -541,39 +549,39 @@ div.container *{
 .WDdataCellBody  tbody tr.folder {
   cursor: pointer;
 }
-.WDdataCellBody  tbody tr.folder td.synchMainColumn{
+.WDdataCellBody  tbody tr.folder td.synchMainColumn .cellCont{
   font-weight: bold;
 }
-.WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn{
+.WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn .cellCont{
   background: url('../img/folder-open-blue.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeUpdated.folder  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeUpdated.folder  td.synchMainColumn .cellCont{
   background: url('../img/folder-open-green.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeDeleted.folder  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeDeleted.folder  td.synchMainColumn .cellCont{
   background: url('../img/folder-open-red.png') no-repeat 10px center transparent;
 }
 /*closed folders*/
-.WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn{
+.WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeUpdated.folder.closed  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeUpdated.folder.closed  td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-green.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeDeleted.folder.closed  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeDeleted.folder.closed  td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-red.png') no-repeat 10px center transparent;
 }
 /*files*/
-.WDdataCellBody  tbody .willNotBeUpdated td.synchMainColumn{
+.WDdataCellBody  tbody .willNotBeUpdated td.synchMainColumn .cellCont{
   background: url('../img/file-gray.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn{
+.WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn .cellCont{
   background: url('../img/file-blue.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeUpdated.file  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeUpdated.file  td.synchMainColumn .cellCont{
   background: url('../img/file-green.png') no-repeat 10px center transparent;
 }
-.WDdataCellBody  tbody .toBeDeleted.file  td.synchMainColumn{
+.WDdataCellBody  tbody .toBeDeleted.file  td.synchMainColumn .cellCont{
   background: url('../img/file-red.png') no-repeat 10px center transparent;
 }
 
