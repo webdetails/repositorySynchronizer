@@ -13,37 +13,39 @@ var synchronizer = {};
 		"nothing_to_be_updated":"will not be updated"
 	};
 
-/*	myself.getParentFolderPath = function(fullPath,sep,type) {
-		var levelsArray = fullPath.split(sep);
-		if(type !== "folder"){
-			levelsArray.splice(-1);
-		}
-		return levelsArray.join(sep);
-	}
-
-	myself.getParentFolderLevel = function(fullPath,sep,type) {
-		var levels = (fullPath.split(sep)).length;
-		if(type !== "folder"){
-			levels -= 1;
-		}		
-		return levels - 1;
-	}
-*/	
-	myself.getParentFolderPath = function(fullPath,sep) {
+	myself.getParentFolderPath = function ( fullPath , sep ){
 		var levelsArray = fullPath.split(sep);
 		levelsArray.splice(-1);
 		return levelsArray.join(sep);
 	}
-
-	myself.getParentFolderLevel = function(fullPath,sep) {
+	myself.getParentFolderLevel = function ( fullPath , sep ){
 		var levels = (fullPath.split(sep)).length;	
 		return levels - 2;
 	}
-	myself.getParentFolderInfo = function(fullPath,sep) {
+	myself.getParentFolderInfo = function ( fullPath , sep){
 		var infoObj = {};
 		infoObj.path = synchronizer.getParentFolderPath(fullPath,sep);
 		infoObj.level = synchronizer.getParentFolderLevel(fullPath,sep);
 		return infoObj;
+	}
+
+	myself.checkIfInside = function ( contentPath , containerPath , sep ){
+		var childrenLevel = synchronizer.getParentFolderLevel(containerPath,sep) + 1,
+			contentRoot = [],
+			contentFragments = contentPath.split(sep);
+
+		var i = 0;
+		while( i <= childrenLevel){
+			contentRoot.push(contentFragments[i]);
+			i++;
+		}
+		return (contentRoot.join(sep) === containerPath ? true : false)
+	}
+	myself.checkIfChild = function ( contentPath , containerPath , sep ){
+		return (synchronizer.getParentFolderPath(contentPath,sep) === containerPath ? true : false)
+	}
+	myself.checkIfGandchild = function ( contentPath , containerPath , sep ){
+		return (( synchronizer.checkIfInside(contentPath,containerPath,sep) && !synchronizer.checkIfChild(contentPath,containerPath,sep) ) ? true : false)
 	}
 
   	myself.createTableEmptyRawData = function() {
@@ -84,7 +86,7 @@ var synchronizer = {};
     	return emptyData;
   	}  
 	 
-	myself.runEndpoint = function ( pluginId, endpoint, opts){
+	myself.runEndpoint = function ( pluginId , endpoint , opts ){
 
 	    if ( !pluginId && !endpoint){
 	      	Dashboards.log('PluginId or endpointName not defined.');
@@ -128,7 +130,7 @@ var synchronizer = {};
 	      	data: {}
 	    }
 
-	    _.each( opts.params , function ( value , key){
+	    _.each( opts.params , function ( value , key ){
 	      	ajaxOpts.data['param' + key] = value;
 	    });
 	    _.each( opts.systemParams , function ( value , key){
@@ -138,16 +140,16 @@ var synchronizer = {};
 	    $.ajax(ajaxOpts)
 	}
 
-	myself.incUpdateEvent = function( eventName ){
+	myself.incUpdateEvent = function ( eventName ){
 	    var updateCnt = parseInt(Dashboards.getParameterValue(eventName));
 	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());		
 	}
 
-	myself.toggleDeleteStatus = function( status ){
+	myself.toggleDeleteStatus = function ( status ){
 		return (status == "N" ? "Y" : "N");
 	}
 
-	myself.getColIndexFromColName = function( metadata, name ) {
+	myself.getColIndexFromColName = function ( metadata , name ){
 		var colIndex;
 		$.each(metadata, function(idx,ele){
 			if(ele.colName === name){
@@ -157,8 +159,8 @@ var synchronizer = {};
 		return colIndex;
 	}
 
-	myself.getCamelCase = function( string , sep ) {
-		var capitalizeString = function( string ) {
+	myself.getCamelCase = function ( string , sep ){
+		var capitalizeString = function ( string ){
 				return (string.substring(0,1).toUpperCase()).concat(string.substring(1)); 
 			},
 			workedPartsArr = $.map( string.split(sep) , function(ele,idx){
@@ -167,7 +169,7 @@ var synchronizer = {};
 		return workedPartsArr.join("");
 	}
 
-	myself.addAuxIsOpenColumn = function(data) {
+	myself.addAuxIsOpenColumn = function ( data ){
 		var newColIndex = data.metadata.length;
 		/* metadata update */
 		data.metadata.push({
@@ -186,7 +188,7 @@ var synchronizer = {};
 		return data;
 	}
 
-	myself.tablePostChangeProcedure = function( data, fileCounterParam , files2deleteParam , destinationRepoLocation) {
+	myself.tablePostChangeProcedure = function ( data, fileCounterParam , files2deleteParam , destinationRepoLocation ){
 	    if(_.isEmpty(data)){
 	        data = synchronizer.createTableEmptyRawData();
 	    } else {
@@ -277,20 +279,43 @@ var synchronizer = {};
 	    	$(tgt).empty().text("/"+label);
 	    	$(tgt).parent().addClass(type);
 
+	    	var closeFolder = function ( $row , st ){
+
+	    	}
+
 	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
 	    		$(tgt).click(function(){
-	    			/* toggle row isOpen status */
-	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleDeleteStatus(st.tableData[st.rowIdx][opt.isOpenColIdx]);
-
+	    			/* toggle row isOpen value */
+	    			var isOpen = st.tableData[st.rowIdx][opt.isOpenColIdx];
+	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleDeleteStatus(isOpen);
+	    			/* toggle row close css-class*/
+	    			$(tgt).parent().toggleClass("closed");
 	    			var thisRowIdx = st.rowIdx+1,
-	    				thisValue = st.rawData.resultset[thisRowIdx][st.colIdx],
-	    				$thisTgtRow = $(tgt).parent().next();
-	    			while( synchronizer.getParentFolderPath(thisValue,opt.sep) === parentFolderFullPath  ){
+	    				$thisTgtRow = $(tgt).parent().next(),
+	    				rowsQty = st.rawData.resultset.length,
+	    				thisValue = ( thisRowIdx < rowsQty ? st.rawData.resultset[thisRowIdx][st.colIdx] : "dummy" );
+var bruno;
+	    			while( synchronizer.checkIfInside(thisValue,parentFolderFullPath,opt.sep) && thisRowIdx < rowsQty ){
 	    				/* toggle Next Row visibility */
-	    				$thisTgtRow.toggleClass("WDhidden");
+	    				if(isOpen === "Y"){
+	    					$thisTgtRow.addClass("WDhidden");
+	    					if(st.tableData[thisRowIdx][opt.typeColIdx] === "folder"){
+	    						$thisTgtRow.addClass("closed");
+	    						st.tableData[thisRowIdx][opt.isOpenColIdx] = "N";
+	    					}
+	    				} else {
+	    					$thisTgtRow.removeClass("WDhidden");
+	    					/* if folder, update its open/close status */
+	    					if(st.tableData[thisRowIdx][opt.typeColIdx] === "folder"){
+	    						$thisTgtRow.removeClass("closed");
+	    						st.tableData[thisRowIdx][opt.isOpenColIdx] = "Y";
+	    					}
+	    				}
 	    				/* increment iterator variables */
-	    				thisRowIdx += 1,
-	    				thisValue = st.rawData.resultset[thisRowIdx][st.colIdx],
+	    				thisRowIdx += 1;
+						if(thisRowIdx < rowsQty){
+	    					thisValue = st.rawData.resultset[thisRowIdx][st.colIdx];
+	    				}
 	    				$thisTgtRow = $thisTgtRow.next();
 	    			}
 	    		});

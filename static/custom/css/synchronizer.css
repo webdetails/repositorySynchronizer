@@ -536,10 +536,14 @@ div.container *{
   background: url('../img/status-delete-to.png') no-repeat 10px center transparent;
 }
 
+/* synchMainColumn cells */
+/*open folders*/
 .WDdataCellBody  tbody tr.folder {
   cursor: pointer;
 }
-
+.WDdataCellBody  tbody tr.folder td.synchMainColumn{
+  font-weight: bold;
+}
 .WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn{
   background: url('../img/folder-open-blue.png') no-repeat 10px center transparent;
 }
@@ -549,6 +553,17 @@ div.container *{
 .WDdataCellBody  tbody .toBeDeleted.folder  td.synchMainColumn{
   background: url('../img/folder-open-red.png') no-repeat 10px center transparent;
 }
+/*closed folders*/
+.WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn{
+  background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.folder.closed  td.synchMainColumn{
+  background: url('../img/folder-closed-green.png') no-repeat 10px center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.folder.closed  td.synchMainColumn{
+  background: url('../img/folder-closed-red.png') no-repeat 10px center transparent;
+}
+/*files*/
 .WDdataCellBody  tbody .willNotBeUpdated td.synchMainColumn{
   background: url('../img/file-gray.png') no-repeat 10px center transparent;
 }
