@@ -268,7 +268,6 @@ var synchronizer = {};
 	    },
     
 	    implementation: function(tgt, st, opt){
-var bruno;
 	    	var type = st.tableData[st.rowIdx][opt.typeColIdx],
 	    		parentFolderFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
 
@@ -287,33 +286,15 @@ var bruno;
 	    				thisValue = st.rawData.resultset[thisRowIdx][st.colIdx],
 	    				$thisTgtRow = $(tgt).parent().next();
 	    			while( synchronizer.getParentFolderPath(thisValue,opt.sep) === parentFolderFullPath  ){
-
 	    				/* toggle Next Row visibility */
-	    				$nextTgtRow.toggleClass("WDhidden");
-
+	    				$thisTgtRow.toggleClass("WDhidden");
 	    				/* increment iterator variables */
 	    				thisRowIdx += 1,
-	    				nextValue = st.rawData.resultset[thisRowIdx][st.colIdx],
-	    				$nextTgtRow = $nextTgtRow.parent().next();
+	    				thisValue = st.rawData.resultset[thisRowIdx][st.colIdx],
+	    				$thisTgtRow = $thisTgtRow.next();
 	    			}
 	    		});
-	    	}
-
-
-
-/*		      	var $cellContainer = $('<div/>').addClass('mainCellContainer'),
-		      		$button = $("<button/>").addClass('mainCellButton'),
-		      		elementsArr = st.value.split("/");
-		      	label = elementsArr[(elementsArr.length-1)];
-		      	var $label = $("div/").text(label).addClass('mainCellLabel');
-		        $button.click(function(){
-		            //el.action(st.value, st);
-
-		        });
-		       	$buttonContainer.append($button);
-		       	$buttonContainer.append($label);
-		      	$(tgt).empty().append($buttonContainer);
-*/	      	
+	    	}      	
 	    }
     };
     Dashboards.registerAddIn("Table", "colType", new AddIn(synchMainColumn));

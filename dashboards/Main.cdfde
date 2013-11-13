@@ -6016,6 +6016,117 @@
       "type": "String"
      }
     ]
+   },
+   {
+    "id": "2ad316b7-a5fa-5e0f-32b5-7b994622338d",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "hiddenHtmlObjsContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "176164a0-a0a8-ac2e-98c2-01beedca90d6",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "2ad316b7-a5fa-5e0f-32b5-7b994622338d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fsAddressCompObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
    }
   ]
  },
@@ -7660,6 +7771,89 @@
     ]
    },
    {
+    "id": "7c485fe9-cea1-365a-0db7-97b81d678115",
+    "type": "ComponentsQuery",
+    "typeDesc": "Query Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fsAddressComp",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "resultvar",
+      "value": "",
+      "type": "Result"
+     },
+     {
+      "name": "dataSource",
+      "value": "repoAddressesQuery",
+      "type": "Datasource"
+     },
+     {
+      "name": "priority",
+      "value": "3",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:fsAddressCompObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function f(data){\n    var nameColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementName\"),\n        pathColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementPath\");\n    \n    $.each(data.resultset,function(idx,ele){\n        if(Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\") === ele[nameColIdx]){\n            Dashboards.setParameter(\"${p:fileSystemAddressParam}\",ele[pathColIdx]);\n        }\n    });\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "GENERIC",
     "name": "Generic",
     "type": "Label",
@@ -8307,6 +8501,22 @@
     "meta": "CPK",
     "meta_pluginId": "repositorysynchronizer",
     "meta_endpoint": "previewDifferences_noFileFolderFlag"
+   },
+   {
+    "id": "de92b4cc-0663-b8d7-7a19-3bf6733e7c94",
+    "type": "Componentsrepositorysynchronizer_repoAddresses_CPKENDPOINT",
+    "typeDesc": "repoAddresses Endpoint",
+    "parent": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "repoAddressesQuery",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "repositorysynchronizer",
+    "meta_endpoint": "repoAddresses"
    }
   ]
  },
