@@ -188,29 +188,45 @@ var synchronizer = {};
 		return data;
 	}
 
-	myself.tablePostChangeProcedure = function ( data, fileCounterParam , files2deleteParam , destinationRepoLocation ){
+	myself.tablePostChangeProcedure = function ( data, listParamObj , destinationRepoLocation ){
 	    if(_.isEmpty(data)){
 	        data = synchronizer.createTableEmptyRawData();
 	    } else {
 		    var files2deleteList = [],
-		        fileCounter = 0,
-		        statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
+		    	files2updateList = [],
+		    	files2createList = [],
+		    	filesWillNotBeUpdatedList = [],
+		    	fileCounter = 0,
+		    	statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
 		        fileIdx = synchronizer.getColIndexFromColName(data.metadata,"file"),
 		        typeIdx = synchronizer.getColIndexFromColName(data.metadata,"type");
 		    /* Add auxiliar column to test if folder is open */
 		    data = synchronizer.addAuxIsOpenColumn(data);
 
-		    /* Update respective ToBeDeletedList and FileCounterParam */
+		    /* Update respective ToBe-<something>-List and FileCounterParam */
 		    $.each(data.resultset,function(idx,ele){
 		        if(ele[typeIdx] === "file"){
 		            fileCounter += 1;
 		            if(ele[statusIdx] === "to_be_deleted"){
 		                files2deleteList.push(ele[fileIdx]);
+		            } else if(ele[statusIdx] === "to_be_modified") {
+		                files2updateList.push(ele[fileIdx]);
+
+		            } else if(ele[statusIdx] === "to_be_copied") {
+		                files2createList.push(ele[fileIdx]);
+
+		            } else if(ele[statusIdx] === "mothing_to_be_updated") {
+		                filesWillNotBeUpdatedList.push(ele[fileIdx]);
+
 		            }
 		        }
 		    });
-		    Dashboards.setParameter(files2deleteParam,files2deleteList);
-		    Dashboards.fireChange(fileCounterParam,fileCounter);
+		    
+		    Dashboards.setParameter(listParamObj.files2deleteParam,files2deleteList);
+		    Dashboards.setParameter(listParamObj.files2updateParam,files2updateList);
+		    Dashboards.setParameter(listParamObj.files2createParam,files2createList);
+		    Dashboards.setParameter(listParamObj.filesWillNotBeUpdatedParam,filesWillNotBeUpdatedList);
+		    Dashboards.fireChange(listParamObj.fileCounterParam,fileCounter);
 
 		    /* Update file and modification_status headers*/
 		    data.metadata[fileIdx].colName = Dashboards.getParameterValue(destinationRepoLocation);

@@ -4544,1404 +4544,6 @@
     ]
    },
    {
-    "id": "b4dc36ae-1d39-af66-0395-844ab60367a3",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell1_OLD",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCell dataCell1 WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ea621d26-e0ee-da04-3748-f5d1d9d9577b",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "b4dc36ae-1d39-af66-0395-844ab60367a3",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "9ab8fd3d-c84d-79ca-9e62-d7d266dae895",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ea621d26-e0ee-da04-3748-f5d1d9d9577b",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell1Header",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "730f0e57-fd8e-2648-2144-eb8ce1b7d243",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ea621d26-e0ee-da04-3748-f5d1d9d9577b",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell1Body",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellBody active",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "e43f4fa3-5f24-735b-17fe-18615ae53c7f",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "730f0e57-fd8e-2648-2144-eb8ce1b7d243",
-    "properties": [
-     {
-      "name": "name",
-      "value": "JCR",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "dataCell1Column JCR",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "596ed467-1999-7210-92cb-2fd97bec67a8",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "e43f4fa3-5f24-735b-17fe-18615ae53c7f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "JCR ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ab8191e2-3576-38d6-70b4-f680c62ab780",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "730f0e57-fd8e-2648-2144-eb8ce1b7d243",
-    "properties": [
-     {
-      "name": "name",
-      "value": "actionButtons",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "16",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "dataCell1Column",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "18dd10c2-d318-133c-b17b-fff450259182",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab8191e2-3576-38d6-70b4-f680c62ab780",
-    "properties": [
-     {
-      "name": "name",
-      "value": "syncButtonRow",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "mainButtonsRow",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "fba8138f-214f-a37a-2b8a-ee87ae5077ab",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "18dd10c2-d318-133c-b17b-fff450259182",
-    "properties": [
-     {
-      "name": "name",
-      "value": "syncButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "3052cdc6-5ea4-0169-1a4c-3667e2f687b1",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab8191e2-3576-38d6-70b4-f680c62ab780",
-    "properties": [
-     {
-      "name": "name",
-      "value": "exportButtonRow",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "mainButtonsRow",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "16965196-beed-66ea-a76f-2310da3e706c",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "3052cdc6-5ea4-0169-1a4c-3667e2f687b1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "exportButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "abb1db22-99fa-1433-cd9d-494ee6c1d55e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab8191e2-3576-38d6-70b4-f680c62ab780",
-    "properties": [
-     {
-      "name": "name",
-      "value": "importButtonRow",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "mainButtonsRow",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "7a3f60b7-2b7b-631c-684f-d81e6380a1a5",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "abb1db22-99fa-1433-cd9d-494ee6c1d55e",
-    "properties": [
-     {
-      "name": "name",
-      "value": "importButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "396a60c3-6100-b6bf-23a7-892512fe9bea",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ab8191e2-3576-38d6-70b4-f680c62ab780",
-    "properties": [
-     {
-      "name": "name",
-      "value": "deleteActivationButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "deleteButton",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "65e854e2-2de6-51fb-0f12-5540329641f2",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "730f0e57-fd8e-2648-2144-eb8ce1b7d243",
-    "properties": [
-     {
-      "name": "name",
-      "value": "fileSystem",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "dataCell1Column FileSystem",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "eee37a45-1593-e3b0-af21-d6a5b5b64048",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "65e854e2-2de6-51fb-0f12-5540329641f2",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "File System ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "160222bb-82f9-52dc-a80f-b3274a054001",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell_OLD",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCell dataCell2 WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "41b8d1a0-058c-3f4e-59b0-40644d023d59",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "160222bb-82f9-52dc-a80f-b3274a054001",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "4e432a9a-e2cd-8dee-3052-f3b6dea9c7c8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "41b8d1a0-058c-3f4e-59b0-40644d023d59",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell2Header",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellHeader WDhidden",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5e720128-6096-10b9-9942-d3a92e1c061f",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "41b8d1a0-058c-3f4e-59b0-40644d023d59",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dataCell2Body",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDdataCellBody active",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "48e0fd75-8c84-27e5-13dc-cc34b5e525b0",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "5e720128-6096-10b9-9942-d3a92e1c061f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "confirmationColumn",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "2",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "dataCell2Column",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "046ae600-140b-5f34-1e43-4f2d49ef8991",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "48e0fd75-8c84-27e5-13dc-cc34b5e525b0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "confirmationCont",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "confirmationCont",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "dd5f26c8-6a6b-76ad-c5e8-cd244c0c0777",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "046ae600-140b-5f34-1e43-4f2d49ef8991",
-    "properties": [
-     {
-      "name": "name",
-      "value": "okButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "b2ad5e43-eacb-4130-ca2b-5372701090f7",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "046ae600-140b-5f34-1e43-4f2d49ef8991",
-    "properties": [
-     {
-      "name": "name",
-      "value": "cancelButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5ef67414-6496-b3e2-c5cb-ec91bd768011",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "5e720128-6096-10b9-9942-d3a92e1c061f",
-    "properties": [
-     {
-      "name": "name",
-      "value": "diffTableColumn",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "20",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "dataCell2Column",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "310ec33e-eb7a-a64b-eb45-ee09226da070",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "5ef67414-6496-b3e2-c5cb-ec91bd768011",
-    "properties": [
-     {
-      "name": "name",
-      "value": "diffTableObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
     "id": "f4dc0251-2ec0-baff-325e-20c975531752",
     "type": "LayoutRow",
     "typeDesc": "Row",
@@ -6147,162 +4749,6 @@
     ]
    },
    {
-    "id": "9c433ae7-e3c8-bf35-cf2e-efb3f6fceb89",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "okButton_OLD",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "OK",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    \n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        };\n\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:deleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = Dashboards.getParameterValue(\"${p:selectedActionParam}\");\n    endpointOpts.params[\"originRepoLocation\"]=Dashboards.getParameterValue(\"${p:originRepoLocationParam}\");    \n    endpointOpts.params[\"destinationRepoLocation\"]=Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\");\n    \n    synchronizer.runEndpoint(pluginId,endpoint,endpointOpts);\n    synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:okButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "ac0a8070-159c-970a-f401-4e8dea76631a",
-    "type": "ComponentsbuttonComponent",
-    "typeDesc": "Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "cancelButton_OLD",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Cancel",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n//    $(\"#dataCell1\").toggleClass(\"collapsed\");    \n//    $(\"#dataCell2\").toggleClass(\"collapsed\");\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "buttonStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:cancelButtonObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "e90ece87-2ee8-9c5b-b11b-6d41a762d346",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
@@ -6325,7 +4771,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:jcr2fsToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted in the File System\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = deleteStatus;\n    endpointOpts.params[\"selectedAction\"] = \"E\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n\n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:jcr2fsDeleteParam}\");\n\n    var files2updateList = Dashboards.getParameterValue(\"${p:jcr2fsToBeUpdatedList}\");\n    if(files2updateList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeUpdated'>\"+files2updateList.length + \" files will be updated in the File System\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n\n    var files2createList = Dashboards.getParameterValue(\"${p:jcr2fsToBeCreatedList}\");\n    if(files2createList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeCreated'>\"+files2createList.length + \" files will be created in the File System\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:jcr2fsToBeDeletedList}\");\n        if(files2deleteList.length > 0){\n            $dialogMessage = $(\"<div class='dialogMessage toBeDeleted'>\"+files2deleteList.length + \" files will be deleted in the File System\"+\"</div>\");\n            $dialogMessage.appendTo($dialogBodyCont);\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = deleteStatus;\n    endpointOpts.params[\"selectedAction\"] = \"E\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n\n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6403,7 +4849,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:synchToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"S\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n            }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n\n    var files2updateList = Dashboards.getParameterValue(\"${p:synchToBeUpdatedList}\");\n    if(files2updateList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeUpdated'>\"+files2updateList.length + \" files will be updated\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n\n    var files2createList = Dashboards.getParameterValue(\"${p:synchToBeCreatedList}\");\n    if(files2createList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeCreated'>\"+files2createList.length + \" files will be created\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:synchToBeDeletedList}\");\n        if(files2deleteList.length > 0){\n            $dialogMessage = $(\"<div class='dialogMessage toBeDeleted'>\"+files2deleteList.length + \" files will be deleted\"+\"</div>\");\n            $dialogMessage.appendTo($dialogBodyCont);\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"S\";\n    endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n            }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6481,7 +4927,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:fs2jcrToBeDeletedList}\");\n        $dialogMessage = $(\"<div class='dialogMessage'>\"+files2deleteList.length + \" files will be deleted in JCR\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n        if(files2deleteList.length > 0){\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    \n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"I\";\n    endpointOpts.params[\"originRepoLocation\"] = \"File System\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"JCR\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
+      "value": "function f(){\n    var pluginId = \"repositorysynchronizer\",\n        endpoint = \"syncRepositories\",\n        endpointOpts = {\n            params:{}    \n        },\n        dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n        $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n\n    var files2updateList = Dashboards.getParameterValue(\"${p:fs2jcrToBeUpdatedList}\");\n    if(files2updateList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeUpdated'>\"+files2updateList.length + \" files will be updated in JCR\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n\n    var files2createList = Dashboards.getParameterValue(\"${p:fs2jcrToBeCreatedList}\");\n    if(files2createList.length > 0){\n        $dialogMessage = $(\"<div class='dialogMessage toBeCreated'>\"+files2createList.length + \" files will be created in JCR\"+\"</div>\");\n        $dialogMessage.appendTo($dialogBodyCont);\n    }\n    if( deleteStatus === \"Y\"){\n        var files2deleteList = Dashboards.getParameterValue(\"${p:fs2jcrToBeDeletedList}\");\n        if(files2deleteList.length > 0){\n            $dialogMessage = $(\"<div class='dialogMessage toBeDeleted'>\"+files2deleteList.length + \" files will be deleted in JCR\"+\"</div>\");\n            $dialogMessage.appendTo($dialogBodyCont);\n            $dialogTable = $(\"<div class='dialogTable'></div>\");\n            $.each(files2deleteList,function(idx,ele){\n                $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n            });\n            $dialogTable.appendTo($dialogBodyCont);\n        }\n    }\n    endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    endpointOpts.params[\"selectedAction\"] = \"I\";\n    endpointOpts.params[\"originRepoLocation\"] = \"File System\";    \n    endpointOpts.params[\"destinationRepoLocation\"] = \"JCR\";\n    \n    var successCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        },\n        errorCallback = function () {\n            synchronizer.incUpdateEvent(\"${p:updateAllTableEvent}\");\n            Dashboards.decrementRunningCalls();\n        };\n        \n    var okCallback = function () {\n            dialog.close();\n            Dashboards.incrementRunningCalls();\n            synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                success: successCallback,\n                error: errorCallback\n                }));\n        },\n        cancelCallback = function () {\n            dialog.close();\n        };\n    \n    dialog.open({\n        content:$dialogBodyCont,\n        buttons:[\n            { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n            { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n        ]\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -6699,7 +5145,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:jcr2fsFileCounterParam}\",\"${p:jcr2fsToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
+      "value": "function f(data){\n    var actionType = \"jcr2fs\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6897,7 +5343,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:synchFileCounterParam}\",\"${p:synchToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;\n}",
+      "value": "function f(data){\n    var actionType = \"synch\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -7095,7 +5541,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    data = synchronizer.tablePostChangeProcedure(data,\"${p:fs2jcrFileCounterParam}\",\"${p:fs2jcrToBeDeletedList}\",\"${p:fileSystemAddressParam}\");\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n        \n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    return data;}",
+      "value": "function f(data){\n    var actionType = \"fs2jcr\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    this.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    this.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -7148,7 +5594,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -7206,7 +5652,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -7264,7 +5710,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -8176,7 +6622,91 @@
     ]
    },
    {
-    "id": "bc5a13f3-e709-1438-e43b-ef04f494a01e",
+    "id": "b04b4993-070a-59af-77bd-2ca42162b93b",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsToBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "ac8ecaa4-36ce-ae69-475e-5959ec191720",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsWillNotBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "8633af51-1300-4e6b-e28d-3f4b342908b8",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jcr2fsToBeCreatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "a13cdc11-9f26-cfd4-45b5-761b8ebc4ca2",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
@@ -8184,6 +6714,90 @@
      {
       "name": "name",
       "value": "jcr2fsToBeDeletedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "70067a88-e70e-34e8-97f4-fdb451c599d3",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchToBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "f8b1349e-8d95-af89-db68-6fecda7af28b",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchWillNotBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "b01788b3-40c4-c84d-713b-e341cb299078",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "synchToBeCreatedList",
       "type": "Id"
      },
      {
@@ -8212,6 +6826,90 @@
      {
       "name": "name",
       "value": "synchToBeDeletedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "9dd15faf-00bd-be0a-0ca4-139fb2e40342",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrToBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "37d60802-c061-11c1-eaea-2703a6e8a2b7",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrWillNotBeUpdatedList",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "6cc9b172-85b2-c5fa-68b5-6a7a37fa3169",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fs2jcrToBeCreatedList",
       "type": "Id"
      },
      {

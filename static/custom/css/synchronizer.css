@@ -552,6 +552,9 @@ div.container *{
 .WDdataCellBody  tbody tr.folder td.synchMainColumn .cellCont{
   font-weight: bold;
 }
+.WDdataCellBody  tbody .willNotBeUpdated.folder td.synchMainColumn .cellCont{
+  background: url('../img/folder-open-gray.png') no-repeat 10px center transparent;
+}
 .WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn .cellCont{
   background: url('../img/folder-open-blue.png') no-repeat 10px center transparent;
 }
@@ -562,6 +565,9 @@ div.container *{
   background: url('../img/folder-open-red.png') no-repeat 10px center transparent;
 }
 /*closed folders*/
+.WDdataCellBody  tbody .willNotBeUpdated.folder.closed td.synchMainColumn .cellCont{
+  background: url('../img/folder-closed-gray.png') no-repeat 10px center transparent;
+}
 .WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
 }
@@ -572,7 +578,7 @@ div.container *{
   background: url('../img/folder-closed-red.png') no-repeat 10px center transparent;
 }
 /*files*/
-.WDdataCellBody  tbody .willNotBeUpdated td.synchMainColumn .cellCont{
+.WDdataCellBody  tbody .willNotBeUpdated.file td.synchMainColumn .cellCont{
   background: url('../img/file-gray.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn .cellCont{
@@ -942,6 +948,13 @@ button span {
   max-width: 230px;
   text-align: left;
 }
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogMessage.toBeCreated{
+  color: #333333;
+}
+.ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogMessage.toBeUpdated{
+  color: #39B54A;
+}
+
 .ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogTable{
   background: #FFFFFF;
   width: 100%;
