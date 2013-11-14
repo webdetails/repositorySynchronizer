@@ -883,7 +883,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "container4transition",
       "type": "String"
      }
     ]
@@ -2309,7 +2309,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "container4transition",
       "type": "String"
      }
     ]
@@ -3735,7 +3735,7 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "container4transition",
       "type": "String"
      }
     ]
@@ -5594,7 +5594,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\"),\n        $dataCellBody = $dataCell.find(\".WDdataCellBody\");\n        \n    $dataCellHeader.click(function(){\n        $alreadyOpenBody = $dataCell.siblings(\".WDdataCell\").find(\".WDdataCellBody.active\");\nvar bruno;\n        $dataCellBody.removeClass(\"delay\");\n        if(!$.isEmptyObject($alreadyOpenBody[0])){\n            $dataCellBody.addClass(\"delay\");\n            $alreadyOpenBody.parents(\".WDdataCell\").removeClass(\"active\").removeClass(\"delay\");\n            $alreadyOpenBody.height(0);\n            $alreadyOpenBody.removeClass(\"active\");\n        }\n            \n        var bodyHeight = $dataCellBody.hasClass(\"active\") ? 0 : $dataCellBody.find(\".container4transition\").height()\n        $dataCellBody.height(bodyHeight);\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -5652,7 +5652,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\"),\n        $dataCellBody = $dataCell.find(\".WDdataCellBody\");\n        \n    $dataCellHeader.click(function(){\n        $alreadyOpenBody = $dataCell.siblings(\".WDdataCell\").find(\".WDdataCellBody.active\");\nvar bruno;\n        $dataCellBody.removeClass(\"delay\");\n        if(!$.isEmptyObject($alreadyOpenBody[0])){\n            $dataCellBody.addClass(\"delay\");\n            $alreadyOpenBody.parents(\".WDdataCell\").removeClass(\"active\").removeClass(\"delay\");\n            $alreadyOpenBody.height(0);\n            $alreadyOpenBody.removeClass(\"active\");\n        }\n            \n        var bodyHeight = $dataCellBody.hasClass(\"active\") ? 0 : $dataCellBody.find(\".container4transition\").height()\n        $dataCellBody.height(bodyHeight);\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {
@@ -5710,7 +5710,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\");\n    $dataCellHeader.click(function(){\n        $.each( $dataCell.siblings(\".WDdataCell\") , function(idx,ele){\n            $(ele).removeClass(\"active\");\n            $(ele).find(\".WDdataCellBody\").removeClass(\"active\");\n        });\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
+      "value": "function f(){\n    var $dataCell = $(\"#\"+this.htmlObject).parents(\".WDdataCell\"),\n        $dataCellHeader = $dataCell.find(\".WDdataCellHeader\"),\n        $dataCellBody = $dataCell.find(\".WDdataCellBody\");\n        \n    $dataCellHeader.click(function(){\n        $alreadyOpenBody = $dataCell.siblings(\".WDdataCell\").find(\".WDdataCellBody.active\");\nvar bruno;\n        $dataCellBody.removeClass(\"delay\");\n        if(!$.isEmptyObject($alreadyOpenBody[0])){\n            $dataCellBody.addClass(\"delay\");\n            $alreadyOpenBody.parents(\".WDdataCell\").removeClass(\"active\").removeClass(\"delay\");\n            $alreadyOpenBody.height(0);\n            $alreadyOpenBody.removeClass(\"active\");\n        }\n            \n        var bodyHeight = $dataCellBody.hasClass(\"active\") ? 0 : $dataCellBody.find(\".container4transition\").height()\n        $dataCellBody.height(bodyHeight);\n        $dataCell.toggleClass(\"active\");\n        $dataCell.find(\".WDdataCellBody\").toggleClass(\"active\");\n    });\n}",
       "type": "JavaScript"
      },
      {

@@ -54,6 +54,10 @@ border: 0;
   display: none;
 }
 
+html{
+  overflow-y: scroll;
+}
+
 
 /* =============================================================================
    1. BACKGROUND 
@@ -345,23 +349,33 @@ div.container *{
   height: 0px;
   padding: 0px 10px 0px 10px;
   z-index: 3000;
-/*  position: absolute;
-  top: 30px;
-  background: #EAEAEA;
-  color: #4F5354;
-  font-size: 18px;
-*/
-  -webkit-transition: all 600ms ease-out;
-  -moz-transition:    all 600ms ease-out;
-  -ms-transition:     all 600ms ease-out;
-  -o-transition:      all 600ms ease-out;
-  transition:         all 600ms ease-out;
+  /*border-top: solid 1px #CBDDE8;*/
+
+  -webkit-transition: all 900ms ease-out;
+  -moz-transition:    all 900ms ease-out;
+  -ms-transition:     all 900ms ease-out;
+  -o-transition:      all 900ms ease-out;
+  transition:         all 900ms ease-out;
 
   overflow:hidden;
 }
+.WDdataCellBody.delay{
+  -webkit-transition-delay: 1000ms;
+  -moz-transition-delay: 1000ms;
+  -ms-transition-delay: 1000ms;
+  -o-transition-delay: 1000ms;
+  transition-delay: 1000ms;  
+}
 .WDdataCellBody.active{
+/*  height: auto;
+  height: 800px;
+  border-top: solid 1px #CBDDE8;
+  border-bottom: solid 1px #CBDDE8;
+  min-height: 10px;*/
+}
+.WDdataCellBody .container4transition{
   height: auto;
-  min-height: 10px;
+  padding-bottom: 10px;
 }
 
 .WDdataCellBody .actionRow{
