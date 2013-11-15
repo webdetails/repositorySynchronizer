@@ -286,9 +286,25 @@ div.container *{
   margin: 20px 0px 20px 0px;
   border: solid 1px #CBDDE8;
   font-size: 10px;
+
+  -webkit-transition: all 0ms ease-out;
+  -moz-transition:    all 0ms ease-out;
+  -ms-transition:     all 0ms ease-out;
+  -o-transition:      all 0ms ease-out;
+  transition:         all 0ms ease-out;
 } 
 .WDdataCell.active{
   background: #FFFFFF;
+}
+
+/* this class allows dataCell background color to be synched with
+ cellBody opening and closing */
+.WDdataCell.delay{
+  -webkit-transition-delay: 900ms;
+  -moz-transition-delay: 900ms;
+  -ms-transition-delay: 900ms;
+  -o-transition-delay: 900ms;
+  transition-delay: 900ms;  
 }
 
 /* Data Cells header*/
@@ -349,13 +365,12 @@ div.container *{
   height: 0px;
   padding: 0px 10px 0px 10px;
   z-index: 3000;
-  /*border-top: solid 1px #CBDDE8;*/
 
-  -webkit-transition: all 900ms ease-out;
-  -moz-transition:    all 900ms ease-out;
-  -ms-transition:     all 900ms ease-out;
-  -o-transition:      all 900ms ease-out;
-  transition:         all 900ms ease-out;
+  -webkit-transition: height 900ms ease-out;
+  -moz-transition:    height 900ms ease-out;
+  -ms-transition:     height 900ms ease-out;
+  -o-transition:      height 900ms ease-out;
+  transition:         height 900ms ease-out;
 
   overflow:hidden;
 }
@@ -375,8 +390,8 @@ div.container *{
 }
 .WDdataCellBody .container4transition{
   height: auto;
-  padding-bottom: 10px;
-}
+/*  padding-bottom: 10px;
+*/}
 
 .WDdataCellBody .actionRow{
   height: 60px;
@@ -404,6 +419,14 @@ div.container *{
   border-radius:5px;
   cursor: pointer;  
 }
+.WDdataCellBody .actionRow .transferButton button.disabled{
+  background: #F2F2F2;
+  color: #CCCCCC;
+}
+.WDdataCellBody .actionRow .transferButton button.disabled:hover{
+  cursor: default;
+}
+
 .WDdataCellBody .actionRow .deleteCont{
   height: 100%;
   float: left;
@@ -439,13 +462,15 @@ div.container *{
   background: url('../img/checked.png') no-repeat center center transparent;
   cursor: pointer;
 }
-.WDdataCellBody .tableInfoBox{
-  margin: 10px 0px 3px 0px;
-}
+
 .WDdataCellBody .tableInfoBox{
   background: #D7F1FC;
   min-height: 30px;
   padding: 10px 10px 10px 10px;
+  margin: 10px 0px 10px 0px;
+}
+.WDdataCellBody .tableInfoBox.allTransf{
+  background: #D7F0DB;
 }
 .WDdataCellBody .tableInfoBox .iconColumn{
   width: 30px;
@@ -473,6 +498,8 @@ div.container *{
 
 .WDdataCellBody table {
   font-size: 10px;
+
+  padding-bottom: 10px;
 }
 
 

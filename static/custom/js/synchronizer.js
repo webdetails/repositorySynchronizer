@@ -29,6 +29,24 @@ var synchronizer = {};
 		return infoObj;
 	}
 
+	myself.updateCellBodyHeight = function ( $cellBody ){
+		$cellBody.height( $cellBody.find(".container4transition").height() );
+	}
+	myself.openCell = function ( $cell2open ){
+		$cell2open.addClass("active");
+		var $cellBody = $cell2open.find(".WDdataCellBody");
+		synchronizer.updateCellBodyHeight($cellBody);
+		$cellBody.addClass("active");
+	}
+	myself.closeCell = function ( $cell2close ){
+		var $cellBody = $cell2close.find(".WDdataCellBody");
+		/* remove delay, just in case */
+		$cellBody.removeClass("delay");
+		$cellBody.height(0);
+		$cellBody.removeClass("active");
+		$cell2close.addClass("delay").removeClass("active");
+	}
+
 	myself.checkIfInside = function ( contentPath , containerPath , sep ){
 		var childrenLevel = synchronizer.getParentFolderLevel(containerPath,sep) + 1,
 			contentRoot = [],
@@ -188,16 +206,29 @@ var synchronizer = {};
 		return data;
 	}
 
+	myself.isActionEnabled = function ( listParamObj ){
+		var deleteQty = Dashboards.getParameterValue(listParamObj.files2deleteParam).length,
+			updateQty = Dashboards.getParameterValue(listParamObj.files2updateParam).length,
+			createQty = Dashboards.getParameterValue(listParamObj.files2createParam).length;
+		if( deleteQty == 0 && createQty == 0 && updateQty == 0 ){
+			return false
+		}
+		else {
+			return true
+		}
+	}
+
 	myself.tablePostChangeProcedure = function ( data, listParamObj , destinationRepoLocation ){
+		var files2deleteList = [],
+		    files2updateList = [],
+		    files2createList = [],
+		    filesWillNotBeUpdatedList = [],
+		    fileCounter = 0;
+
 	    if(_.isEmpty(data)){
 	        data = synchronizer.createTableEmptyRawData();
 	    } else {
-		    var files2deleteList = [],
-		    	files2updateList = [],
-		    	files2createList = [],
-		    	filesWillNotBeUpdatedList = [],
-		    	fileCounter = 0,
-		    	statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
+		    var statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
 		        fileIdx = synchronizer.getColIndexFromColName(data.metadata,"file"),
 		        typeIdx = synchronizer.getColIndexFromColName(data.metadata,"type");
 		    /* Add auxiliar column to test if folder is open */
@@ -217,21 +248,20 @@ var synchronizer = {};
 
 		            } else if(ele[statusIdx] === "mothing_to_be_updated") {
 		                filesWillNotBeUpdatedList.push(ele[fileIdx]);
-
 		            }
 		        }
 		    });
-		    
-		    Dashboards.setParameter(listParamObj.files2deleteParam,files2deleteList);
-		    Dashboards.setParameter(listParamObj.files2updateParam,files2updateList);
-		    Dashboards.setParameter(listParamObj.files2createParam,files2createList);
-		    Dashboards.setParameter(listParamObj.filesWillNotBeUpdatedParam,filesWillNotBeUpdatedList);
-		    Dashboards.fireChange(listParamObj.fileCounterParam,fileCounter);
-
 		    /* Update file and modification_status headers*/
 		    data.metadata[fileIdx].colName = Dashboards.getParameterValue(destinationRepoLocation);
 	    	data.metadata[statusIdx].colName = "Modification status";
 	    }
+
+		Dashboards.setParameter(listParamObj.files2deleteParam,files2deleteList);
+		Dashboards.setParameter(listParamObj.files2updateParam,files2updateList);
+		Dashboards.setParameter(listParamObj.files2createParam,files2createList);
+		Dashboards.setParameter(listParamObj.filesWillNotBeUpdatedParam,filesWillNotBeUpdatedList);
+		Dashboards.fireChange(listParamObj.fileCounterParam,fileCounter);
+
 	    return data;
 	};
 
@@ -331,6 +361,8 @@ var synchronizer = {};
 	    				}
 	    				$thisTgtRow = $thisTgtRow.next();
 	    			}
+	    		$thisCellBody = $(tgt).parents(".WDdataCellBody").removeClass("delay");
+	    		synchronizer.updateCellBodyHeight($thisCellBody);
 	    		});
 	    	}      	
 	    }
