@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdf>
-        <author></author>
-        <description>Clean Dashboard</description>
-        <icon></icon>
-        <rendererType>blueprint</rendererType>
-        <title>Clean</title>
-        <widget>false</widget>
-        <style>Clean</style>
-</cdf>
+<cdf><title>Pentaho Synchronizer</title><description>Pentaho Repository Synchronizer</description><author></author><style>Clean</style><rendererType>blueprint</rendererType><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>
