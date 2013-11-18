@@ -45,8 +45,9 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 /*margin: 0;
 padding: 0;
-border: 0;
-        font-family: Open Sans, Arial, sans-serif;*/
+border: 0;*/
+    font-family: Open-sans, Arial, sans-serif;
+    font-weight: lighter;
   }
 
 
@@ -85,7 +86,7 @@ div.container *{
    ========================================================================== */
 .WDheader {
   height: 40px;
-  font-size: 15px;
+  font-size: 24px;
   color: #1973BC;
   text-align: left;
   margin-bottom: 10px;
@@ -283,15 +284,19 @@ div.container *{
 
 /* Data Cells */
 .WDdataCell {
+  position: relative;
+  padding-top: 40px;
+
   margin: 20px 0px 20px 0px;
   border: solid 1px #CBDDE8;
-  font-size: 10px;
+  font-size: 14px;
 
   -webkit-transition: all 0ms ease-out;
   -moz-transition:    all 0ms ease-out;
   -ms-transition:     all 0ms ease-out;
   -o-transition:      all 0ms ease-out;
   transition:         all 0ms ease-out;
+
 } 
 .WDdataCell.active{
   background: #FFFFFF;
@@ -309,14 +314,35 @@ div.container *{
 
 /* Data Cells header*/
 .WDdataCellHeader{
+  position: absolute;
+  top: 0px;
+  left: 0px;
   height: 40px;
   color: #1973BC;
-  padding-left: 80px;
   line-height: 40px;
   display: inline-block;
   width: 100%;
   cursor: pointer;
 }
+.WDdataCellHeader:hover{
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EAF2F5));
+  background: -webkit-linear-gradient(top, #FFFFFF, #EAF2F5);
+  background: -moz-linear-gradient(top, #FFFFFF, #EAF2F5);
+  background: -ms-linear-gradient(top, #FFFFFF, #EAF2F5);
+  background: -o-linear-gradient(top, #FFFFFF, #EAF2F5);
+  background: -ms-linear-gradient(top, #FFFFFF 0%, #EAF2F5 100%);
+
+}
+.active .WDdataCellHeader:hover{
+  background: #FFFFFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EAF2F5), to(#FFFFFF));
+  background: -webkit-linear-gradient(top, #EAF2F5, #FFFFFF);
+  background: -moz-linear-gradient(top, #EAF2F5, #FFFFFF);
+  background: -ms-linear-gradient(top, #EAF2F5, #FFFFFF);
+  background: -o-linear-gradient(top, #EAF2F5, #FFFFFF);
+  background: -ms-linear-gradient(top, #EAF2F5 0%, #FFFFFF 100%);  
+}
+
 .no-svg   .WDdataCellHeader {
 }
 .svg   .WDdataCellHeader {
@@ -325,21 +351,26 @@ div.container *{
   height: 100%;
   width: 100%;
 }
-.WDdataCellHeader.jcr2fs{
-  background: url('../img/transfer-1.png') no-repeat 10px center transparent;
+.WDdataCellHeader .imgCont{
+  width: 80px;
+  float: left;
 }
-.WDdataCellHeader.synch{
+.WDdataCellHeader.jcr2fs .imgCont{
+  background: url('../img/transfer-1.png') no-repeat 10px center;
+}
+.WDdataCellHeader.synch .imgCont{
   background: url('../img/synch.png') no-repeat 10px center transparent;
 }
-.WDdataCellHeader.fs2jcr{
+.WDdataCellHeader.fs2jcr .imgCont{
   background: url('../img/transfer-2.png') no-repeat 10px center transparent;
 }
+
 .WDdataCellHeader .cellTitle{
-  width: 50%;
+  width: 70%;
   float: left;
 }
 .WDdataCellHeader .fileCounterBlock{
-  width: 50%;
+  width: 20%;
   float: left;
   display: inline-block;
 
@@ -364,7 +395,6 @@ div.container *{
   width: 100%;
   height: 0px;
   padding: 0px 10px 0px 10px;
-  z-index: 3000;
 
   -webkit-transition: height 900ms ease-out;
   -moz-transition:    height 900ms ease-out;
@@ -399,7 +429,7 @@ div.container *{
 }
 .WDdataCellBody .actionRow .transferButton{
   height: 100%;
-  width: 85px;
+  width: 90px;
   float: right;
 }
 .WDdataCellBody .actionRow .transferButton button{
@@ -407,9 +437,8 @@ div.container *{
   color: #FFFFFF;
   height: 100%;
   width: 100%;
-  font-size: 10px;
-  font-weight: normal;
-  background: #0C7094;
+  font-size: 13px;
+  font-weight: ligth;
   border: none;
   box-shadow: none;
   -webkit-border-radius:5px;
@@ -417,7 +446,23 @@ div.container *{
   -o-border-radius:5px;
   -ms-border-radius:5px;
   border-radius:5px;
-  cursor: pointer;  
+  cursor: pointer;
+  background: #0A6383;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0C7297), to(#0A6383));
+  background: -webkit-linear-gradient(top, #0C7297, #0A6383);
+  background: -moz-linear-gradient(top, #0C7297, #0A6383);
+  background: -ms-linear-gradient(top, #0C7297, #0A6383);
+  background: -o-linear-gradient(top, #0C7297, #0A6383);
+  background: -ms-linear-gradient(top, #0C7297 0%, #0A6383 100%);
+}
+.WDdataCellBody .actionRow .transferButton button:hover{
+  background: #0B6584;
+  background: -webkit-gradient(linear, left top, left bottom, from(#29ABE2), to(#0B6584));
+  background: -webkit-linear-gradient(top, #29ABE2, #0B6584);
+  background: -moz-linear-gradient(top, #29ABE2, #0B6584);
+  background: -ms-linear-gradient(top, #29ABE2, #0B6584);
+  background: -o-linear-gradient(top, #29ABE2, #0B6584);
+  background: -ms-linear-gradient(top, #29ABE2 0%, #0B6584 100%);
 }
 .WDdataCellBody .actionRow .transferButton button.disabled{
   background: #F2F2F2;
@@ -437,6 +482,7 @@ div.container *{
 }
 .WDdataCellBody .actionRow .deleteCont .deleteText{
   line-height: 30px;
+  font-size: 14px;
 }
 .WDdataCellBody .actionRow .deleteCont.checked .deleteText{
   color: #FF3F3F;
@@ -465,7 +511,6 @@ div.container *{
 
 .WDdataCellBody .tableInfoBox{
   background: #D7F1FC;
-  min-height: 30px;
   padding: 10px 10px 10px 10px;
   margin: 10px 0px 10px 0px;
 }
@@ -474,15 +519,14 @@ div.container *{
 }
 .WDdataCellBody .tableInfoBox .iconColumn{
   width: 30px;
-  height: 30px;
+  height: 21px;
   background: url('../img/info.png') no-repeat center center transparent;
   float: left;
 }
 .WDdataCellBody .tableInfoBox .textColumn{
   color: #333333;
-  font-size: 10px;
+  font-size: 13px;
   padding-left: 10px;
-  padding-top: 5px;
   float: left;
 }
 .WDdataCellBody .tableInfoBox .textColumn .textRow{
@@ -497,8 +541,8 @@ div.container *{
    ========================================================================== */
 
 .WDdataCellBody table {
-  font-size: 10px;
-
+  font-size: 14px;
+  font-weight: lighter;
   padding-bottom: 10px;
 }
 
@@ -918,33 +962,16 @@ button span {
   background: url('../img/Confirmation.png') no-repeat left center transparent;
   padding-left: 40px;
   color: #408AC6;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   line-height: 40px;
 }
 .ui-dialog.confirmationDialog .ui-dialog-titlebar.ui-widget-header a{
   display: none;
 }
-/*
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a{
-  display: inline;
-}
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus,
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover{
-  background: #25B9ED;
-  border: none;
-}
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a span{
-  background: url('../img/x.png') -45px -10px no-repeat #25B9ED;
-}
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-focus span,
-.ui-dialog.closeButtonVisible .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-state-hover span{
-  background: url('../img/x.png') -11px -9px no-repeat #25B9ED;
-}
-*/
 .ui-dialog.confirmationDialog .ui-dialog-content{
   color: #F84F50;
-  font-size: 10px;
+  font-size: 13px;
   min-height: 0px;
   padding: 0px 40px;
 }
@@ -955,7 +982,7 @@ button span {
   margin: 0px 0px 0px 0px;
 }
 .ui-dialog.confirmationDialog .ui-dialog-buttonpane button{
-  font-size: 10px;
+  font-size: 13px;
   height: 30px;
   font-weight: normal;
   color: #FFFFFF;
@@ -965,13 +992,44 @@ button span {
   background: #C6000E;
 }
 .ui-dialog.confirmationDialog .ui-dialog-buttonpane button.cancel{
-  background: #C6000E;
+  background: #C10817;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FC0A0B), to(#C10817));
+  background: -webkit-linear-gradient(top, #FC0A0B, #C10817);
+  background: -moz-linear-gradient(top, #FC0A0B, #C10817);
+  background: -ms-linear-gradient(top, #FC0A0B, #C10817);
+  background: -o-linear-gradient(top, #FC0A0B, #C10817);
+  background: -ms-linear-gradient(top, #FC0A0B 0%, #C10817 100%);
   width: 65px;
 }
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane button.cancel:hover{
+  background: #C20615;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FE7D81), to(#C20615));
+  background: -webkit-linear-gradient(top, #FE7D81, #C20615);
+  background: -moz-linear-gradient(top, #FE7D81, #C20615);
+  background: -ms-linear-gradient(top, #FE7D81, #C20615);
+  background: -o-linear-gradient(top, #FE7D81, #C20615);
+  background: -ms-linear-gradient(top, #FE7D81 0%, #C20615 100%);
+}
 .ui-dialog.confirmationDialog .ui-dialog-buttonpane button.ok{
-  background: #0B6788;
+  background: #0A6383;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0C7297), to(#0A6383));
+  background: -webkit-linear-gradient(top, #0C7297, #0A6383);
+  background: -moz-linear-gradient(top, #0C7297, #0A6383);
+  background: -ms-linear-gradient(top, #0C7297, #0A6383);
+  background: -o-linear-gradient(top, #0C7297, #0A6383);
+  background: -ms-linear-gradient(top, #0C7297 0%, #0A6383 100%);
   width: 85px;
 }
+.ui-dialog.confirmationDialog .ui-dialog-buttonpane button.ok:hover{
+  background: #0B6584;
+  background: -webkit-gradient(linear, left top, left bottom, from(#29ABE2), to(#0B6584));
+  background: -webkit-linear-gradient(top, #29ABE2, #0B6584);
+  background: -moz-linear-gradient(top, #29ABE2, #0B6584);
+  background: -ms-linear-gradient(top, #29ABE2, #0B6584);
+  background: -o-linear-gradient(top, #29ABE2, #0B6584);
+  background: -ms-linear-gradient(top, #29ABE2 0%, #0B6584 100%);
+}
+
 .ui-widget-overlay{
   background: #537C8E;
   opacity: 0.9;
@@ -986,7 +1044,6 @@ button span {
 .ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogMessage{
   height: 25px;
   width: 100%;
-  max-width: 230px;
   text-align: left;
 }
 .ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogMessage.toBeCreated{
