@@ -46,7 +46,7 @@ time, mark, audio, video {
 /*margin: 0;
 padding: 0;
 border: 0;*/
-    font-family: Open-sans, Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-weight: lighter;
   }
 
@@ -66,7 +66,7 @@ html{
 
 /* Window Background */
 body{
-  background: #EAF2F5;  
+  background: #EAF2F5; 
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
@@ -305,11 +305,11 @@ div.container *{
 /* this class allows dataCell background color to be synched with
  cellBody opening and closing */
 .WDdataCell.delay{
-  -webkit-transition-delay: 900ms;
-  -moz-transition-delay: 900ms;
-  -ms-transition-delay: 900ms;
-  -o-transition-delay: 900ms;
-  transition-delay: 900ms;  
+  -webkit-transition-delay: 600ms;
+  -moz-transition-delay: 600ms;
+  -ms-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
+  transition-delay: 600ms;  
 }
 
 /* Data Cells header*/
@@ -323,6 +323,24 @@ div.container *{
   display: inline-block;
   width: 100%;
   cursor: pointer;
+  border-bottom: solid 0px #CBDDE8;
+
+  -webkit-transition: all 0ms ease-out;
+  -moz-transition:    all 0ms ease-out;
+  -ms-transition:     all 0ms ease-out;
+  -o-transition:      all 0ms ease-out;
+  transition:         all 0ms ease-out;
+}
+.active .WDdataCellHeader{
+  border-bottom: solid 1px #CBDDE8;
+}
+
+.delay .WDdataCellHeader{
+  -webkit-transition-delay: 600ms;
+  -moz-transition-delay: 600ms;
+  -ms-transition-delay: 600ms;
+  -o-transition-delay: 600ms;
+  transition-delay: 600ms;  
 }
 .WDdataCellHeader:hover{
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EAF2F5));
@@ -356,13 +374,13 @@ div.container *{
   float: left;
 }
 .WDdataCellHeader.jcr2fs .imgCont{
-  background: url('../img/transfer-1.png') no-repeat 10px center;
+  background: url('../img/transfer-1.png') no-repeat 8px center;
 }
 .WDdataCellHeader.synch .imgCont{
-  background: url('../img/synch.png') no-repeat 10px center transparent;
+  background: url('../img/synch.png') no-repeat 8px center transparent;
 }
 .WDdataCellHeader.fs2jcr .imgCont{
-  background: url('../img/transfer-2.png') no-repeat 10px center transparent;
+  background: url('../img/transfer-2.png') no-repeat 8px center transparent;
 }
 
 .WDdataCellHeader .cellTitle{
@@ -371,7 +389,8 @@ div.container *{
 }
 .WDdataCellHeader .fileCounterBlock{
   width: 20%;
-  float: left;
+  float: right;
+  padding-right: 10px;
   display: inline-block;
 
 }
@@ -383,10 +402,10 @@ div.container *{
 .fileCounterBlock .cellActivationComp{
   width:  10%;
   float: right;
-  background: url('../img/drop.png') no-repeat center center transparent;
+  background: url('../img/drop.png') no-repeat right center transparent;
 }
 .WDdataCell.active .cellActivationComp{
-  background: url('../img/up.png') no-repeat center center transparent;
+  background: url('../img/up.png') no-repeat right center transparent;
 }
 
 
@@ -394,22 +413,22 @@ div.container *{
 .WDdataCellBody{
   width: 100%;
   height: 0px;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;  
 
-  -webkit-transition: height 900ms ease-out;
-  -moz-transition:    height 900ms ease-out;
-  -ms-transition:     height 900ms ease-out;
-  -o-transition:      height 900ms ease-out;
-  transition:         height 900ms ease-out;
+  -webkit-transition: height 600ms ease-out;
+  -moz-transition:    height 600ms ease-out;
+  -ms-transition:     height 600ms ease-out;
+  -o-transition:      height 600ms ease-out;
+  transition:         height 600ms ease-out;
 
   overflow:hidden;
 }
 .WDdataCellBody.delay{
-  -webkit-transition-delay: 1000ms;
-  -moz-transition-delay: 1000ms;
-  -ms-transition-delay: 1000ms;
-  -o-transition-delay: 1000ms;
-  transition-delay: 1000ms;  
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -ms-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms;  
 }
 .WDdataCellBody.active{
 /*  height: auto;
@@ -424,8 +443,8 @@ div.container *{
 */}
 
 .WDdataCellBody .actionRow{
-  height: 60px;
-  padding: 15px 0px 15px 0px;
+  height: 50px;
+  padding: 10px 0px 10px 0px;
 }
 .WDdataCellBody .actionRow .transferButton{
   height: 100%;
@@ -509,10 +528,31 @@ div.container *{
   cursor: pointer;
 }
 
+.WDdataCellBody .fileSystemInfoRow{
+  height: 20px;
+  color: #333333;
+  font-size: 13px;
+  background: #EAF2F5;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.WDdataCellBody .fileSystemInfoRow .fsAddressCol{
+  padding-left: 10px;
+  width: 83%;
+  height: 100%;
+  float: left;
+}
+.WDdataCellBody .fileSystemInfoRow .modificationStatusCol{
+  width: 17%;
+  height: 100%;
+  padding-right: 10px;
+  float: right;
+}
+
 .WDdataCellBody .tableInfoBox{
   background: #D7F1FC;
-  padding: 10px 10px 10px 10px;
-  margin: 10px 0px 10px 0px;
+  padding: 10px 10px 10px 9px;
+  margin-bottom: 10px;
 }
 .WDdataCellBody .tableInfoBox.allTransf{
   background: #D7F0DB;
@@ -520,13 +560,13 @@ div.container *{
 .WDdataCellBody .tableInfoBox .iconColumn{
   width: 30px;
   height: 21px;
-  background: url('../img/info.png') no-repeat center center transparent;
+  background: url('../img/info.png') no-repeat 0px center transparent;
   float: left;
 }
 .WDdataCellBody .tableInfoBox .textColumn{
   color: #333333;
   font-size: 13px;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
   float: left;
 }
 .WDdataCellBody .tableInfoBox .textColumn .textRow{
@@ -548,7 +588,9 @@ div.container *{
 
 
 /* Header */
-.WDdataCellBody  thead {}
+.WDdataCellBody  thead {
+  display: none;
+}
 .WDdataCellBody thead tr {
 }
 .WDdataCellBody  thead th {
@@ -599,38 +641,41 @@ div.container *{
   background: transparent;
 }
 .WDdataCellBody  tbody td.synchModification{
-  padding-left: 40px;
+  padding-left: 30px;
+  width: 17%;
+}
+
+.WDdataCellBody  tbody .toBeCreated.jcr2fs td.synchModification{
+  background: url('../img/status-transfer-from.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.jcr2fs  td.synchModification{
+  background: url('../img/status-update-from.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.jcr2fs  td.synchModification{
+  background: url('../img/status-delete-from.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .willNotBeUpdated td.synchModification{
+  background: url('../img/status-wont.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .toBeCreated.fs2jcr td.synchModification{
+  background: url('../img/status-transfer-to.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .toBeUpdated.fs2jcr  td.synchModification{
+  background: url('../img/status-update-to.png') no-repeat left center transparent;
+}
+.WDdataCellBody  tbody .toBeDeleted.fs2jcr  td.synchModification{
+  background: url('../img/status-delete-to.png') no-repeat left center transparent;
+}
+
+/*open folders*/
+.WDdataCellBody  tbody tr td.synchMainColumn{
+  width: 83%;
 }
 .WDdataCellBody  tbody td.synchMainColumn .cellCont{
   min-height: 17px;
   padding-left: 35px;
   line-height: 17px;
 }
-
-.WDdataCellBody  tbody .toBeCreated.jcr2fs td.synchModification{
-  background: url('../img/status-transfer-from.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .toBeUpdated.jcr2fs  td.synchModification{
-  background: url('../img/status-update-from.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .toBeDeleted.jcr2fs  td.synchModification{
-  background: url('../img/status-delete-from.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .willNotBeUpdated td.synchModification{
-  background: url('../img/status-wont.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .toBeCreated.fs2jcr td.synchModification{
-  background: url('../img/status-transfer-to.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .toBeUpdated.fs2jcr  td.synchModification{
-  background: url('../img/status-update-to.png') no-repeat 10px center transparent;
-}
-.WDdataCellBody  tbody .toBeDeleted.fs2jcr  td.synchModification{
-  background: url('../img/status-delete-to.png') no-repeat 10px center transparent;
-}
-
-/* synchMainColumn cells */
-/*open folders*/
 .WDdataCellBody  tbody tr.folder {
   cursor: pointer;
 }
@@ -638,10 +683,10 @@ div.container *{
   font-weight: bold;
 }
 .WDdataCellBody  tbody .willNotBeUpdated.folder td.synchMainColumn .cellCont{
-  background: url('../img/folder-open-gray.png') no-repeat 10px center transparent;
+  background: url('../img/folder-open-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn .cellCont{
-  background: url('../img/folder-open-blue.png') no-repeat 10px center transparent;
+  background: url('../img/folder-open-gray.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeUpdated.folder  td.synchMainColumn .cellCont{
   background: url('../img/folder-open-green.png') no-repeat 10px center transparent;
@@ -651,10 +696,10 @@ div.container *{
 }
 /*closed folders*/
 .WDdataCellBody  tbody .willNotBeUpdated.folder.closed td.synchMainColumn .cellCont{
-  background: url('../img/folder-closed-gray.png') no-repeat 10px center transparent;
+  background: url('../img/folder-closed-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn .cellCont{
-  background: url('../img/folder-closed-blue.png') no-repeat 10px center transparent;
+  background: url('../img/folder-closed-gray.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeUpdated.folder.closed  td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-green.png') no-repeat 10px center transparent;
@@ -664,10 +709,10 @@ div.container *{
 }
 /*files*/
 .WDdataCellBody  tbody .willNotBeUpdated.file td.synchMainColumn .cellCont{
-  background: url('../img/file-gray.png') no-repeat 10px center transparent;
+  background: url('../img/file-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn .cellCont{
-  background: url('../img/file-blue.png') no-repeat 10px center transparent;
+  background: url('../img/file-gray.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeUpdated.file  td.synchMainColumn .cellCont{
   background: url('../img/file-green.png') no-repeat 10px center transparent;
@@ -710,7 +755,9 @@ div.container *{
 .WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
   .WDdataCellBody  .dataTables_wrapper tbody tr.even{
   }
-
+.WDdataCellBody .dataTables_empty{
+  display: none;
+}
 /* Pagination and Page Info */
 
 .WDdataCellBody   .dataTables_info{    

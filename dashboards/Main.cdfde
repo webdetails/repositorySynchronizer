@@ -1370,7 +1370,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tableHeaderPhCell1",
+      "value": "FileSystemInfoCell1",
       "type": "Id"
      },
      {
@@ -1395,7 +1395,186 @@
      },
      {
       "name": "cssClass",
-      "value": "tableHeaderPH",
+      "value": "fileSystemInfoRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c4910ac9-bc24-4f02-eb79-cbd5e854a3bd",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "10888663-1236-6e1d-b49d-eac11a404a9f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fsAddressCell1",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fsAddressCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "29d4b089-237c-bc02-40a7-c2d248fd76a0",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "10888663-1236-6e1d-b49d-eac11a404a9f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "modificationStatusCell1",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "modificationStatusCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "62c0984a-8760-95bf-80a4-8daf03b88a92",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "29d4b089-237c-bc02-40a7-c2d248fd76a0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Modification status ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -3011,7 +3190,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tableHeaderPhCell2",
+      "value": "FileSystemInfoCell2",
       "type": "Id"
      },
      {
@@ -3036,7 +3215,186 @@
      },
      {
       "name": "cssClass",
-      "value": "tableHeaderPH",
+      "value": "fileSystemInfoRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c7c6f52a-94c1-416c-ac4c-434cdc0167d2",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "eeacfd06-80da-dd57-9dd9-2df544fdb360",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fsAddressCell2",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fsAddressCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3b3491a6-2dfc-31e8-648a-74139f0fb0ed",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "eeacfd06-80da-dd57-9dd9-2df544fdb360",
+    "properties": [
+     {
+      "name": "name",
+      "value": "modificationStatusCell2",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "modificationStatusCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "75f486d2-d0c6-025e-cd5e-75e84851d4f9",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "3b3491a6-2dfc-31e8-648a-74139f0fb0ed",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Modification status ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -4652,7 +5010,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "tableHeaderPhCell3",
+      "value": "fileSystemInfoCell3",
       "type": "Id"
      },
      {
@@ -4677,7 +5035,186 @@
      },
      {
       "name": "cssClass",
-      "value": "tableHeaderPH",
+      "value": "fileSystemInfoRow",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "190948f8-4c89-5bf8-9a5a-28b5285ebe87",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "4b5a8049-4db1-70aa-594b-d8742b75621f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "fsAddressCell3",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "fsAddressCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ff19212f-2dbc-5359-8495-b42c03ef3988",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "4b5a8049-4db1-70aa-594b-d8742b75621f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "modificationStatusCell3",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "modificationStatusCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e35bf893-e2da-82d9-e33d-330f11fdc4e9",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "ff19212f-2dbc-5359-8495-b42c03ef3988",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Modification status ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -5730,7 +6267,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n    \n/*    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }  \n}",
       "type": "JavaScript"
      },
      {
@@ -5790,12 +6327,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"jcr2fs\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Tranfer\").removeClass(\"WDhidden\");  \n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"jcr2fs\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $modificationStatusTitle = $(\"#\"+myself.htmlObject).siblings(\".fileSystemInfoRow\").find(\".modificationStatusCol\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    $modificationStatusTitle.removeClass(\"WDhidden\");\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n            $modificationStatusTitle.addClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -5928,7 +6465,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n    \n/*    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }  \n}",
       "type": "JavaScript"
      },
      {
@@ -5988,12 +6525,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"synch\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Tranfer\").removeClass(\"WDhidden\");  \n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"synch\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $modificationStatusTitle = $(\"#\"+myself.htmlObject).siblings(\".fileSystemInfoRow\").find(\".modificationStatusCol\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    $modificationStatusTitle.removeClass(\"WDhidden\");\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n            $modificationStatusTitle.addClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/\n\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6126,7 +6663,7 @@
      },
      {
       "name": "drawCallback",
-      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n    \n/*    var $tableHTMLObj = $(\"#\"+this.htmlObject),\n        $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/    \n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        $thisDataCellBody.removeClass(\"delay\");\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }  \n}",
       "type": "JavaScript"
      },
      {
@@ -6186,12 +6723,12 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"fs2jcr\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Tranfer\").removeClass(\"WDhidden\");  \n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"fs2jcr\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj,\"${p:fileSystemAddressParam}\");\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\"),\n        fsPath = Dashboards.getParameterValue(\"${p:fileSystemAddressParam}\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        fsAddress: fsPath,\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $modificationStatusTitle = $(\"#\"+myself.htmlObject).siblings(\".fileSystemInfoRow\").find(\".modificationStatusCol\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"allTransf\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    $modificationStatusTitle.removeClass(\"WDhidden\");\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n            $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n        }\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n            $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n            $modificationStatusTitle.addClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
       "name": "postExecution",
-      "value": "function f(){\n    var $tableHTMLObj = $(\"#\"+this.htmlObject);\n/*      $headerPH = $tableHTMLObj.siblings(\".tableHeaderPH\").empty(),\n        $thead = $tableHTMLObj.find(\"thead\");\n    $thead.detach().prependTo($headerPH);\n*/\n\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
+      "value": "function f(){\n    var $thisDataCellBody = $(\"#\"+this.htmlObject).parents(\".WDdataCellBody\");\n    if( $thisDataCellBody.hasClass(\"active\") ){\n        synchronizer.updateCellBodyHeight($thisDataCellBody);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -6924,7 +7461,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var nameColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementName\"),\n        pathColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementPath\");\n    \n    $.each(data.resultset,function(idx,ele){\n        if(Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\") === ele[nameColIdx]){\n            Dashboards.setParameter(\"${p:fileSystemAddressParam}\",ele[pathColIdx]);\n        }\n    });\n}",
+      "value": "function f(data){\n    var nameColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementName\"),\n        pathColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementPath\"),\n        fsAddress;\n    \n    $.each(data.resultset,function(idx,ele){\n        if(Dashboards.getParameterValue(\"${p:destinationRepoLocationParam}\") === ele[nameColIdx]){\n            fsAddress = ele[pathColIdx];\n            Dashboards.setParameter(\"${p:fileSystemAddressParam}\",fsAddress);\n        }\n    });\n    var $dataCells = $(\"body\").find(\".fsAddressCol\").text(fsAddress);\n}",
       "type": "JavaScript"
      },
      {
