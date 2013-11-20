@@ -10,7 +10,7 @@ var synchronizer = {};
 		"to_be_copied":"to be created",
 		"to_be_deleted":"to be deleted",
 		"to_be_modified":"to be updated",
-		"nothing_to_be_updated":"will not be updated"
+		"nothing_to_be_updated":"won't be updated"
 	};
 
 	myself.getParentFolderPath = function ( fullPath , sep ){
@@ -184,7 +184,11 @@ var synchronizer = {};
 			workedPartsArr = $.map( string.split(sep) , function(ele,idx){
 				return (idx === 0 ? ele : capitalizeString(ele));
 			});
-		return workedPartsArr.join("");
+			var result = workedPartsArr.join("");
+
+		/* get rid of ' , just in case */
+		return result.replace("'","");
+
 	}
 
 	myself.addAuxIsOpenColumn = function ( data ){
@@ -246,7 +250,7 @@ var synchronizer = {};
 		            } else if(ele[statusIdx] === "to_be_copied") {
 		                files2createList.push(ele[fileIdx]);
 
-		            } else if(ele[statusIdx] === "mothing_to_be_updated") {
+		            } else if(ele[statusIdx] === "nothing_to_be_updated") {
 		                filesWillNotBeUpdatedList.push(ele[fileIdx]);
 		            }
 		        }
@@ -328,6 +332,7 @@ var synchronizer = {};
 	    	$(tgt).parent().addClass(type);
 
 	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
+	    		$(tgt).addClass("semiBold");
 	    		$(tgt).click(function(){
 	    			/* toggle row isOpen value */
 	    			var isOpen = st.tableData[st.rowIdx][opt.isOpenColIdx];

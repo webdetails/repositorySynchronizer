@@ -59,6 +59,10 @@ html{
   overflow-y: scroll;
 }
 
+.semiBold{
+  font-weight: 500;
+}
+
 
 /* =============================================================================
    1. BACKGROUND 
@@ -560,7 +564,7 @@ div.container *{
 .WDdataCellBody .tableInfoBox .iconColumn{
   width: 30px;
   height: 21px;
-  background: url('../img/info.png') no-repeat 0px center transparent;
+  background: url('../img/info.png') no-repeat 0px 1px transparent;
   float: left;
 }
 .WDdataCellBody .tableInfoBox .textColumn{
@@ -630,7 +634,7 @@ div.container *{
   color: #FF0000;
   background: #FFF2F2;
 }
-.WDdataCellBody  tbody tr.willNotBeUpdated {
+.WDdataCellBody  tbody tr.wontBeUpdated {
   color: #808080;
 }
 
@@ -641,7 +645,7 @@ div.container *{
   background: transparent;
 }
 .WDdataCellBody  tbody td.synchModification{
-  padding-left: 30px;
+  padding-left: 35px;
   width: 17%;
 }
 
@@ -654,7 +658,7 @@ div.container *{
 .WDdataCellBody  tbody .toBeDeleted.jcr2fs  td.synchModification{
   background: url('../img/status-delete-from.png') no-repeat left center transparent;
 }
-.WDdataCellBody  tbody .willNotBeUpdated td.synchModification{
+.WDdataCellBody  tbody .wontBeUpdated td.synchModification{
   background: url('../img/status-wont.png') no-repeat left center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.fs2jcr td.synchModification{
@@ -670,6 +674,7 @@ div.container *{
 /*open folders*/
 .WDdataCellBody  tbody tr td.synchMainColumn{
   width: 83%;
+  padding-right: 10px;
 }
 .WDdataCellBody  tbody td.synchMainColumn .cellCont{
   min-height: 17px;
@@ -680,9 +685,9 @@ div.container *{
   cursor: pointer;
 }
 .WDdataCellBody  tbody tr.folder td.synchMainColumn .cellCont{
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
-.WDdataCellBody  tbody .willNotBeUpdated.folder td.synchMainColumn .cellCont{
+.WDdataCellBody  tbody .wontBeUpdated.folder td.synchMainColumn .cellCont{
   background: url('../img/folder-open-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.folder td.synchMainColumn .cellCont{
@@ -695,7 +700,7 @@ div.container *{
   background: url('../img/folder-open-red.png') no-repeat 10px center transparent;
 }
 /*closed folders*/
-.WDdataCellBody  tbody .willNotBeUpdated.folder.closed td.synchMainColumn .cellCont{
+.WDdataCellBody  tbody .wontBeUpdated.folder.closed td.synchMainColumn .cellCont{
   background: url('../img/folder-closed-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.folder.closed td.synchMainColumn .cellCont{
@@ -708,7 +713,7 @@ div.container *{
   background: url('../img/folder-closed-red.png') no-repeat 10px center transparent;
 }
 /*files*/
-.WDdataCellBody  tbody .willNotBeUpdated.file td.synchMainColumn .cellCont{
+.WDdataCellBody  tbody .wontBeUpdated.file td.synchMainColumn .cellCont{
   background: url('../img/file-disabled.png') no-repeat 10px center transparent;
 }
 .WDdataCellBody  tbody .toBeCreated.file td.synchMainColumn .cellCont{
