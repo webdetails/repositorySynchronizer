@@ -1107,6 +1107,7 @@ button span {
   padding: 5px 3px 4px 10px;
   border: solid 1px #D3E2EB;
   margin-bottom: 15px;
+  overflow: auto;
 }
 .ui-dialog.confirmationDialog .ui-dialog-content .dialogContentContainer .dialogTable .dialogTableRow{
   text-align: left;
