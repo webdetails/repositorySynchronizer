@@ -7,12 +7,12 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>delete</name>
             <default_value>N</default_value>
-            <description>Y&#47;N</description>
+            <description>Y&#x2f;N</description>
         </parameter>
         <parameter>
             <name>destinationRepoLocation</name>
@@ -22,7 +22,7 @@
         <parameter>
             <name>operation_type</name>
             <default_value>P</default_value>
-            <description>P:preview | C:copy | D: delete | M: merge(?)</description>
+            <description>P&#x3a;preview &#x7c; C&#x3a;copy &#x7c; D&#x3a; delete &#x7c; M&#x3a; merge&#x28;&#x3f;&#x29;</description>
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
@@ -32,12 +32,12 @@
         <parameter>
             <name>overwrite</name>
             <default_value>N</default_value>
-            <description>Y&#47;N</description>
+            <description>Y&#x2f;N</description>
         </parameter>
         <parameter>
             <name>selectedAction</name>
             <default_value>S</default_value>
-            <description>S: synch | E: export | I: import</description>
+            <description>S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import</description>
         </parameter>
     </parameters>
     <log>
@@ -47,7 +47,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -64,6 +64,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -92,33 +97,17 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2013&#47;09&#47;19 00:39:48.368</created_date>
+  <created_date>2013&#x2f;09&#x2f;19 00&#x3a;39&#x3a;48.368</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2013&#47;09&#47;19 00:39:48.368</modified_date>
+  <modified_date>2013&#x2f;09&#x2f;19 00&#x3a;39&#x3a;48.368</modified_date>
   </info>
   <notepads>
     <notepad>
-      <note>
-* previewDifferences
-	* Description: List the differences (files changed, new files and deleted files) on the origin repository in relation to the destination repository.
-      _Remark_: The items in the list for which the corresponding modification status is *to be deleted* should be displayed only in the case the parameter deleteBoolean (see below) is set to true;
-
-	* Parameters:
-      originRepoLocation,
-      destinationRepoLocation, 
-      deleteBoolean (stating if files on the destination repo that do not exist on the origin repo should be deleted or not), 
-      selectedAction (stating if the selected action was &quot;Synchronize JCR with File System&quot;, &quot;Export from JCR&quot; or &quot;Import to JCR&quot;)
-
-	* Output: table containing all changed files&#47;directories.
-      Should contain the *Id*, the *location* and the *modification status* (*to be modified*, *to be deleted* or *to be created*), for each item on the list.
-      Additionally some kind of *&quot;direction status&quot;* information, stating from which repository to which repository the changes are being mirrored for each item, should be present.
-
-
-</note>
+      <note>&#xa;&#x2a; previewDifferences&#xa;	&#x2a; Description&#x3a; List the differences &#x28;files changed, new files and deleted files&#x29; on the origin repository in relation to the destination repository.&#xa;      _Remark_&#x3a; The items in the list for which the corresponding modification status is &#x2a;to be deleted&#x2a; should be displayed only in the case the parameter deleteBoolean &#x28;see below&#x29; is set to true&#x3b;&#xa;&#xa;	&#x2a; Parameters&#x3a;&#xa;      originRepoLocation,&#xa;      destinationRepoLocation, &#xa;      deleteBoolean &#x28;stating if files on the destination repo that do not exist on the origin repo should be deleted or not&#x29;, &#xa;      selectedAction &#x28;stating if the selected action was &#x22;Synchronize JCR with File System&#x22;, &#x22;Export from JCR&#x22; or &#x22;Import to JCR&#x22;&#x29;&#xa;&#xa;	&#x2a; Output&#x3a; table containing all changed files&#x2f;directories.&#xa;      Should contain the &#x2a;Id&#x2a;, the &#x2a;location&#x2a; and the &#x2a;modification status&#x2a; &#x28;&#x2a;to be modified&#x2a;, &#x2a;to be deleted&#x2a; or &#x2a;to be created&#x2a;&#x29;, for each item on the list.&#xa;      Additionally some kind of &#x2a;&#x22;direction status&#x22;&#x2a; information, stating from which repository to which repository the changes are being mirrored for each item, should be present.&#xa;&#xa;&#xa;</note>
       <xloc>1016</xloc>
       <yloc>1</yloc>
-      <width>1317</width>
-      <heigth>209</heigth>
+      <width>1389</width>
+      <heigth>237</heigth>
       <fontname>Courier New</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -135,13 +124,11 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Criteria for establishing differences:
-- name and relative location of file
-- size</note>
+      <note>Criteria for establishing differences&#x3a;&#xa;- name and relative location of file&#xa;- size</note>
       <xloc>826</xloc>
       <yloc>93</yloc>
       <width>205</width>
-      <heigth>51</heigth>
+      <heigth>52</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -158,22 +145,11 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>NAMED PARAMETERS
-====================
-
-destinationRepoLocation
-originRepoLocation
-delete (Y&#47;N)
-selectedAction	S: synch | E: export | I: import
-
-Internal use:
-operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files | DF: delete folders | M: merge(?)
-
-</note>
+      <note>NAMED PARAMETERS&#xa;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#xa;&#xa;destinationRepoLocation&#xa;originRepoLocation&#xa;delete &#x28;Y&#x2f;N&#x29;&#xa;selectedAction	S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import&#xa;&#xa;Internal use&#x3a;&#xa;operation_type P&#x3a;preview &#x28;default&#x29; &#x7c; C&#x3a;copy &#x7c; CF&#x3a; copy folders &#x7c; D&#x3a; delete files &#x7c; DF&#x3a; delete folders &#x7c; M&#x3a; merge&#x28;&#x3f;&#x29;&#xa;&#xa;</note>
       <xloc>1016</xloc>
       <yloc>238</yloc>
       <width>603</width>
-      <heigth>159</heigth>
+      <heigth>182</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -194,7 +170,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       <xloc>380</xloc>
       <yloc>740</yloc>
       <width>71</width>
-      <heigth>22</heigth>
+      <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -211,11 +187,11 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Import &#47; Export</note>
+      <note>Import &#x2f; Export</note>
       <xloc>726</xloc>
       <yloc>740</yloc>
       <width>82</width>
-      <heigth>22</heigth>
+      <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -233,12 +209,65 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     </notepad>
   </notepads>
   <order>
-  <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>  <hop> <from>delete filter</from><to>operation_type</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>  <hop> <from>delete files info</from><to>delete fields</to><enabled>Y</enabled> </hop>  <hop> <from>just files to_be_deleted</from><to>delete files info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just files to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy fields</from><to>output_copy</to><enabled>Y</enabled> </hop>  <hop> <from>delete fields</from><to>output_delete</to><enabled>Y</enabled> </hop>  <hop> <from>preview fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders fields</from><to>output_delete folder</to><enabled>Y</enabled> </hop>  <hop> <from>delete folders info</from><to>delete folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_deleted</from><to>delete folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_deleted</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders fields</from><to>output_copy folders</to><enabled>Y</enabled> </hop>  <hop> <from>copy folders info</from><to>copy folders fields</to><enabled>Y</enabled> </hop>  <hop> <from>just folders to_be_copied</from><to>copy folders info</to><enabled>Y</enabled> </hop>  <hop> <from>operation_type</from><to>just folders to_be_copied</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>flagfield --&gt; status</to><enabled>Y</enabled> </hop>  <hop> <from>flagfield --&gt; status</from><to>source&amp;dest</to><enabled>Y</enabled> </hop>  <hop> <from>source&amp;dest</from><to>delete filter</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get origin</from><to>lk origin</to><enabled>Y</enabled> </hop>  <hop> <from>Get destination</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location destination</from><to>Merge Rows (diff)</to><enabled>Y</enabled> </hop>  <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>  <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>join</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>destinationRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>originRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>  <hop> <from>getLastSynchDate</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>join 2</from><to>lastmodifiedtime to number</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Rows (diff)</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>filename_without_location origin</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>  <hop> <from>lk lastmodifiedtime</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>not identical</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>join 2</to><enabled>Y</enabled> </hop>  <hop> <from>lastmodifiedtime to number</from><to>synchronize?</to><enabled>Y</enabled> </hop>  <hop> <from>Synchronize</from><to>operation_type</to><enabled>Y</enabled> </hop>  <hop> <from>synchronize?</from><to>Synchronize</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in destination</from><to>md5 destination</to><enabled>Y</enabled> </hop>  <hop> <from>md5 destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names in origin</from><to>md5 origin</to><enabled>Y</enabled> </hop>  <hop> <from>md5 origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>
+  <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete files info</from><to>delete fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>just files to_be_deleted</from><to>delete files info</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>just files to_be_deleted</to><enabled>Y</enabled> </hop>
+  <hop> <from>copy fields</from><to>output_copy</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete fields</from><to>output_delete</to><enabled>Y</enabled> </hop>
+  <hop> <from>preview fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete folders fields</from><to>output_delete folder</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete folders info</from><to>delete folders fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>just folders to_be_deleted</from><to>delete folders info</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>just folders to_be_deleted</to><enabled>Y</enabled> </hop>
+  <hop> <from>copy folders fields</from><to>output_copy folders</to><enabled>Y</enabled> </hop>
+  <hop> <from>copy folders info</from><to>copy folders fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>just folders to_be_copied</from><to>copy folders info</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>just folders to_be_copied</to><enabled>Y</enabled> </hop>
+  <hop> <from>synchronize&#x3f;</from><to>flagfield --&#x3e; status</to><enabled>Y</enabled> </hop>
+  <hop> <from>flagfield --&#x3e; status</from><to>source&#x26;dest</to><enabled>Y</enabled> </hop>
+  <hop> <from>source&#x26;dest</from><to>delete filter</to><enabled>Y</enabled> </hop>
+  <hop> <from>getLocations</from><to>lk origin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get origin</from><to>lk origin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get destination</from><to>lk destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location origin</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location destination</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>
+  <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>join</from><to>Get Variables</to><enabled>Y</enabled> </hop>
+  <hop> <from>destinationRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>originRepoLocation</from><to>join</to><enabled>Y</enabled> </hop>
+  <hop> <from>getLastSynchDate</from><to>join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>join 2</from><to>lastmodifiedtime to number</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Rows &#x28;diff&#x29;</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location origin</from><to>lk lastmodifiedtime</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk lastmodifiedtime</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>not identical</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>join 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>lastmodifiedtime to number</from><to>synchronize&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>synchronize&#x3f;</from><to>Synchronize</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names in destination</from><to>md5 destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>md5 destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names in origin</from><to>md5 origin</to><enabled>Y</enabled> </hop>
+  <hop> <from>md5 origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>
+  <hop> <from>Synchronize</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>gen_folder_lines &#x28;if needed&#x29;</from><to>operation_type</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete filter</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
     <name>Get File Names in destination</name>
     <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -277,6 +306,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -315,6 +345,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -323,7 +354,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <fields>
       <field>
         <name>delete_flag</name>
-        <variable>${delete}</variable>
+        <variable>&#x24;&#x7b;delete&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -335,7 +366,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       </field>
       <field>
         <name>operation_type</name>
-        <variable>${operation_type}</variable>
+        <variable>&#x24;&#x7b;operation_type&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -347,7 +378,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       </field>
       <field>
         <name>selectedAction</name>
-        <variable>${selectedAction}</variable>
+        <variable>&#x24;&#x7b;selectedAction&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -359,7 +390,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       </field>
       <field>
         <name>overwrite_flag</name>
-        <variable>${overwrite}</variable>
+        <variable>&#x24;&#x7b;overwrite&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -383,6 +414,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -391,7 +423,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <fields>
       <field>
         <name>name</name>
-        <variable>${destinationRepoLocation}</variable>
+        <variable>&#x24;&#x7b;destinationRepoLocation&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -403,7 +435,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       </field>
       <field>
         <name>wildcard</name>
-        <variable>.*</variable>
+        <variable>.&#x2a;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -427,6 +459,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -435,7 +468,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <fields>
       <field>
         <name>name</name>
-        <variable>${originRepoLocation}</variable>
+        <variable>&#x24;&#x7b;originRepoLocation&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -447,7 +480,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
       </field>
       <field>
         <name>wildcard</name>
-        <variable>.*</variable>
+        <variable>.&#x2a;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -467,10 +500,11 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     </step>
 
   <step>
-    <name>Merge Rows (diff)</name>
+    <name>Merge Rows &#x28;diff&#x29;</name>
     <type>MergeRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -501,6 +535,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -519,6 +554,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -558,6 +594,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -567,32 +604,7 @@ operation_type P:preview (default) | C:copy | CF: copy folders | D: delete files
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var status;
-var source;
-var dest;
-
-status = &apos;nothing_to_be_updated&apos;;
-source = &apos;&apos;;
-dest = &apos;&apos;;
-
-if (flagfield ==&quot;new&quot;) {
-	if ((lastmodifiedtime_destination &lt; last_synch) &amp;&amp; (delete_flag == &apos;Y&apos;)) { status = &apos;to_be_deleted&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
-	if (lastmodifiedtime_destination &gt; last_synch) { status = &apos;to_be_copied&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
-} else if (flagfield == &quot;deleted&quot;) {
-	if ((lastmodifiedtime_origin &lt; last_synch) &amp;&amp; (delete_flag == &apos;Y&apos;)) { status = &apos;to_be_deleted&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
-	if (lastmodifiedtime_origin &gt; last_synch) { status = &apos;to_be_copied&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
-} else if (flagfield == &quot;changed&quot;) {
-	if ((lastmodifiedtime_origin &lt; last_synch) &amp;&amp; (lastmodifiedtime_destination &gt; last_synch)) { status = &apos;to_be_copied&apos;; source = destinationRepoLocation; dest = originRepoLocation;}
-	if ((lastmodifiedtime_origin &gt; last_synch) &amp;&amp; (lastmodifiedtime_destination &lt; last_synch)) { status = &apos;to_be_copied&apos;; source = originRepoLocation; dest = destinationRepoLocation;}
-
-	if ((lastmodifiedtime_origin &gt; last_synch) &amp;&amp; (lastmodifiedtime_destination &gt; last_synch) &amp;&amp; (overwrite_flag == &quot;Y&quot;)) {
-		status = &apos;to_be_copied&apos;;
-		if (lastmodifiedtime_origin &gt; lastmodifiedtime_destination) { source = originRepoLocation; dest = destinationRepoLocation;}
-		else { source = destinationRepoLocation; dest = originRepoLocation;}
-		}
-}
-
-</jsScript_script>
+        <jsScript_script>var status&#x3b;&#xa;var source&#x3b;&#xa;var dest&#x3b;&#xa;&#xa;status &#x3d; &#x27;nothing_to_be_updated&#x27;&#x3b;&#xa;source &#x3d; &#x27;&#x27;&#x3b;&#xa;dest &#x3d; &#x27;&#x27;&#x3b;&#xa;&#xa;if &#x28;flagfield &#x3d;&#x3d;&#x22;new&#x22;&#x29; &#x7b;&#xa;	if &#x28;&#x28;lastmodifiedtime_destination &#x3c; last_synch&#x29; &#x26;&#x26; &#x28;delete_flag &#x3d;&#x3d; &#x27;Y&#x27;&#x29;&#x29; &#x7b; status &#x3d; &#x27;to_be_deleted&#x27;&#x3b; source &#x3d; originRepoLocation&#x3b; dest &#x3d; destinationRepoLocation&#x3b;&#x7d;&#xa;	if &#x28;lastmodifiedtime_destination &#x3e; last_synch&#x29; &#x7b; status &#x3d; &#x27;to_be_copied&#x27;&#x3b; source &#x3d; destinationRepoLocation&#x3b; dest &#x3d; originRepoLocation&#x3b;&#x7d;&#xa;&#x7d; else if &#x28;flagfield &#x3d;&#x3d; &#x22;deleted&#x22;&#x29; &#x7b;&#xa;	if &#x28;&#x28;lastmodifiedtime_origin &#x3c; last_synch&#x29; &#x26;&#x26; &#x28;delete_flag &#x3d;&#x3d; &#x27;Y&#x27;&#x29;&#x29; &#x7b; status &#x3d; &#x27;to_be_deleted&#x27;&#x3b; source &#x3d; destinationRepoLocation&#x3b; dest &#x3d; originRepoLocation&#x3b;&#x7d;&#xa;	if &#x28;lastmodifiedtime_origin &#x3e; last_synch&#x29; &#x7b; status &#x3d; &#x27;to_be_copied&#x27;&#x3b; source &#x3d; originRepoLocation&#x3b; dest &#x3d; destinationRepoLocation&#x3b;&#x7d;&#xa;&#x7d; else if &#x28;flagfield &#x3d;&#x3d; &#x22;changed&#x22;&#x29; &#x7b;&#xa;	if &#x28;&#x28;lastmodifiedtime_origin &#x3c; last_synch&#x29; &#x26;&#x26; &#x28;lastmodifiedtime_destination &#x3e; last_synch&#x29;&#x29; &#x7b; status &#x3d; &#x27;to_be_copied&#x27;&#x3b; source &#x3d; destinationRepoLocation&#x3b; dest &#x3d; originRepoLocation&#x3b;&#x7d;&#xa;	if &#x28;&#x28;lastmodifiedtime_origin &#x3e; last_synch&#x29; &#x26;&#x26; &#x28;lastmodifiedtime_destination &#x3c; last_synch&#x29;&#x29; &#x7b; status &#x3d; &#x27;to_be_copied&#x27;&#x3b; source &#x3d; originRepoLocation&#x3b; dest &#x3d; destinationRepoLocation&#x3b;&#x7d;&#xa;&#xa;	if &#x28;&#x28;lastmodifiedtime_origin &#x3e; last_synch&#x29; &#x26;&#x26; &#x28;lastmodifiedtime_destination &#x3e; last_synch&#x29; &#x26;&#x26; &#x28;overwrite_flag &#x3d;&#x3d; &#x22;Y&#x22;&#x29;&#x29; &#x7b;&#xa;		status &#x3d; &#x27;to_be_copied&#x27;&#x3b;&#xa;		if &#x28;lastmodifiedtime_origin &#x3e; lastmodifiedtime_destination&#x29; &#x7b; source &#x3d; originRepoLocation&#x3b; dest &#x3d; destinationRepoLocation&#x3b;&#x7d;&#xa;		else &#x7b; source &#x3d; destinationRepoLocation&#x3b; dest &#x3d; originRepoLocation&#x3b;&#x7d;&#xa;		&#x7d;&#xa;&#x7d;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>status</name>
         <rename>status</rename>
         <type>String</type>
@@ -624,6 +636,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -655,27 +668,28 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>origin</field_name>
-<formula_string>source + filename_without_location</formula_string>
+<formula_string>source &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>destination</field_name>
-<formula_string>dest + filename_without_location</formula_string>
+<formula_string>dest &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>wildcard</field_name>
-<formula_string>&quot;.*&quot;</formula_string>
+<formula_string>&#x22;.&#x2a;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -694,6 +708,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -725,27 +740,28 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>origin</field_name>
-<formula_string>source + filename_without_location</formula_string>
+<formula_string>source &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>destination</field_name>
-<formula_string>dest + filename_without_location</formula_string>
+<formula_string>dest &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>wildcard</field_name>
-<formula_string>&quot;.*&quot;</formula_string>
+<formula_string>&#x22;.&#x2a;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -764,6 +780,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -782,6 +799,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -809,20 +827,21 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>file_to_be_deleted</field_name>
-<formula_string>dest + filename_without_location</formula_string>
+<formula_string>dest &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>wildcard</field_name>
-<formula_string>&quot;.*&quot;</formula_string>
+<formula_string>&#x22;.&#x2a;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -841,6 +860,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -855,14 +875,14 @@ if (flagfield ==&quot;new&quot;) {
   <condition>
    <negated>N</negated>
    <leftvalue>delete_flag</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>OR</operator>
    <leftvalue>status</leftvalue>
-   <function>&lt;&gt;</function>
+   <function>&#x3c;&#x3e;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>to_be_deleted</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   </conditions>
@@ -881,6 +901,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -904,13 +925,14 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>folders_to_be_deleted</field_name>
-<formula_string>dest + filename_without_location</formula_string>
+<formula_string>dest &#x2b; filename_without_location</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -929,6 +951,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -952,13 +975,14 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>filename.replaceAll(&quot;\\\\&quot;,&quot;&#47;&quot;).replaceAll(&quot;^&quot;+elementPath.replaceAll(&quot;\\\\&quot;,&quot;&#47;&quot;),&quot;&quot;)</formula_string>
+<formula_string>filename.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -977,13 +1001,14 @@ if (flagfield ==&quot;new&quot;) {
     <type>Janino</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>filename.replaceAll(&quot;\\\\&quot;,&quot;&#47;&quot;).replaceAll(&quot;^&quot;+elementPath.replaceAll(&quot;\\\\&quot;,&quot;&#47;&quot;),&quot;&quot;)</formula_string>
+<formula_string>filename.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -998,10 +1023,11 @@ if (flagfield ==&quot;new&quot;) {
     </step>
 
   <step>
-    <name>flagfield --&gt; status</name>
+    <name>flagfield --&#x3e; status</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1037,6 +1063,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1045,7 +1072,7 @@ if (flagfield ==&quot;new&quot;) {
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;_getLastSynchDate.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_getLastSynchDate.ktr</filename>
     <directory_path/>
     <mappings>
       <input>
@@ -1075,6 +1102,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>Mapping</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1083,7 +1111,7 @@ if (flagfield ==&quot;new&quot;) {
     <specification_method>filename</specification_method>
     <trans_object_id/>
     <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;_getLocations.ktr</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_getLocations.ktr</filename>
     <directory_path/>
     <mappings>
       <input>
@@ -1113,12 +1141,13 @@ if (flagfield ==&quot;new&quot;) {
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
       <main>not identical</main>
@@ -1126,7 +1155,7 @@ if (flagfield ==&quot;new&quot;) {
 <condition>
  <negated>N</negated>
  <leftvalue/>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  </condition>
     </compare>
@@ -1143,12 +1172,13 @@ if (flagfield ==&quot;new&quot;) {
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
       <main/>
@@ -1156,7 +1186,7 @@ if (flagfield ==&quot;new&quot;) {
 <condition>
  <negated>N</negated>
  <leftvalue/>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  </condition>
     </compare>
@@ -1173,6 +1203,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1187,14 +1218,14 @@ if (flagfield ==&quot;new&quot;) {
   <condition>
    <negated>N</negated>
    <leftvalue>status</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>to_be_copied</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>type</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>file</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   </conditions>
@@ -1213,6 +1244,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1227,14 +1259,14 @@ if (flagfield ==&quot;new&quot;) {
   <condition>
    <negated>N</negated>
    <leftvalue>status</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>to_be_deleted</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>type</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>file</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   </conditions>
@@ -1253,6 +1285,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1267,14 +1300,14 @@ if (flagfield ==&quot;new&quot;) {
   <condition>
    <negated>N</negated>
    <leftvalue>status</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>to_be_copied</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>type</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>folder</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   </conditions>
@@ -1293,6 +1326,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1307,14 +1341,14 @@ if (flagfield ==&quot;new&quot;) {
   <condition>
    <negated>N</negated>
    <leftvalue>status</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>to_be_deleted</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
    <leftvalue>type</leftvalue>
-   <function>=</function>
+   <function>&#x3d;</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>folder</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
   </conditions>
@@ -1333,6 +1367,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1344,8 +1379,11 @@ if (flagfield ==&quot;new&quot;) {
         <type>Integer</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>#</conversion_mask>
+        <conversion_mask>&#x23;</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1356,8 +1394,11 @@ if (flagfield ==&quot;new&quot;) {
         <type>Integer</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>#</conversion_mask>
+        <conversion_mask>&#x23;</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1376,6 +1417,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>StreamLookup</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1411,6 +1453,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>StreamLookup</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1446,6 +1489,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>StreamLookup</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1477,10 +1521,77 @@ if (flagfield ==&quot;new&quot;) {
     </step>
 
   <step>
+    <name>md5 destination</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>md5</field_name>
+<calc_type>MD5</calc_type>
+<field_a>filename</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>207</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>md5 origin</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>md5</field_name>
+<calc_type>MD5</calc_type>
+<field_a>filename</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>629</xloc>
+      <yloc>207</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>not identical</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1492,7 +1603,7 @@ if (flagfield ==&quot;new&quot;) {
 <condition>
  <negated>N</negated>
  <leftvalue>flagfield</leftvalue>
- <function>&lt;&gt;</function>
+ <function>&#x3c;&#x3e;</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>identical</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
@@ -1509,6 +1620,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SwitchCase</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1544,6 +1656,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1567,6 +1680,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1585,6 +1699,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1603,6 +1718,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1621,6 +1737,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1639,6 +1756,7 @@ if (flagfield ==&quot;new&quot;) {
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1670,10 +1788,11 @@ if (flagfield ==&quot;new&quot;) {
     </step>
 
   <step>
-    <name>source&amp;dest</name>
+    <name>source&#x26;dest</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1702,22 +1821,23 @@ if (flagfield ==&quot;new&quot;) {
     </step>
 
   <step>
-    <name>synchronize?</name>
+    <name>synchronize&#x3f;</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
 <send_true_to>Synchronize</send_true_to>
-<send_false_to>flagfield --&gt; status</send_false_to>
+<send_false_to>flagfield --&#x3e; status</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>selectedAction</leftvalue>
- <function>=</function>
+ <function>&#x3d;</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>S</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
@@ -1730,65 +1850,47 @@ if (flagfield ==&quot;new&quot;) {
     </step>
 
   <step>
-    <name>md5 destination</name>
-    <type>Calculator</type>
+    <name>gen_folder_lines &#x28;if needed&#x29;</name>
+    <type>Mapping</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <calculation><field_name>md5</field_name>
-<calc_type>MD5</calc_type>
-<field_a>filename</field_a>
-<field_b/>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
-      <yloc>207</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>md5 origin</name>
-    <type>Calculator</type>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_gen_folder_lines.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
     <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>md5</field_name>
-<calc_type>MD5</calc_type>
-<field_a>filename</field_a>
-<field_b/>
-<field_c/>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<remove>N</remove>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<currency_symbol/>
-</calculation>
+       <connector><parent>filename_without_location</parent><child>filename</child></connector>
+       <connector><parent>status</parent><child>status</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>629</xloc>
-      <yloc>207</yloc>
+      <xloc>558</xloc>
+      <yloc>899</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1798,4 +1900,5 @@ if (flagfield ==&quot;new&quot;) {
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>
