@@ -124,7 +124,7 @@ var synchronizer = {};
 	      	dataType: 'json'
 	    }
 	    var opts = $.extend( {}, _opts, opts);
-	    var url = Dashboards.getWebAppPath() + '/content/' + pluginId + '/' + endpoint;
+	    var url = Dashboards.getWebAppPath() + '/plugin/' + pluginId + '/api/' + endpoint;
 
 	    function successHandler  (json){
 	      	if ( json && json.result == false){
@@ -229,7 +229,7 @@ var synchronizer = {};
 		    filesWillNotBeUpdatedList = [],
 		    fileCounter = 0;
 
-	    if(_.isEmpty(data)){
+	    if( _.isEmpty(data) || data.resultset.length === 0 ){
 	        data = synchronizer.createTableEmptyRawData();
 	    } else {
 		    var statusIdx = synchronizer.getColIndexFromColName(data.metadata,"modification_status"),
