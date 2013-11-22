@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>_previewDiffAndSynch</name>
+  <name>_previewDiffAndSynch_old</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -370,20 +370,20 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>708</xloc>
-      <yloc>91</yloc>
+      <xloc>590</xloc>
+      <yloc>140</yloc>
       </entry>
     <entry>
       <name>Create a folder</name>
       <description/>
       <type>CREATE_FOLDER</type>
       <foldername/>
-      <fail_of_folder_exists>N</fail_of_folder_exists>
+      <fail_of_folder_exists>Y</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>717</xloc>
-      <yloc>184</yloc>
+      <xloc>777</xloc>
+      <yloc>187</yloc>
       </entry>
   </entries>
   <hops>
@@ -455,15 +455,6 @@
       <to>Copy Folders</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>previewDifferences &#x28;copy folders&#x29;</from>
-      <to>Create a folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
@@ -471,5 +462,9 @@
   </hops>
   <notepads>
   </notepads>
+<attributes><group><name>JobRestart</name>
+<attribute><key>UniqueConnections</key>
+<value>N</value>
+</attribute></group></attributes>
 
 </job>
