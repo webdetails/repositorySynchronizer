@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>destinationRepoLocation</name>
-            <default_value>JCR</default_value>
+            <default_value>File System</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -26,7 +26,7 @@
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>File System</default_value>
+            <default_value>JCR</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -36,7 +36,7 @@
         </parameter>
         <parameter>
             <name>selectedAction</name>
-            <default_value>S</default_value>
+            <default_value>E</default_value>
             <description>S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import</description>
         </parameter>
     </parameters>
@@ -208,6 +208,28 @@
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <read_only>true</read_only>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
   <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>
@@ -237,8 +259,6 @@
   <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>
   <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>
   <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>filename_without_location origin</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>filename_without_location destination</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>
   <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>
   <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>
@@ -261,6 +281,12 @@
   <hop> <from>Synchronize</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>gen_folder_lines &#x28;if needed&#x29;</from><to>operation_type</to><enabled>Y</enabled> </hop>
   <hop> <from>delete filter</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows &#x28;left&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location origin</from><to>Sort rows &#x28;right&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows &#x28;right&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get destination 2</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>preview fields</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Get File Names in destination</name>
@@ -518,8 +544,8 @@
       <value>md5</value>
     </values>
 <flag_field>flagfield</flag_field>
-<reference>filename_without_location origin</reference>
-<compare>filename_without_location destination</compare>
+<reference>Sort rows &#x28;right&#x29;</reference>
+<compare>Sort rows &#x28;left&#x29;</compare>
     <compare>
     </compare>
      <cluster_schema/>
@@ -585,6 +611,74 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>460</xloc>
       <yloc>433</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows &#x28;left&#x29;</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>filename_without_location</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>488</xloc>
+      <yloc>274</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows &#x28;right&#x29;</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>filename_without_location</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>653</xloc>
+      <yloc>270</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1054,6 +1148,52 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>717</xloc>
       <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>gen_folder_lines &#x28;if needed&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_gen_folder_lines.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>filename_without_location</parent><child>filename</child></connector>
+       <connector><parent>status</parent><child>status</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>558</xloc>
+      <yloc>899</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1755,7 +1895,7 @@
     <name>preview fields</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1850,8 +1990,8 @@
     </step>
 
   <step>
-    <name>gen_folder_lines &#x28;if needed&#x29;</name>
-    <type>Mapping</type>
+    <name>Get destination 2</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1860,37 +2000,166 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_gen_folder_lines.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-       <connector><parent>filename_without_location</parent><child>filename</child></connector>
-       <connector><parent>status</parent><child>status</child></connector>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
+    <fields>
+      <field>
+        <name>delete</name>
+        <variable>&#x24;&#x7b;delete&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>destinationRepoLocation</name>
+        <variable>&#x24;&#x7b;destinationRepoLocation&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>operation_type</name>
+        <variable>&#x24;&#x7b;operation_type&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>originRepoLocation</name>
+        <variable>&#x24;&#x7b;originRepoLocation&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>overwrite</name>
+        <variable>&#x24;&#x7b;overwrite&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>selectedAction</name>
+        <variable>&#x24;&#x7b;selectedAction&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>558</xloc>
-      <yloc>899</yloc>
+      <xloc>104</xloc>
+      <yloc>50</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>delete</name>
+        </field>
+      <field>
+        <name>destinationRepoLocation</name>
+        </field>
+      <field>
+        <name>operation_type</name>
+        </field>
+      <field>
+        <name>originRepoLocation</name>
+        </field>
+      <field>
+        <name>overwrite</name>
+        </field>
+      <field>
+        <name>selectedAction</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>113</xloc>
+      <yloc>142</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>file</name>
+        </field>
+      <field>
+        <name>modification_status</name>
+        </field>
+      <field>
+        <name>direction</name>
+        </field>
+      <field>
+        <name>type</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>964</xloc>
+      <yloc>881</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1900,5 +2169,7 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+</group></attributes>
 
 </transformation>
