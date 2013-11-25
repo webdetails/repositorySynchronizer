@@ -232,7 +232,6 @@
   </connection>
   <order>
   <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>
-  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>
   <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>
@@ -293,7 +292,29 @@
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
   <hop> <from>gen_folder_lines &#x28;if needed&#x29;</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>operation_type</to><enabled>Y</enabled> </hop>
+  <hop> <from>getLocations 2</from><to>lk name</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>lk name</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk name</from><to>preview fields</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>382</xloc>
+      <yloc>924</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Get File Names in destination</name>
     <type>GetFileNames</type>
@@ -668,8 +689,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>970</xloc>
-      <yloc>971</yloc>
+      <xloc>1039</xloc>
+      <yloc>970</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -900,8 +921,79 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>964</xloc>
-      <yloc>881</yloc>
+      <xloc>1043</xloc>
+      <yloc>880</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 3</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>ttttt</logmessage>
+    <fields>
+      <field>
+        <name>last_synch</name>
+        </field>
+      <field>
+        <name>type</name>
+        </field>
+      <field>
+        <name>filename_without_location</name>
+        </field>
+      <field>
+        <name>flagfield</name>
+        </field>
+      <field>
+        <name>lastmodifiedtime_origin</name>
+        </field>
+      <field>
+        <name>lastmodifiedtime_destination</name>
+        </field>
+      <field>
+        <name>destinationRepoLocation</name>
+        </field>
+      <field>
+        <name>originRepoLocation</name>
+        </field>
+      <field>
+        <name>delete_flag</name>
+        </field>
+      <field>
+        <name>operation_type</name>
+        </field>
+      <field>
+        <name>selectedAction</name>
+        </field>
+      <field>
+        <name>overwrite_flag</name>
+        </field>
+      <field>
+        <name>status</name>
+        </field>
+      <field>
+        <name>source</name>
+        </field>
+      <field>
+        <name>dest</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>986</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1854,6 +1946,94 @@
     </step>
 
   <step>
+    <name>m1</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_md5.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>260</xloc>
+      <yloc>218</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>m1 2</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_md5.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>882</xloc>
+      <yloc>220</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>md5 destination</name>
     <type>Calculator</type>
     <description/>
@@ -1967,7 +2147,7 @@
 <case_value_group/>
 <default_target_step>default - nothing</default_target_step>
 <cases><case><value>P</value>
-<target_step>preview fields</target_step>
+<target_step>lk name</target_step>
 </case><case><value>C</value>
 <target_step>just files to_be_copied</target_step>
 </case><case><value>CF</value>
@@ -2103,7 +2283,7 @@
         <rename>modification_status</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>source</name>
+      </field>      <field>        <name>elementName</name>
         <rename>direction</rename>
         <length>-2</length>
         <precision>-2</precision>
@@ -2114,8 +2294,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>852</xloc>
-      <yloc>971</yloc>
+      <xloc>892</xloc>
+      <yloc>969</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2183,167 +2363,8 @@
     </step>
 
   <step>
-    <name>m1</name>
+    <name>getLocations 2</name>
     <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_md5.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>260</xloc>
-      <yloc>218</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>m1 2</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_md5.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>882</xloc>
-      <yloc>220</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Write to log 3</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>ttttt</logmessage>
-    <fields>
-      <field>
-        <name>last_synch</name>
-        </field>
-      <field>
-        <name>type</name>
-        </field>
-      <field>
-        <name>filename_without_location</name>
-        </field>
-      <field>
-        <name>flagfield</name>
-        </field>
-      <field>
-        <name>lastmodifiedtime_origin</name>
-        </field>
-      <field>
-        <name>lastmodifiedtime_destination</name>
-        </field>
-      <field>
-        <name>destinationRepoLocation</name>
-        </field>
-      <field>
-        <name>originRepoLocation</name>
-        </field>
-      <field>
-        <name>delete_flag</name>
-        </field>
-      <field>
-        <name>operation_type</name>
-        </field>
-      <field>
-        <name>selectedAction</name>
-        </field>
-      <field>
-        <name>overwrite_flag</name>
-        </field>
-      <field>
-        <name>status</name>
-        </field>
-      <field>
-        <name>source</name>
-        </field>
-      <field>
-        <name>dest</name>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>288</xloc>
-      <yloc>986</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
     <description/>
     <distribute>N</distribute>
     <custom_distribution/>
@@ -2352,10 +2373,66 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_getLocations.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>382</xloc>
-      <yloc>924</yloc>
+      <xloc>777</xloc>
+      <yloc>894</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lk name</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>getLocations 2</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>source</name>
+        <field>elementPath</field>
+      </key>
+      <value>
+        <name>elementName</name>
+        <rename>elementName</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>778</xloc>
+      <yloc>972</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

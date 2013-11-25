@@ -1885,7 +1885,7 @@
      },
      {
       "name": "html",
-      "value": "The files marked as <font color=\"green\">green</font> will be updated by the latest version ",
+      "value": "The files marked as <font color=\"green\">green</font> will be updated by the version on JCR ",
       "type": "Html"
      },
      {
@@ -3705,7 +3705,7 @@
      },
      {
       "name": "html",
-      "value": "The files marked as <font color=\"green\">green</font> will be updated by the latest version ",
+      "value": "The files marked as <font color=\"green\">green</font> will be updated ",
       "type": "Html"
      },
      {
@@ -4213,7 +4213,7 @@
      },
      {
       "name": "html",
-      "value": "Transfer to <span class=\"semiBold\">JCR</span> from <span class=\"semiBold\">File System</span> ",
+      "value": "Transfer from <span class=\"semiBold\">File System</span> to <span class=\"semiBold\">JCR</span> ",
       "type": "Html"
      },
      {
@@ -5525,7 +5525,7 @@
      },
      {
       "name": "html",
-      "value": "The files marked as <font color=\"green\">green</font> will be updated by the latest version ",
+      "value": "The files marked as <font color=\"green\">green</font> will be updated by the version on File System ",
       "type": "Html"
      },
      {

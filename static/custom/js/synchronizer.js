@@ -297,7 +297,7 @@ var synchronizer = {};
       		var text = synchronizer.settings.statusDictionary[st.value],
         		cssClass = synchronizer.getCamelCase(text,opt.sep),
         		dirValue = st.tableData[st.rowIdx][opt.dirColIdx],
-        		dirClass = ( dirValue === opt.fsAddress ? "fs2jcr" : "jcr2fs" );
+        		dirClass = ( dirValue === "File System" ? "fs2jcr" : "jcr2fs" );
         
             $(tgt).parent().addClass(cssClass+" "+dirClass);
          	$(tgt).empty().append(text);      
@@ -325,7 +325,7 @@ var synchronizer = {};
 
 	    	var elementsArr = mainFullPath.split(opt.sep),
 		      	label = elementsArr[(elementsArr.length-1)],
-		      	$cont = $("<div class='cellCont' /div>").text(opt.sep+label);
+		      	$cont = $("<div class='cellCont' /div>").text(/*opt.sep+*/label);
 	    	$(tgt).empty().append($cont);
 	    	var level = synchronizer.getParentFolderLevel(mainFullPath,opt.sep)
 	    	$(tgt).css("padding-left",level * 20);
