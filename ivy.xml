@@ -31,4 +31,3 @@
 		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.2.2" conf='default->default'/>
   </dependencies>
 </ivy-module>
-vy-module>

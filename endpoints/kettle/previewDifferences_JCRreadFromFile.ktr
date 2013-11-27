@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>previewDifferences2</name>
+    <name>previewDifferences_JCRreadFromFile</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -11,12 +11,12 @@
     <parameters>
         <parameter>
             <name>delete</name>
-            <default_value>N</default_value>
+            <default_value>Y</default_value>
             <description>Y&#x2f;N</description>
         </parameter>
         <parameter>
             <name>destinationRepoLocation</name>
-            <default_value>JCR</default_value>
+            <default_value>File System</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -26,7 +26,7 @@
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
-            <default_value>File System</default_value>
+            <default_value>JCR</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -36,7 +36,7 @@
         </parameter>
         <parameter>
             <name>selectedAction</name>
-            <default_value>S</default_value>
+            <default_value>E</default_value>
             <description>S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import</description>
         </parameter>
     </parameters>
@@ -106,8 +106,8 @@
       <note>&#xa;&#x2a; previewDifferences&#xa;	&#x2a; Description&#x3a; List the differences &#x28;files changed, new files and deleted files&#x29; on the origin repository in relation to the destination repository.&#xa;      _Remark_&#x3a; The items in the list for which the corresponding modification status is &#x2a;to be deleted&#x2a; should be displayed only in the case the parameter deleteBoolean &#x28;see below&#x29; is set to true&#x3b;&#xa;&#xa;	&#x2a; Parameters&#x3a;&#xa;      originRepoLocation,&#xa;      destinationRepoLocation, &#xa;      deleteBoolean &#x28;stating if files on the destination repo that do not exist on the origin repo should be deleted or not&#x29;, &#xa;      selectedAction &#x28;stating if the selected action was &#x22;Synchronize JCR with File System&#x22;, &#x22;Export from JCR&#x22; or &#x22;Import to JCR&#x22;&#x29;&#xa;&#xa;	&#x2a; Output&#x3a; table containing all changed files&#x2f;directories.&#xa;      Should contain the &#x2a;Id&#x2a;, the &#x2a;location&#x2a; and the &#x2a;modification status&#x2a; &#x28;&#x2a;to be modified&#x2a;, &#x2a;to be deleted&#x2a; or &#x2a;to be created&#x2a;&#x29;, for each item on the list.&#xa;      Additionally some kind of &#x2a;&#x22;direction status&#x22;&#x2a; information, stating from which repository to which repository the changes are being mirrored for each item, should be present.&#xa;&#xa;&#xa;</note>
       <xloc>1016</xloc>
       <yloc>1</yloc>
-      <width>1317</width>
-      <heigth>209</heigth>
+      <width>1389</width>
+      <heigth>237</heigth>
       <fontname>Courier New</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -128,7 +128,7 @@
       <xloc>826</xloc>
       <yloc>93</yloc>
       <width>205</width>
-      <heigth>51</heigth>
+      <heigth>52</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -149,7 +149,7 @@
       <xloc>1016</xloc>
       <yloc>238</yloc>
       <width>603</width>
-      <heigth>159</heigth>
+      <heigth>182</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -170,7 +170,7 @@
       <xloc>380</xloc>
       <yloc>740</yloc>
       <width>71</width>
-      <heigth>22</heigth>
+      <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -191,7 +191,7 @@
       <xloc>726</xloc>
       <yloc>740</yloc>
       <width>82</width>
-      <heigth>22</heigth>
+      <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -232,8 +232,6 @@
   </connection>
   <order>
   <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>
-  <hop> <from>delete filter</from><to>operation_type</to><enabled>Y</enabled> </hop>
-  <hop> <from>operation_type</from><to>preview fields</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>
   <hop> <from>just files to_be_copied</from><to>copy files info</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>default - nothing</to><enabled>Y</enabled> </hop>
@@ -258,12 +256,7 @@
   <hop> <from>Get origin</from><to>lk origin</to><enabled>Y</enabled> </hop>
   <hop> <from>Get destination</from><to>lk destination</to><enabled>Y</enabled> </hop>
   <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>lk origin</from><to>Get File Names in origin</to><enabled>Y</enabled> </hop>
   <hop> <from>lk destination</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names in origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>
-  <hop> <from>filename_without_location origin</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names in destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>filename_without_location destination</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>lk origin</from><to>originRepoLocation</to><enabled>Y</enabled> </hop>
   <hop> <from>lk destination</from><to>destinationRepoLocation</to><enabled>Y</enabled> </hop>
   <hop> <from>not identical</from><to>join</to><enabled>Y</enabled> </hop>
@@ -278,50 +271,44 @@
   <hop> <from>Select values</from><to>not identical</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables</from><to>join 2</to><enabled>Y</enabled> </hop>
   <hop> <from>lastmodifiedtime to number</from><to>synchronize&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Synchronize</from><to>operation_type</to><enabled>Y</enabled> </hop>
   <hop> <from>synchronize&#x3f;</from><to>Synchronize</to><enabled>Y</enabled> </hop>
+  <hop> <from>Synchronize</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>delete filter</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows &#x28;left&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location origin</from><to>Sort rows &#x28;right&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows &#x28;right&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>preview fields</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>gen_folder_lines &#x28;if needed&#x29;</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>operation_type</to><enabled>Y</enabled> </hop>
+  <hop> <from>getLocations 2</from><to>lk name</to><enabled>Y</enabled> </hop>
+  <hop> <from>operation_type</from><to>lk name</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk name</from><to>preview fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names in destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Get File Names in destination</name>
-    <type>GetFileNames</type>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filter>
-      <filterfiletype>all_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>N</isaddresult>
-    <filefield>Y</filefield>
-    <rownum_field/>
-    <filename_Field>elementPath</filename_Field>
-    <wildcard_Field>wildcard</wildcard_Field>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name/>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>386</xloc>
-      <yloc>207</yloc>
+      <xloc>382</xloc>
+      <yloc>924</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get File Names in origin</name>
+    <name>Get File Names in destination</name>
     <type>GetFileNames</type>
     <description/>
     <distribute>N</distribute>
@@ -353,8 +340,8 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>760</xloc>
-      <yloc>208</yloc>
+      <xloc>386</xloc>
+      <yloc>207</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -512,8 +499,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>760</xloc>
-      <yloc>17</yloc>
+      <xloc>920</xloc>
+      <yloc>177</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -534,11 +521,10 @@
     </keys>
     <values>
       <value>size</value>
-      <value>lastmodifiedtime</value>
     </values>
 <flag_field>flagfield</flag_field>
-<reference>filename_without_location origin</reference>
-<compare>filename_without_location destination</compare>
+<reference>Sort rows &#x28;right&#x29;</reference>
+<compare>Sort rows &#x28;left&#x29;</compare>
     <compare>
     </compare>
      <cluster_schema/>
@@ -562,8 +548,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>970</xloc>
-      <yloc>971</yloc>
+      <xloc>1039</xloc>
+      <yloc>970</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -604,6 +590,74 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>460</xloc>
       <yloc>433</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows &#x28;left&#x29;</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>filename_without_location</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>488</xloc>
+      <yloc>274</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows &#x28;right&#x29;</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>filename_without_location</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>653</xloc>
+      <yloc>270</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -651,10 +705,119 @@
     </step>
 
   <step>
+    <name>Write to log 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>file</name>
+        </field>
+      <field>
+        <name>modification_status</name>
+        </field>
+      <field>
+        <name>direction</name>
+        </field>
+      <field>
+        <name>type</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1043</xloc>
+      <yloc>880</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 3</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>ttttt</logmessage>
+    <fields>
+      <field>
+        <name>last_synch</name>
+        </field>
+      <field>
+        <name>type</name>
+        </field>
+      <field>
+        <name>filename_without_location</name>
+        </field>
+      <field>
+        <name>flagfield</name>
+        </field>
+      <field>
+        <name>lastmodifiedtime_origin</name>
+        </field>
+      <field>
+        <name>lastmodifiedtime_destination</name>
+        </field>
+      <field>
+        <name>destinationRepoLocation</name>
+        </field>
+      <field>
+        <name>originRepoLocation</name>
+        </field>
+      <field>
+        <name>delete_flag</name>
+        </field>
+      <field>
+        <name>operation_type</name>
+        </field>
+      <field>
+        <name>selectedAction</name>
+        </field>
+      <field>
+        <name>overwrite_flag</name>
+        </field>
+      <field>
+        <name>status</name>
+        </field>
+      <field>
+        <name>source</name>
+        </field>
+      <field>
+        <name>dest</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>986</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>copy fields</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1078,6 +1241,52 @@
     </step>
 
   <step>
+    <name>gen_folder_lines &#x28;if needed&#x29;</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_gen_folder_lines.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>filename_without_location</parent><child>filename</child></connector>
+       <connector><parent>status</parent><child>status</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>558</xloc>
+      <yloc>899</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>getLastSynchDate</name>
     <type>Mapping</type>
     <description/>
@@ -1149,8 +1358,8 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>566</xloc>
-      <yloc>17</yloc>
+      <xloc>586</xloc>
+      <yloc>35</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1236,10 +1445,22 @@
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>status</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>to_be_copied</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+   <conditions>
+    <condition>
+     <negated>N</negated>
+     <leftvalue>status</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>to_be_copied</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    <condition>
+     <negated>N</negated>
+     <operator>OR</operator>
+     <leftvalue>status</leftvalue>
+     <function>&#x3d;</function>
+     <rightvalue/>
+     <value><name>constant</name><type>String</type><text>to_be_modified</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>     </condition>
+    </conditions>
+   </condition>
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
@@ -1533,8 +1754,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>760</xloc>
-      <yloc>99</yloc>
+      <xloc>923</xloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1587,7 +1808,7 @@
 <case_value_group/>
 <default_target_step>default - nothing</default_target_step>
 <cases><case><value>P</value>
-<target_step>preview fields</target_step>
+<target_step>lk name</target_step>
 </case><case><value>C</value>
 <target_step>just files to_be_copied</target_step>
 </case><case><value>CF</value>
@@ -1708,7 +1929,7 @@
     <name>preview fields</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1723,7 +1944,7 @@
         <rename>modification_status</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>source</name>
+      </field>      <field>        <name>elementName</name>
         <rename>direction</rename>
         <length>-2</length>
         <precision>-2</precision>
@@ -1734,8 +1955,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>852</xloc>
-      <yloc>971</yloc>
+      <xloc>892</xloc>
+      <yloc>969</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1798,6 +2019,409 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>570</xloc>
       <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>getLocations 2</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_getLocations.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>777</xloc>
+      <yloc>894</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lk name</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>getLocations 2</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>source</name>
+        <field>elementPath</field>
+      </key>
+      <value>
+        <name>elementName</name>
+        <rename>elementName</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>778</xloc>
+      <yloc>972</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file input</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>DOS</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x2f;Applications&#x2f;pentaho501&#x2f;server&#x2f;biserver-ee&#x2f;pentaho-solutions&#x2f;system&#x2f;repositorysynchronizer&#x2f;endpoints&#x2f;kettle&#x2f;jcrStatusFetch.txt</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>name</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>wildcard</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>elementPath</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>69</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>filename</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>500</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>short_filename</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>500</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>path</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>500</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>type</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>500</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>exists</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ishidden</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>isreadable</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>iswriteable</name>
+        <type>Boolean</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>lastmodifiedtime</name>
+        <type>Date</type>
+        <format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>size</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>extension</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>uri</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>92</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>rooturi</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>59</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>759</xloc>
+      <yloc>201</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
