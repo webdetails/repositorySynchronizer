@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prs>
 	<locations>
-		<location path="jcr-solution:http://admin:password@localhost:8080/pentaho!/public" name="JCR"/>
+		<location path="jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin" name="JCR"/>
 		<location path="/Users/bruno/Documents/testKettle/testFolders/test2" name="File System"/>
 	</locations>
 	<last_synch>0</last_synch>

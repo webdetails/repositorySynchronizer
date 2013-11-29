@@ -208,28 +208,6 @@
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
   <hop> <from>copy files info</from><to>copy fields</to><enabled>Y</enabled> </hop>
   <hop> <from>operation_type</from><to>just files to_be_copied</to><enabled>Y</enabled> </hop>
@@ -329,7 +307,7 @@
            <schema_name/>
            </partitioning>
     <filter>
-      <filterfiletype>all_files</filterfiletype>
+      <filterfiletype>only_files</filterfiletype>
     </filter>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
@@ -368,7 +346,7 @@
            <schema_name/>
            </partitioning>
     <filter>
-      <filterfiletype>all_files</filterfiletype>
+      <filterfiletype>only_files</filterfiletype>
     </filter>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
@@ -2444,10 +2422,6 @@
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
 <attributes><group><name>DataService</name>
-<attribute><key>name</key>
-<value/>
-</attribute><attribute><key>stepname</key>
-<value/>
-</attribute></group></attributes>
+</group></attributes>
 
 </transformation>

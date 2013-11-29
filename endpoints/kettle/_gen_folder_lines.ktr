@@ -73,38 +73,17 @@
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
   <hop> <from>sample data</from><to>folder</to><enabled>N</enabled> </hop>
   <hop> <from>folder</from><to>Clone row</to><enabled>Y</enabled> </hop>
   <hop> <from>Clone row</from><to>file&#x2f;folder</to><enabled>Y</enabled> </hop>
   <hop> <from>file&#x2f;folder</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>Sort</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort</from><to>discard duplicates</to><enabled>Y</enabled> </hop>
   <hop> <from>input</from><to>folder</to><enabled>Y</enabled> </hop>
   <hop> <from>discard duplicates</from><to>remove fields</to><enabled>Y</enabled> </hop>
   <hop> <from>remove fields</from><to>output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>order</to><enabled>Y</enabled> </hop>
+  <hop> <from>order</from><to>Sort</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Clone row</name>
@@ -126,8 +105,8 @@
     <clonenumfield/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>235</xloc>
-      <yloc>103</yloc>
+      <xloc>239</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -179,8 +158,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>427</xloc>
-      <yloc>103</yloc>
+      <xloc>435</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -216,11 +195,17 @@
         <case_sensitive>N</case_sensitive>
         <presorted>N</presorted>
       </field>
+      <field>
+        <name>order</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>523</xloc>
-      <yloc>103</yloc>
+      <xloc>631</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -244,8 +229,8 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>619</xloc>
-      <yloc>103</yloc>
+      <xloc>729</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -269,16 +254,23 @@
 <replace_field>filename</replace_field>
 </formula>
        <formula><field_name>status</field_name>
-<formula_string>is_clone&#x3f;&#x22;to_be_modified&#x22;&#x3a;status</formula_string>
+<formula_string>&#x28;is_clone &#x26;&#x26; &#x21; status.equals&#x28;&#x22;nothing_to_be_updated&#x22;&#x29;&#x29;&#x3f;&#x22;to_be_modified&#x22;&#x3a;status</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field>status</replace_field>
 </formula>
+       <formula><field_name>type</field_name>
+<formula_string>is_clone&#x3f;&#x22;folder&#x22;&#x3a;type</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>type</replace_field>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>331</xloc>
-      <yloc>103</yloc>
+      <xloc>337</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -322,8 +314,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>139</xloc>
-      <yloc>103</yloc>
+      <xloc>141</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -352,12 +344,18 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>type</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
         <select_unspecified>N</select_unspecified>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>43</xloc>
-      <yloc>103</yloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -375,8 +373,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>811</xloc>
-      <yloc>103</yloc>
+      <xloc>925</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -396,10 +394,11 @@
       <remove>        <name>result</name>
       </remove>      <remove>        <name>folder</name>
       </remove>      <remove>        <name>is_clone</name>
+      </remove>      <remove>        <name>order</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>715</xloc>
-      <yloc>103</yloc>
+      <xloc>827</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -438,18 +437,57 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>type</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <data>
-      <line> <item>.&#x2f;file10.txt</item><item>to_be_copied</item> </line>
-      <line> <item>&#x2f;folder1B</item><item>to_be_copied</item> </line>
-      <line> <item>&#x2f;folder1B&#x2f;file12.txt</item><item>to_be_copied</item> </line>
-      <line> <item>&#x2f;folder2A&#x2f;file21.txt</item><item>to_be_modified</item> </line>
-      <line> <item>&#x2f;folder2A&#x2f;newemptyfile.txt</item><item>to_be_copied</item> </line>
+      <line> <item>.&#x2f;file10.txt</item><item>to_be_copied</item><item>file</item> </line>
+      <line> <item>&#x2f;folder1B</item><item>to_be_copied</item><item>folder</item> </line>
+      <line> <item>&#x2f;folder1B&#x2f;file12.txt</item><item>to_be_copied</item><item>file</item> </line>
+      <line> <item>&#x2f;folder2A&#x2f;file21.txt</item><item>to_be_modified</item><item>file</item> </line>
+      <line> <item>&#x2f;folder2A&#x2f;newemptyfile.txt</item><item>nothing_to_be_updated</item><item>file</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>43</xloc>
       <yloc>24</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>order</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <field_to_use>status</field_to_use>
+    <target_field>order</target_field>
+    <non_match_default>0</non_match_default>
+    <fields>
+      <field>
+        <source_value>nothing_to_be_updated</source_value>
+        <target_value>1</target_value>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>533</xloc>
+      <yloc>102</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
