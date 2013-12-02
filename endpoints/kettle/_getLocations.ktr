@@ -78,67 +78,14 @@
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Get data from XML</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>refresh jcr</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to/>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>elementName</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>JCR</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>116</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Get data from XML</name>
     <type>getXMLData</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -234,67 +181,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>536</xloc>
       <yloc>89</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>refresh jcr</name>
-    <type>UserDefinedJavaClass</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-
-    <definitions>
-        <definition>
-        <class_type>TRANSFORM_CLASS</class_type>
-
-        <class_name>Processor</class_name>
-
-        <class_source><![CDATA[import org.apache.commons.vfs.FileObject;
-import org.pentaho.di.core.vfs.KettleVFS;
-
-public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException { 
-	try {
-		
-		// First, get a row from the default input hop
-		Object[] r = getRow();
-
-    	// If the row object is null, we are done processing.
-		if (r == null) {
-			setOutputDone();
-			return false;
-		}
-      	
-		String fileName = get(Fields.In, "elementPath").getString(r);
-		FileObject jcrObject = KettleVFS.getFileObject( fileName );
-//System.out.println(fileName);
-//		FileObject jcrObject = KettleVFS.getFileObject( "jcr-solution:http://admin:password@localhost:8080/pentaho!/" );
-
-		if ( jcrObject != null && jcrObject.exists() ) {
-			KettleVFS.getInstance().getFileSystemManager().closeFileSystem(jcrObject.getFileSystem());
-		}
-
-		return true;
-	
-	} catch ( Exception e ){
-		throw new KettleException( e );
-	}
-}
-]]></class_source>
-        </definition>
-    </definitions>
-    <fields>
-    </fields><clear_result_fields>Y</clear_result_fields>
-<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>116</xloc>
-      <yloc>315</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
