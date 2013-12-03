@@ -12,7 +12,7 @@
 
     <!-- REST resources -->
     <bean id="api" class="org.pentaho.platform.web.servlet.JAXRSPluginServlet"/>
-    <bean id="repositorysynchronizer.api" class="pt.webdetails.cpk.CpkApi"/>
+    <bean id="repositorySynchronizer.api" class="pt.webdetails.cpk.CpkApi"/>
     
     <!--  Content Generator  -->
     <!-- <bean id="cpk" class="pt.webdetails.cpk.CpkContentGenerator" scope="prototype"/> -->

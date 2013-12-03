@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin title="repositorysynchronizer" loader="DEFAULT">
+<plugin title="repositorySynchronizer" loader="DEFAULT">
 	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
 	<static-paths>
-		<static-path url="/repositorysynchronizer/static" localFolder="static"/>
-		<static-path url="/repositorysynchronizer/resources" localFolder="resources"/>
+		<static-path url="/repositorySynchronizer/static" localFolder="static"/>
+		<static-path url="/repositorySynchronizer/resources" localFolder="resources"/>
 	</static-paths>
 	<content-types>
 		<content-type>
@@ -13,12 +13,12 @@
 		</content-type>
 	</content-types>
 	<content-generator
-		id="repositorysynchronizer"
+		id="repositorySynchronizer"
 		title="Pentaho Repository Synchronizer"
-		type="repositorysynchronizer"
+		type="repositorySynchronizer"
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
 	<!-- Menu entry -->
 	<menu-items>
-		<menu-item id="repositorysynchronizer_main" anchor="tools-submenu" label="Pentaho Repository Synchronizer" command="content/repositorysynchronizer/" type="MENU_ITEM" how="LAST_CHILD"/>
+		<menu-item id="repositorySynchronizer_main" anchor="tools-submenu" label="Pentaho Repository Synchronizer" command="content/repositorySynchronizer/" type="MENU_ITEM" how="LAST_CHILD"/>
 	</menu-items>
 </plugin>

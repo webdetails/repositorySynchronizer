@@ -285,7 +285,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x2f;Applications&#x2f;pentaho501&#x2f;server&#x2f;biserver-ee&#x2f;pentaho-solutions&#x2f;system&#x2f;repositorysynchronizer&#x2f;endpoints&#x2f;kettle&#x2f;jcrStatusFetch</name>
+      <name>&#x2f;Applications&#x2f;pentaho501&#x2f;server&#x2f;biserver-ee&#x2f;pentaho-solutions&#x2f;system&#x2f;repositorySynchronizer&#x2f;endpoints&#x2f;kettle&#x2f;jcrStatusFetch</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>

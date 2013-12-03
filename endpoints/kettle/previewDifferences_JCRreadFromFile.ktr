@@ -2136,7 +2136,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x2f;Applications&#x2f;pentaho501&#x2f;server&#x2f;biserver-ee&#x2f;pentaho-solutions&#x2f;system&#x2f;repositorysynchronizer&#x2f;endpoints&#x2f;kettle&#x2f;jcrStatusFetch.txt</name>
+      <name>&#x2f;Applications&#x2f;pentaho501&#x2f;server&#x2f;biserver-ee&#x2f;pentaho-solutions&#x2f;system&#x2f;repositorySynchronizer&#x2f;endpoints&#x2f;kettle&#x2f;jcrStatusFetch.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
