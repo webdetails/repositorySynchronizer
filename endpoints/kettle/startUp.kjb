@@ -23,7 +23,7 @@
         </parameter>
         <parameter>
             <name>cpk.webapp.dir</name>
-            <default_value>C&#x3a;&#x5c;Program Files&#x5c;pentaho&#x5c;server&#x5c;biserver-ee&#x5c;tomcat&#x5c;webapps&#x5c;</default_value>
+            <default_value>C&#x3a;&#x5c;Program Files&#x5c;pentaho&#x5c;server&#x5c;biserver-ee&#x5c;tomcat&#x5c;webapps&#x5c;pentaho</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -118,7 +118,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;lib&#x2f;</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;</source_filefolder>
           <destination_filefolder>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;</destination_filefolder>
           <wildcard>libpensol.&#x2a;&#x5c;.jar</wildcard>
         </field>
