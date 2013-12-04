@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin title="repositorySynchronizer" loader="DEFAULT">
+<overlays>
+		<overlay id="startup.repositorySynchronizer" resourcebundle="content/repositorySynchronizer/resources/lang/messages">
+			<menubar id="toolsmenu">
+	        	<menuitem id="repositorySynchronizer" label="${Launcher.repositorySynchronizer}" command="mantleXulHandler.openUrl('${Launcher.repositorySynchronizer}','${Launcher.repositorySynchronizer_TOOLTIP}','plugin/repositorySynchronizer/api/default')"/>
+	      	</menubar>
+	    </overlay>
+	</overlays>
 	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
 	<static-paths>
 		<static-path url="/repositorySynchronizer/static" localFolder="static"/>
