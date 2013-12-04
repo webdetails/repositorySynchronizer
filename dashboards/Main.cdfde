@@ -8367,22 +8367,6 @@
     "meta_endpoint": "previewDifferences"
    },
    {
-    "id": "801797da-eeeb-308e-be80-08e26d24510d",
-    "type": "ComponentsrepositorySynchronizer_previewDifferences_noFileFolderFlag_CPKENDPOINT",
-    "typeDesc": "previewDifferences_noFileFolderFlag Endpoint",
-    "parent": "REPOSITORYSYNCHRONIZER_CPKENDPOINTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "diffTableQuery_tempStop",
-      "type": "Id"
-     }
-    ],
-    "meta": "CPK",
-    "meta_pluginId": "repositorySynchronizer",
-    "meta_endpoint": "previewDifferences_noFileFolderFlag"
-   },
-   {
     "id": "de92b4cc-0663-b8d7-7a19-3bf6733e7c94",
     "type": "ComponentsrepositorySynchronizer_repoAddresses_CPKENDPOINT",
     "typeDesc": "repoAddresses Endpoint",
