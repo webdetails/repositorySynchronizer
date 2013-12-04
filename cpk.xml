@@ -15,7 +15,7 @@
         </elementType>
     </elementTypes> 
     <info>
-        <CPK_version>1</CPK_version>
+        <CPK_version>4</CPK_version>
         <description>Pentaho Plugin allowing synchronization between JCR and the File System</description>
         <name>Pentaho Repository Synchronizer</name>
         <company_name>Webdetails</company_name>

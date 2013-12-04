@@ -1,0 +1,12 @@
+filename_without_location;status;type;source;dest
+/folder1B;to_be_modified;folder;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder1B/file12.txt;to_be_copied;file;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder1B/file13.txt;to_be_copied;file;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder1B/file14.txt;to_be_copied;file;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder1B/folder1BA/folder1BAA;to_be_modified;folder;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder1B/folder1BA/folder1BAA/file13.txt;to_be_copied;file;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder2A;to_be_modified;folder;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/folder2A/file21.txt;to_be_copied;file;/Users/bruno/Documents/testKettle/testFolders/test2;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin
+/UpdateAuditData.html;to_be_copied;file;jcr-solution:http://admin:password@localhost:8080/pentaho!/home/admin;/Users/bruno/Documents/testKettle/testFolders/test2
+
+t2
