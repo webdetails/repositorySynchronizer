@@ -79,7 +79,8 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>clean path</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Get data from XML</name>
@@ -179,7 +180,50 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>536</xloc>
+      <xloc>535</xloc>
+      <yloc>89</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>clean path</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>elementPath</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x5c;</replace_string>
+        <replace_by_string>&#x2f;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>elementPath</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x2f;&#x24;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>326</xloc>
       <yloc>89</yloc>
       <draw>Y</draw>
       </GUI>
