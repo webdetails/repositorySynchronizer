@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -107,7 +107,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs2.xml</name>
+      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>

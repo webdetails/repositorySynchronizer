@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -83,28 +83,6 @@
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
   <hop> <from>Block until Text file input finishes</from><to>update prs.xml</to><enabled>Y</enabled> </hop>
   <hop> <from>prs.xml</from><to>now</to><enabled>Y</enabled> </hop>
@@ -294,7 +272,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs2.xml</name>
+      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -379,7 +357,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs2.xml</name>
+      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
