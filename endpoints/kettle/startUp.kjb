@@ -28,7 +28,7 @@
         </parameter>
         <parameter>
             <name>executeAtStart</name>
-            <default_value>true</default_value>
+            <default_value>false</default_value>
             <description/>
         </parameter>
     </parameters>
