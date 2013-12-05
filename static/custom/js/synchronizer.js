@@ -222,7 +222,7 @@ var synchronizer = {};
 		}
 	}
 
-	myself.tablePostChangeProcedure = function ( data, listParamObj , destinationRepoLocation ){
+	myself.tablePostChangeProcedure = function ( data, listParamObj ){
 		var files2deleteList = [],
 		    files2updateList = [],
 		    files2createList = [],
@@ -255,9 +255,6 @@ var synchronizer = {};
 		            }
 		        }
 		    });
-		    /* Update file and modification_status headers*/
-		    data.metadata[fileIdx].colName = Dashboards.getParameterValue(destinationRepoLocation);
-	    	data.metadata[statusIdx].colName = "Modification status";
 	    }
 
 		Dashboards.setParameter(listParamObj.files2deleteParam,files2deleteList);
