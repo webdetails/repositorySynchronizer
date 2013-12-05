@@ -283,7 +283,6 @@ var synchronizer = {};
         	textFormat: function(v, st) {
 	        	return st.colFormat ? sprintf(st.colFormat,v) : v;
          	},
-         	fsAddress: "",
          	dirColIdx: 0,
          	sep: " "
       	},
