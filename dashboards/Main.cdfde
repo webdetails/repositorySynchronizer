@@ -1370,7 +1370,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "FileSystemInfoCell1",
+      "value": "tableExternalHeaderRowCell1",
       "type": "Id"
      },
      {
@@ -1395,7 +1395,7 @@
      },
      {
       "name": "cssClass",
-      "value": "fileSystemInfoRow",
+      "value": "tableExternalHeaderRow",
       "type": "String"
      }
     ]
@@ -1408,7 +1408,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "fsAddressCell1",
+      "value": "contentHeaderCell1",
       "type": "Id"
      },
      {
@@ -1468,7 +1468,40 @@
      },
      {
       "name": "cssClass",
-      "value": "fsAddressCol",
+      "value": "contentCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d3128dc9-534b-3342-a49e-c381a58f0e06",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "c4910ac9-bc24-4f02-eb79-cbd5e854a3bd",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Content ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -3190,7 +3223,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "FileSystemInfoCell2",
+      "value": "tableExternalHeaderRowCell2",
       "type": "Id"
      },
      {
@@ -3215,7 +3248,7 @@
      },
      {
       "name": "cssClass",
-      "value": "fileSystemInfoRow",
+      "value": "tableExternalHeaderRow",
       "type": "String"
      }
     ]
@@ -3228,7 +3261,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "fsAddressCell2",
+      "value": "contentHeaderCell2",
       "type": "Id"
      },
      {
@@ -3288,7 +3321,40 @@
      },
      {
       "name": "cssClass",
-      "value": "fsAddressCol",
+      "value": "contentCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e30b0744-9714-b335-0df4-b1be92b48cac",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "c7c6f52a-94c1-416c-ac4c-434cdc0167d2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Content ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
@@ -5010,7 +5076,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "fileSystemInfoCell3",
+      "value": "tableExternalHeaderRowCell3",
       "type": "Id"
      },
      {
@@ -5035,7 +5101,7 @@
      },
      {
       "name": "cssClass",
-      "value": "fileSystemInfoRow",
+      "value": "tableExternalHeaderRow",
       "type": "String"
      }
     ]
@@ -5048,7 +5114,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "fsAddressCell3",
+      "value": "contentHeaderCell3",
       "type": "Id"
      },
      {
@@ -5108,7 +5174,40 @@
      },
      {
       "name": "cssClass",
-      "value": "fsAddressCol",
+      "value": "contentCol",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ded0e146-1061-6786-f8b4-e139a4d03303",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "190948f8-4c89-5bf8-9a5a-28b5285ebe87",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Content ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
       "type": "String"
      }
     ]
