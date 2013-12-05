@@ -1116,6 +1116,7 @@
     <description/>
        <connector><parent>filename_without_location</parent><child>filename</child></connector>
        <connector><parent>status</parent><child>status</child></connector>
+       <connector><parent>type</parent><child>type</child></connector>
     </mapping>      </input>
       <output>
     <mapping>    <input_step/>
@@ -1611,7 +1612,7 @@
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>windows-1252</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>

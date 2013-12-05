@@ -72,19 +72,78 @@
   <modified_date>2013&#x2f;11&#x2f;21 14&#x3a;21&#x3a;50.335</modified_date>
   </info>
   <notepads>
+    <notepad>
+      <note>Generates one line for each &#x22;subpath&#x22;                                                                                                              </note>
+      <xloc>63</xloc>
+      <yloc>231</yloc>
+      <width>522</width>
+      <heigth>23</heigth>
+      <fontname>Microsoft Sans Serif</fontname>
+      <fontsize>8</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
-  <hop> <from>sample data</from><to>folder</to><enabled>N</enabled> </hop>
-  <hop> <from>folder</from><to>Clone row</to><enabled>Y</enabled> </hop>
-  <hop> <from>Clone row</from><to>file&#x2f;folder</to><enabled>Y</enabled> </hop>
-  <hop> <from>file&#x2f;folder</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>sample data</from><to>folder_full_path</to><enabled>N</enabled> </hop>
+  <hop> <from>folder_full_path</from><to>Clone row</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort</from><to>discard duplicates</to><enabled>Y</enabled> </hop>
-  <hop> <from>input</from><to>folder</to><enabled>Y</enabled> </hop>
+  <hop> <from>input</from><to>folder_full_path</to><enabled>Y</enabled> </hop>
   <hop> <from>discard duplicates</from><to>remove fields</to><enabled>Y</enabled> </hop>
   <hop> <from>remove fields</from><to>output</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>order</to><enabled>Y</enabled> </hop>
   <hop> <from>order</from><to>Sort</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add sequence</from><to>Split path to rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Split path to rows</from><to>sub_path</to><enabled>Y</enabled> </hop>
+  <hop> <from>is clone&#x3f;</from><to>Add sequence</to><enabled>Y</enabled> </hop>
+  <hop> <from>is clone&#x3f;</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>sub_path</from><to>only valid folders</to><enabled>Y</enabled> </hop>
+  <hop> <from>only valid folders</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Clone row</from><to>is clone&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>update status</to><enabled>Y</enabled> </hop>
+  <hop> <from>update status</from><to>remove leading &#x2f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove leading &#x2f;</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Add sequence</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>n</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>1</start_at>
+      <increment_by>1</increment_by>
+      <max_value>999999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>68</xloc>
+      <yloc>276</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Clone row</name>
     <type>CloneRow</type>
@@ -105,8 +164,27 @@
     <clonenumfield/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>239</xloc>
-      <yloc>102</yloc>
+      <xloc>240</xloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>339</xloc>
+      <yloc>169</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -158,8 +236,31 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>435</xloc>
-      <yloc>102</yloc>
+      <xloc>547</xloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>n</name>
+      </remove>      <remove>        <name>folder</name>
+      </remove>      <remove>        <name>n2</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>536</xloc>
+      <yloc>276</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -204,8 +305,34 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>631</xloc>
-      <yloc>102</yloc>
+      <xloc>737</xloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Split path to rows</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>folder_full_path</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <newfield>folder</newfield>
+   <rownum>Y</rownum>
+   <rownum_field>n2</rownum_field>
+   <resetrownumber>Y</resetrownumber>
+   <delimiter_is_regex>N</delimiter_is_regex>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>185</xloc>
+      <yloc>276</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -229,14 +356,14 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>729</xloc>
-      <yloc>102</yloc>
+      <xloc>834</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>file&#x2f;folder</name>
+    <name>update status</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
@@ -246,13 +373,6 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>filename</field_name>
-<formula_string>is_clone&#x3f;folder&#x3a;filename</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>filename</replace_field>
-</formula>
        <formula><field_name>status</field_name>
 <formula_string>&#x28;is_clone &#x26;&#x26; &#x21; status.equals&#x28;&#x22;nothing_to_be_updated&#x22;&#x29;&#x29;&#x3f;&#x22;to_be_modified&#x22;&#x3a;status</formula_string>
 <value_type>String</value_type>
@@ -260,23 +380,16 @@
 <value_precision>-1</value_precision>
 <replace_field>status</replace_field>
 </formula>
-       <formula><field_name>type</field_name>
-<formula_string>is_clone&#x3f;&#x22;folder&#x22;&#x3a;type</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>type</replace_field>
-</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>337</xloc>
-      <yloc>102</yloc>
+      <xloc>339</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>folder</name>
+    <name>folder_full_path</name>
     <type>RegexEval</type>
     <description/>
     <distribute>Y</distribute>
@@ -300,7 +413,7 @@
     <unix>N</unix>
     <fields>
       <field>
-        <name>folder</name>
+        <name>folder_full_path</name>
         <type>String</type>
         <format/>
         <group/>
@@ -315,7 +428,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>141</xloc>
-      <yloc>102</yloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -355,7 +468,105 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>43</xloc>
-      <yloc>102</yloc>
+      <yloc>84</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>is clone&#x3f;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Add sequence</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>is_clone</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>241</xloc>
+      <yloc>169</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>only valid folders</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to/>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>filename</leftvalue>
+   <function>&#x3c;&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>&#x2f;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>filename</leftvalue>
+   <function>&#x3c;&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>.&#x2f;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>419</xloc>
+      <yloc>276</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>order</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <field_to_use>status</field_to_use>
+    <target_field>order</target_field>
+    <non_match_default>0</non_match_default>
+    <fields>
+      <field>
+        <source_value>nothing_to_be_updated</source_value>
+        <target_value>1</target_value>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>639</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -373,8 +584,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>925</xloc>
-      <yloc>102</yloc>
+      <xloc>834</xloc>
+      <yloc>265</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -392,13 +603,13 @@
            </partitioning>
     <fields>        <select_unspecified>N</select_unspecified>
       <remove>        <name>result</name>
-      </remove>      <remove>        <name>folder</name>
+      </remove>      <remove>        <name>folder_full_path</name>
       </remove>      <remove>        <name>is_clone</name>
       </remove>      <remove>        <name>order</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>827</xloc>
-      <yloc>102</yloc>
+      <xloc>834</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -455,6 +666,10 @@
       <line> <item>&#x2f;folder1B&#x2f;file12.txt</item><item>to_be_copied</item><item>file</item> </line>
       <line> <item>&#x2f;folder2A&#x2f;file21.txt</item><item>to_be_modified</item><item>file</item> </line>
       <line> <item>&#x2f;folder2A&#x2f;newemptyfile.txt</item><item>nothing_to_be_updated</item><item>file</item> </line>
+      <line> <item>&#x2f;bi-developers&#x2f;Analysis&#x2f;Analyzer Prompt.xaction</item><item>to_be_copied</item><item>file</item> </line>
+      <line> <item>&#x2f;a&#x2f;b&#x2f;c&#x2f;d&#x2f;file.txt</item><item>to_be_copied</item><item>file</item> </line>
+      <line> <item>q&#x2f;w&#x2f;e&#x2f;r&#x2f;t&#x2f;y</item><item>to_be_copied</item><item>folder</item> </line>
+      <line> <item>&#x2f;bi-developers&#x2f;legacy-steel-wheels&#x2f;steel-wheels-3.0&#x2f;Income Statement.xaction</item><item>to_be_copied</item><item>file</item> </line>
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -465,8 +680,8 @@
     </step>
 
   <step>
-    <name>order</name>
-    <type>ValueMapper</type>
+    <name>sub_path</name>
+    <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -475,19 +690,59 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <field_to_use>status</field_to_use>
-    <target_field>order</target_field>
-    <non_match_default>0</non_match_default>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#xd;&#xa;&#xd;&#xa;var type &#x3d; &#x22;folder&#x22;&#x3b;&#xd;&#xa;var sub_path &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;path_tmp &#x3d; filename&#x3b;&#xd;&#xa;&#xd;&#xa;for &#x28;i&#x3d;0&#x3b; i&#x3c; n2&#x3b; i&#x2b;&#x2b;&#x29; &#x7b;&#xd;&#xa;	position &#x3d; indexOf&#x28;path_tmp,&#x22;&#x2f;&#x22;&#x29;&#x3b;&#xd;&#xa;	sub_path &#x3d; sub_path &#x2b; substr&#x28;path_tmp,0,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;	path_tmp &#x3d; substr&#x28;path_tmp,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>type</name>
+        <rename>type</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>sub_path</name>
+        <rename>filename</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>302</xloc>
+      <yloc>276</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove leading &#x2f;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
     <fields>
       <field>
-        <source_value>nothing_to_be_updated</source_value>
-        <target_value>1</target_value>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x2f;&#x24;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>533</xloc>
-      <yloc>102</yloc>
+      <xloc>456</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
