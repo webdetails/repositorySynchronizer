@@ -532,7 +532,7 @@ div.container *{
   cursor: pointer;
 }
 
-.WDdataCellBody .fileSystemInfoRow{
+.WDdataCellBody .tableExternalHeaderRow{
   height: 20px;
   color: #333333;
   font-size: 13px;
@@ -540,13 +540,13 @@ div.container *{
   margin-bottom: 10px;
   line-height: 20px;
 }
-.WDdataCellBody .fileSystemInfoRow .fsAddressCol{
+.WDdataCellBody .tableExternalHeaderRow .contentCol{
   padding-left: 10px;
   width: 83%;
   height: 100%;
   float: left;
 }
-.WDdataCellBody .fileSystemInfoRow .modificationStatusCol{
+.WDdataCellBody .tableExternalHeaderRow .modificationStatusCol{
   width: 17%;
   height: 100%;
   padding-right: 10px;
