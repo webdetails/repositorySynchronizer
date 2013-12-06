@@ -287,6 +287,28 @@ div.container *{
    ========================================================================== */
 
 /* Data Cells */
+
+.overallHelpCell{
+  background: transparent;
+  width: 100%;
+  height: 300px;
+}
+.overallHelpCell .helpContainer{
+  width: 100%;
+  height: 100%;
+  padding: 140px 100px 0px 190px;
+}
+.overallHelpCell .helpMessagePH{
+  width: 100%;
+  height: 100%;
+  font-weight: lighter;
+  padding-left: 55px;
+  background: url('../img/tip.png') no-repeat left top transparent;
+  font-size: 15px;
+  color: #1973BC;
+  text-align: left;
+}
+
 .WDdataCell {
   position: relative;
   padding-top: 40px;
