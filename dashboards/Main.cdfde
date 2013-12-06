@@ -200,7 +200,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "emptyWidth",
+      "value": "refreshButtonObj",
       "type": "Id"
      },
      {
@@ -260,7 +260,7 @@
      },
      {
       "name": "cssClass",
-      "value": "headerEmptyWidth",
+      "value": "refreshButtonCont",
       "type": "String"
      }
     ]
@@ -7637,6 +7637,84 @@
      {
       "name": "postFetch",
       "value": "function f(data){\n    var validityColIdx = synchronizer.getColIndexFromColName(data.metadata,\"valid\"),\n        repoNameColIdx = synchronizer.getColIndexFromColName(data.metadata,\"elementName\"),\n        reasonOfFailureColIdx = synchronizer.getColIndexFromColName(data.metadata,\"reason\"),\n        $thisHtmlObj = $(\"#\"+this.htmlObject),\n        $helpCell = $thisHtmlObj.parents(\".overallHelpCell\"),\n        reposValidity = \"Y\",\n        $helpMessage = $(\"<div></div>\");\n        \n    $(\"<div>The repository Synchronizer was not able to read the following repositories:</div>\").appendTo($helpMessage);\n    $.each(data.resultset,function(idx,ele){\n        if( ele[validityColIdx] == \"N\" ){\n            reposValidity = \"N\";\n            $(\"<div> - \"+ele[repoNameColIdx]+\": \"+ele[reasonOfFailureColIdx]+\"</div>\").appendTo($helpMessage);\n        }        \n    })    \n    $(\"<div>Please check your settings on prs.xml file and refresh the dashboard after the changes.</div>\").appendTo($helpMessage);\n\n    if(reposValidity == \"N\"){\n        $helpMessage.appendTo($thisHtmlObj.siblings(\".helpMessagePH\"));\n        $helpCell.removeClass(\"WDhidden\");\n    }else{\n        $helpCell.siblings(\".WDdataCell\").removeClass(\"WDhidden\");\n        synchronizer.incUpdateEvent(\"${p:updateDashboardContentEvent}\");\n    }\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "385ab35e-b7e8-50de-dd0e-875d03af8000",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "refreshButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Refresh",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    location.reload();    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": "2",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:refreshButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "function f(){\n    $(\"#\"+this.htmlObject).find(\"button\").empty();    \n}",
       "type": "JavaScript"
      },
      {
