@@ -888,7 +888,7 @@
 <replace_field>reason</replace_field>
 </formula>
        <formula><field_name>valid</field_name>
-<formula_string>N</formula_string>
+<formula_string>&#x22;N&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
