@@ -95,21 +95,22 @@ div.container *{
   color: #1973BC;
   text-align: left;
   margin-bottom: 10px;
-  display: inline;
 }
 .WDheader .headerTitle{
   width: 30%;
   padding-bottom: 5px;
-  border-bottom: solid 4px #F2CE16;  
+  border-bottom: solid 4px #F2CE16; 
+  float: left; 
 }
 .WDheader .refreshButtonCont{
   width: 70%;
   height: 100%;
+  float: right;
 }
 
 .WDheader .refreshButtonCont button{
   width: 16px;
-  height: 16px;
+  height: 100%;
   cursor: pointer;
   box-shadow: none;
   border: none;

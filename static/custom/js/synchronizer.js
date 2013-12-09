@@ -6,6 +6,8 @@ var synchronizer = {};
 
 	myself.settings = {};
 	
+	myself.settings.repoSettingsExtFileName = "prs.xml";
+
 	myself.settings.statusDictionary = {
 		"to_be_copied":"to be created",
 		"to_be_deleted":"to be deleted",
