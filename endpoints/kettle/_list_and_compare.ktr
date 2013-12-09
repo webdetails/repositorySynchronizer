@@ -1781,6 +1781,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
 		if ( jcrObject != null && jcrObject.exists() ) {
 			KettleVFS.getInstance().getFileSystemManager().closeFileSystem(jcrObject.getFileSystem());
+			KettleVFS.getInstance().getFileSystemManager().getFilesCache().close();
 		}
 
 		return true;
