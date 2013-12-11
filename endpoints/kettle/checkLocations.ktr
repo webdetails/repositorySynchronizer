@@ -73,8 +73,8 @@
   <notepads>
     <notepad>
       <note>Check if everything is ok with the paths written on prs.xml&#xd;&#xa;&#xd;&#xa;Return information on the problem. In particular&#x3a;&#xd;&#xa;1&#x29; regarding JCR&#x3a; if prs was able to connect to JCR&#xd;&#xa;2&#x29; regarding the File system&#x3a; if the path written for File System location exists&#xd;&#xa;</note>
-      <xloc>181</xloc>
-      <yloc>581</yloc>
+      <xloc>702</xloc>
+      <yloc>35</yloc>
       <width>422</width>
       <heigth>96</heigth>
       <fontname>Microsoft Sans Serif</fontname>
@@ -93,10 +93,10 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>FS validation                           </note>
-      <xloc>62</xloc>
-      <yloc>50</yloc>
-      <width>152</width>
+      <note>FS validation                                                                                                         </note>
+      <xloc>163</xloc>
+      <yloc>130</yloc>
+      <width>386</width>
       <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
@@ -114,10 +114,10 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>JCR validation                                                                                                                                                             </note>
-      <xloc>352</xloc>
-      <yloc>48</yloc>
-      <width>549</width>
+      <note>JCR validation                                                                                                                                                                                                                                                                                               </note>
+      <xloc>33</xloc>
+      <yloc>273</yloc>
+      <width>939</width>
       <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
@@ -141,24 +141,26 @@
   <hop> <from>element exists&#x3f;</from><to>is folder&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>is folder&#x3f;</from><to>FS</to><enabled>Y</enabled> </hop>
   <hop> <from>FS</from><to>Select values FS</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values FS</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>JCR&#x3f;</from><to>parse jcr</to><enabled>Y</enabled> </hop>
   <hop> <from>parse jcr</from><to>valid url&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>url</from><to>HTTP Client</to><enabled>Y</enabled> </hop>
   <hop> <from>valid url&#x3f;</from><to>invalid url</to><enabled>Y</enabled> </hop>
-  <hop> <from>HTTP Client</from><to>parse http err</to><enabled>Y</enabled> </hop>
-  <hop> <from>parse http err</from><to>remove url from &#x22;reason&#x22; field</to><enabled>Y</enabled> </hop>
-  <hop> <from>HTTP Client</from><to>lk status code</to><enabled>Y</enabled> </hop>
-  <hop> <from>http status codes</from><to>lk status code</to><enabled>Y</enabled> </hop>
-  <hop> <from>lk status code</from><to>reason</to><enabled>Y</enabled> </hop>
   <hop> <from>invalid url</from><to>Select values JCR</to><enabled>Y</enabled> </hop>
-  <hop> <from>remove url from &#x22;reason&#x22; field</from><to>Select values JCR 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>reason</from><to>Select values JCR 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values JCR</from><to>JCR output</to><enabled>Y</enabled> </hop>
+  <hop> <from>JCR output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>check server folders and credentials</from><to>parse log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values FS</from><to>FS output</to><enabled>Y</enabled> </hop>
+  <hop> <from>FS output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>http status codes</from><to>lk status code</to><enabled>Y</enabled> </hop>
+  <hop> <from>parse log</from><to>status not null</to><enabled>Y</enabled> </hop>
+  <hop> <from>status not null</from><to>lk status code</to><enabled>Y</enabled> </hop>
+  <hop> <from>lk status code</from><to>reason</to><enabled>Y</enabled> </hop>
+  <hop> <from>elementName</from><to>Select values JCR 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>reason</from><to>Select values JCR 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values JCR 2</from><to>JCR output</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values JCR 3</from><to>JCR output</to><enabled>Y</enabled> </hop>
-  <hop> <from>JCR output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  <hop> <from>valid url&#x3f;</from><to>url</to><enabled>Y</enabled> </hop>
+  <hop> <from>valid url&#x3f;</from><to>check server folders and credentials</to><enabled>Y</enabled> </hop>
+  <hop> <from>status not null</from><to>remove non useful log text</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove non useful log text</from><to>elementName</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>FS</name>
@@ -187,45 +189,27 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>273</yloc>
+      <xloc>371</xloc>
+      <yloc>175</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>HTTP Client</name>
-    <type>HTTP</type>
+    <name>FS output</name>
+    <type>Dummy</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <url/>
-    <urlInField>Y</urlInField>
-    <urlField>url</urlField>
-    <encoding>UTF-8</encoding>
-    <httpLogin/>
-    <httpPassword/>
-    <proxyHost/>
-    <proxyPort/>
-    <socketTimeout>10000</socketTimeout>
-    <connectionTimeout>10000</connectionTimeout>
-    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
-    <lookup>
-    </lookup>
-    <result>
-      <name/>
-      <code>status</code>
-      <response_time/>
-    </result>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>93</yloc>
+      <xloc>1076</xloc>
+      <yloc>175</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -243,8 +227,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>465</xloc>
-      <yloc>460</yloc>
+      <xloc>547</xloc>
+      <yloc>611</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -272,8 +256,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>247</xloc>
-      <yloc>93</yloc>
+      <xloc>36</xloc>
+      <yloc>174</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -291,8 +275,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>247</xloc>
-      <yloc>460</yloc>
+      <xloc>1076</xloc>
+      <yloc>611</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -323,8 +307,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>361</yloc>
+      <xloc>489</xloc>
+      <yloc>175</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -355,8 +339,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>361</yloc>
+      <xloc>145</xloc>
+      <yloc>498</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -380,15 +364,15 @@
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>reason</name>
-        <rename/>
+      </field>      <field>        <name>err_desc</name>
+        <rename>reason</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>364</yloc>
+      <xloc>547</xloc>
+      <yloc>498</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -419,8 +403,56 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>832</xloc>
-      <yloc>364</yloc>
+      <xloc>687</xloc>
+      <yloc>498</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>check server folders and credentials</name>
+    <type>JobExecutor</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <job_object_id/>
+    <job_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_checkServerFolders.kjb</filename>
+    <directory_path/>
+    <group_size>1</group_size>
+    <group_field/>
+    <group_time/>
+          <parameters>       <variablemapping><variable>jcrPath</variable><field>elementPath</field><input/></variablemapping>
+    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    <execution_result_target_step>parse log</execution_result_target_step>
+    <execution_time_field/>
+    <execution_result_field>ExecutionResult</execution_result_field>
+    <execution_errors_field/>
+    <execution_lines_read_field/>
+    <execution_lines_written_field/>
+    <execution_lines_input_field/>
+    <execution_lines_output_field/>
+    <execution_lines_rejected_field/>
+    <execution_lines_updated_field/>
+    <execution_lines_deleted_field/>
+    <execution_files_retrieved_field/>
+    <execution_exit_status_field>ExecutionExitStatus</execution_exit_status_field>
+    <execution_log_text_field>ExecutionLogText</execution_log_text_field>
+    <execution_log_channelid_field/>
+    <result_rows_target_step/>
+    <result_files_target_step/>
+    <result_files_file_name_field/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>283</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -443,8 +475,41 @@
     <addresultfilenames>N</addresultfilenames>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>93</yloc>
+      <xloc>163</xloc>
+      <yloc>175</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>elementName</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>elementName</field_name>
+<formula_string>&#x22;JCR&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>valid</field_name>
+<formula_string>&#x22;N&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>547</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -482,8 +547,8 @@
     <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>247</xloc>
-      <yloc>193</yloc>
+      <xloc>36</xloc>
+      <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -492,7 +557,7 @@
     <name>http status codes</name>
     <type>DataGrid</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -592,8 +657,8 @@
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>832</xloc>
-      <yloc>93</yloc>
+      <xloc>843</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -625,8 +690,8 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>273</yloc>
+      <xloc>145</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -651,8 +716,8 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>110</xloc>
-      <yloc>193</yloc>
+      <xloc>268</xloc>
+      <yloc>175</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -687,65 +752,20 @@
       <value>
         <name>status_type</name>
         <rename>status_type</rename>
-        <default/>
+        <default>-1</default>
         <type>String</type>
       </value>
       <value>
         <name>valid</name>
         <rename>valid</rename>
-        <default/>
+        <default>N</default>
         <type>String</type>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>832</xloc>
-      <yloc>194</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>parse http err</name>
-    <type>RegexEval</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <script><![CDATA[org\.pentaho\.di\.core\.exception\.KettleException:(.+)]]></script>    <matcher>err_desc</matcher>
-    <resultfieldname>result</resultfieldname>
-    <usevar>N</usevar>
-    <allowcapturegroups>Y</allowcapturegroups>
-    <replacefields>Y</replacefields>
-    <canoneq>N</canoneq>
-    <caseinsensitive>N</caseinsensitive>
-    <comment>N</comment>
-    <dotall>Y</dotall>
-    <multiline>Y</multiline>
-    <unicode>N</unicode>
-    <unix>N</unix>
-    <fields>
-      <field>
-        <name>reason</name>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>194</yloc>
+      <xloc>687</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -761,7 +781,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <script><![CDATA[jcr-solution:(http(?:s|)://)(.+):(.+)@(.+)!(.+)]]></script>    <matcher>elementPath</matcher>
+    <script><![CDATA[jcr-solution:(http(?:s|)://)(.+):(.+)@(.+)!(.*)]]></script>    <matcher>elementPath</matcher>
     <resultfieldname>result</resultfieldname>
     <usevar>N</usevar>
     <allowcapturegroups>Y</allowcapturegroups>
@@ -831,14 +851,71 @@
         <length>-1</length>
         <precision>-1</precision>
         <nullif/>
+        <ifnull>&#x2f;</ifnull>
+        <trimtype>none</trimtype>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>36</xloc>
+      <yloc>317</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>parse log</name>
+    <type>RegexEval</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <script><![CDATA[.+ check_jcr_result.0 - output = \[(.+?)\]\[(.+?)\].+]]></script>    <matcher>ExecutionLogText</matcher>
+    <resultfieldname>result</resultfieldname>
+    <usevar>N</usevar>
+    <allowcapturegroups>Y</allowcapturegroups>
+    <replacefields>Y</replacefields>
+    <canoneq>N</canoneq>
+    <caseinsensitive>N</caseinsensitive>
+    <comment>N</comment>
+    <dotall>Y</dotall>
+    <multiline>Y</multiline>
+    <unicode>N</unicode>
+    <unix>N</unix>
+    <fields>
+      <field>
+        <name>status</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull>null</ifnull>
+        <trimtype>both</trimtype>
+      </field>
+      <field>
+        <name>err_desc</name>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
         <ifnull/>
         <trimtype>none</trimtype>
       </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>355</xloc>
-      <yloc>93</yloc>
+      <xloc>430</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -854,6 +931,13 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
+       <formula><field_name>elementName</field_name>
+<formula_string>&#x22;JCR&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
        <formula><field_name>reason</field_name>
 <formula_string>status_type &#x2b; &#x22; - Status&#x3a; &#x22; &#x2b; status &#x2b; &#x22; - &#x22; &#x2b; description</formula_string>
 <value_type>String</value_type>
@@ -863,15 +947,15 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>832</xloc>
-      <yloc>274</yloc>
+      <xloc>687</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>remove url from &#x22;reason&#x22; field</name>
-    <type>Janino</type>
+    <name>remove non useful log text</name>
+    <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -880,31 +964,30 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>reason</field_name>
-<formula_string>reason.replaceAll&#x28;url,&#x22;&#x22;&#x29;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>reason</replace_field>
-</formula>
-       <formula><field_name>valid</field_name>
-<formula_string>&#x22;N&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
+    <fields>
+      <field>
+        <in_stream_name>err_desc</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x5c;n.&#x2b; check_jcr_result&#x5c;.0</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>696</xloc>
-      <yloc>274</yloc>
+      <xloc>425</xloc>
+      <yloc>410</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>url</name>
-    <type>Janino</type>
+    <name>status not null</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -913,17 +996,20 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>url</field_name>
-<formula_string>http&#x2b;url</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>url</replace_field>
-</formula>
+<send_true_to>lk status code</send_true_to>
+<send_false_to>remove non useful log text</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>status</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>null</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>579</xloc>
-      <yloc>93</yloc>
+      <xloc>547</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -939,7 +1025,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>url</send_true_to>
+<send_true_to>check server folders and credentials</send_true_to>
 <send_false_to>invalid url</send_false_to>
     <compare>
 <condition>
@@ -951,25 +1037,13 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>93</yloc>
+      <xloc>145</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step_error_handling>
-      <error>
-        <source_step>HTTP Client</source_step>
-        <target_step>parse http err</target_step>
-        <is_enabled>Y</is_enabled>
-        <nr_valuename/>
-        <descriptions_valuename>err_desc</descriptions_valuename>
-        <fields_valuename/>
-        <codes_valuename>err_code</codes_valuename>
-        <max_errors/>
-        <max_pct_errors/>
-        <min_pct_rows/>
-      </error>
   </step_error_handling>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
