@@ -4466,7 +4466,7 @@
      },
      {
       "name": "html",
-      "value": "Transfer from <span class=\"semiBold\">File System</span> to <span class=\"semiBold\">JCR</span> ",
+      "value": "Transfer to <span class=\"semiBold\">JCR</span> from <span class=\"semiBold\">File System</span> ",
       "type": "Html"
      },
      {
