@@ -12,23 +12,23 @@
   <modified_date>2013&#x2f;12&#x2f;04 11&#x3a;07&#x3a;51.747</modified_date>
     <parameters>
         <parameter>
+            <name>cpk.executeAtStart</name>
+            <default_value>true</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>cpk.plugin.dir</name>
             <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>C&#x3a;&#x5c;Program Files&#x5c;pentaho&#x5c;server&#x5c;biserver-ee&#x5c;pentaho-solutions</default_value>
+            <default_value>&#x2f;Users&#x2f;carlos&#x2f;biserver-ce&#x2f;pentaho-solutions</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.webapp.dir</name>
-            <default_value>C&#x3a;&#x5c;Program Files&#x5c;pentaho&#x5c;server&#x5c;biserver-ee&#x5c;tomcat&#x5c;webapps&#x5c;pentaho</default_value>
-            <description/>
-        </parameter>
-        <parameter>
-            <name>executeAtStart</name>
-            <default_value>false</default_value>
+            <default_value>&#x2f;Users&#x2f;carlos&#x2f;biserver-ce&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -52,6 +52,29 @@
       <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>baseline_demo</name>
+    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>BaselineDemo</database>
+    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
     <slaveservers>
@@ -134,8 +157,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>252</xloc>
-      <yloc>214</yloc>
+      <xloc>204</xloc>
+      <yloc>266</yloc>
       </entry>
     <entry>
       <name>Copy libpensol</name>
@@ -159,8 +182,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>459</xloc>
-      <yloc>99</yloc>
+      <xloc>462</xloc>
+      <yloc>100</yloc>
       </entry>
     <entry>
       <name>Create a folder</name>
@@ -173,6 +196,72 @@
       <nr>0</nr>
       <xloc>125</xloc>
       <yloc>43</yloc>
+      </entry>
+    <entry>
+      <name>Copy libpensol.properties</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>N</overwrite_files>
+      <include_subfolders>Y</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;</destination_filefolder>
+          <wildcard>libpensol&#x5c;.properties</wildcard>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>460</xloc>
+      <yloc>170</yloc>
+      </entry>
+    <entry>
+      <name>Delete libpensol.properties</name>
+      <description/>
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>N</include_subfolders>
+      <fields>
+        <field>
+          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;</name>
+          <filemask>libpensol&#x5c;.properties</filemask>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>248</xloc>
+      <yloc>161</yloc>
+      </entry>
+    <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>616</xloc>
+      <yloc>111</yloc>
+      </entry>
+    <entry>
+      <name>Write To Log</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Copied &#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;libpensol.jar to &#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;</logmessage>
+      <loglevel>Minimal</loglevel>
+      <logsubject>repositorySynchronizer&#x3a; libpensol</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>554</xloc>
+      <yloc>33</yloc>
       </entry>
   </entries>
   <hops>
@@ -210,6 +299,51 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Delete libpensol.properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Delete libpensol.properties</from>
+      <to>Copy libpensol.properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy libpensol</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy libpensol.properties</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Copy libpensol</from>
+      <to>Write To Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>
