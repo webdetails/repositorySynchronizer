@@ -23,12 +23,12 @@
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>&#x2f;Users&#x2f;carlos&#x2f;biserver-ce&#x2f;pentaho-solutions</default_value>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.webapp.dir</name>
-            <default_value>&#x2f;Users&#x2f;carlos&#x2f;biserver-ce&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -145,14 +145,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>253</xloc>
-      <yloc>99</yloc>
+      <xloc>254</xloc>
+      <yloc>98</yloc>
       </entry>
     <entry>
       <name>Create &#x22;repositorySynchronizer&#x22; folder</name>
       <description/>
       <type>CREATE_FOLDER</type>
-      <foldername>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;repositorySynchronizer</foldername>
+      <foldername>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;repositorySynchronizer</foldername>
       <fail_of_folder_exists>N</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
