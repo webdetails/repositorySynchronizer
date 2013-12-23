@@ -13,8 +13,8 @@
     <parameters>
         <parameter>
             <name>cpk.executeAtStart</name>
-            <default_value>false</default_value>
-            <description/>
+            <default_value>true</default_value>
+            <description>marks this endpoint to be executed at server startup</description>
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
@@ -145,8 +145,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>254</xloc>
-      <yloc>98</yloc>
+      <xloc>710</xloc>
+      <yloc>82</yloc>
       </entry>
     <entry>
       <name>Create &#x22;repositorySynchronizer&#x22; folder</name>
@@ -182,8 +182,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>462</xloc>
-      <yloc>100</yloc>
+      <xloc>918</xloc>
+      <yloc>84</yloc>
       </entry>
     <entry>
       <name>Create a folder</name>
@@ -219,8 +219,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>460</xloc>
-      <yloc>170</yloc>
+      <xloc>916</xloc>
+      <yloc>154</yloc>
       </entry>
     <entry>
       <name>Delete libpensol.properties</name>
@@ -237,8 +237,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>248</xloc>
-      <yloc>161</yloc>
+      <xloc>704</xloc>
+      <yloc>145</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -247,8 +247,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>616</xloc>
-      <yloc>111</yloc>
+      <xloc>1072</xloc>
+      <yloc>95</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -260,20 +260,54 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>554</xloc>
-      <yloc>33</yloc>
+      <xloc>1010</xloc>
+      <yloc>17</yloc>
+      </entry>
+    <entry>
+      <name>Checks if files exist</name>
+      <description/>
+      <type>FILES_EXIST</type>
+      <filename/>
+      <fields>
+        <field>
+          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;libpensol-TRUNK-SNAPSHOT.jar</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>418</xloc>
+      <yloc>120</yloc>
+      </entry>
+    <entry>
+      <name>Checks if files exist 2</name>
+      <description/>
+      <type>FILES_EXIST</type>
+      <filename/>
+      <fields>
+        <field>
+          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;libpensol.properties</name>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>438</xloc>
+      <yloc>211</yloc>
+      </entry>
+    <entry>
+      <name>Abort job</name>
+      <description/>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>585</xloc>
+      <yloc>257</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>START</from>
-      <to>Delete libpensol libraries</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>Create &#x22;repositorySynchronizer&#x22; folder</to>
@@ -295,15 +329,6 @@
     <hop>
       <from>START</from>
       <to>Create a folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Delete libpensol.properties</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -346,14 +371,68 @@
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
+    <hop>
+      <from>START</from>
+      <to>Checks if files exist</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist</from>
+      <to>Delete libpensol libraries</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Checks if files exist 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist 2</from>
+      <to>Delete libpensol.properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist 2</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
-      <note>StartUp&#xd;&#xa;&#xd;&#xa;1&#x29; put libpensol on &#x2f;biserver-ee&#x2f;tomcat&#x2f;webapps&#x2f;pentaho&#x2f;WEB-INF&#x2f;lib&#xd;&#xa;2&#x29; create the folder &#x22;&#x2f;repositorySynchronizer&#x22; inside &#x22;pentaho-solution&#x22;, which should correspond to the FS default location in prs.xml</note>
+      <note>StartUp&#xd;&#xa;&#xd;&#xa;1&#x29; put libpensol on &#x2f;biserver-ee&#x2f;tomcat&#x2f;webapps&#x2f;pentaho&#x2f;WEB-INF&#x2f;lib&#xd;&#xa;2&#x29; create the folder &#x22;&#x2f;repositorySynchronizer&#x22; inside &#x22;pentaho-solution&#x22;, which should correspond to the FS default location in prs.xml&#xa;&#xa;&#x22;Abort&#x22; means nothing was copied</note>
       <xloc>81</xloc>
-      <yloc>346</yloc>
+      <yloc>347</yloc>
       <width>623</width>
-      <heigth>54</heigth>
+      <heigth>76</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>10</fontsize>
       <fontbold>N</fontbold>
