@@ -255,7 +255,7 @@
         <out_stream_name>elementPath</out_stream_name>
         <use_regex>yes</use_regex>
         <replace_string>&#x5c;&#x24;&#x5c;&#x7b;cpk&#x5c;.solution&#x5c;.system&#x5c;.dir&#x5c;&#x7d;</replace_string>
-        <replace_by_string/>
+        <replace_by_string>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</replace_by_string>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
         <whole_word>no</whole_word>
