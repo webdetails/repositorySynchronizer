@@ -13,7 +13,7 @@
                 <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.(ktr|kjb)" adminOnly="true"/>
             </elementLocations>
         </elementType>
-    </elementTypes> 
+    </elementTypes>
     <info>
         <CPK_version>4</CPK_version>
         <description>Application for installing language packs</description>
@@ -23,4 +23,4 @@
         <creation_date>2013-11-05</creation_date>
         <version>1.0</version>
     </info>
-</cpk> 
+</cpk>

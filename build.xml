@@ -42,10 +42,15 @@
   <property name="plugin.samples.zipfile" value="${plugin.artifact.id}-samples-${distribution.version}.zip"/>
   <property name="plugin.solution.zipfile" value="${plugin.artifact.id}-solution-${distribution.version}.zip"/>
   <target name="assemble" depends="assemble.init,install-antcontrib, dist-plugin"/>
-  <target name="dist" depends="clean,resolve,dist-plugin"/>
+  <!-- <target name="dist" depends="clean-all,resolve,dist-plugin"/> -->
+  <target name="dist" depends="clean,dist-plugin"/>
   <!--=======================================================================
               dist
               Creates a distribution of this project's plugin zip
+
+              notes:
+                - resolve is currently disabled because we're using a non-master CPK branch
+
               ====================================================================-->
   <target name="dist-plugin" depends="" description="Creates a distribution">
       <!-- delete and re-create the plugin dist folder tree -->
