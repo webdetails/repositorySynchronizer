@@ -102,7 +102,7 @@
       <xloc>1016</xloc>
       <yloc>1</yloc>
       <width>1389</width>
-      <heigth>237</heigth>
+      <heigth>248</heigth>
       <fontname>Courier New</fontname>
       <fontsize>8</fontsize>
       <fontbold>N</fontbold>
@@ -122,8 +122,8 @@
       <note>Criteria for establishing differences&#x3a;&#xa;- name and relative location of file&#xa;- size</note>
       <xloc>826</xloc>
       <yloc>93</yloc>
-      <width>205</width>
-      <heigth>52</heigth>
+      <width>223</width>
+      <heigth>55</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -143,8 +143,8 @@
       <note>NAMED PARAMETERS&#xa;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#x3d;&#xa;&#xa;destinationRepoLocation&#xa;originRepoLocation&#xa;delete &#x28;Y&#x2f;N&#x29;&#xa;selectedAction	S&#x3a; synch &#x7c; E&#x3a; export &#x7c; I&#x3a; import&#xa;&#xa;Internal use&#x3a;&#xa;operation_type P&#x3a;preview &#x28;default&#x29; &#x7c; C&#x3a;copy &#x7c; CF&#x3a; copy folders &#x7c; D&#x3a; delete files &#x7c; DF&#x3a; delete folders &#x7c; M&#x3a; merge&#x28;&#x3f;&#x29;&#xa;&#xa;</note>
       <xloc>1016</xloc>
       <yloc>238</yloc>
-      <width>603</width>
-      <heigth>182</heigth>
+      <width>673</width>
+      <heigth>190</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -164,7 +164,7 @@
       <note>Synchronize</note>
       <xloc>380</xloc>
       <yloc>740</yloc>
-      <width>71</width>
+      <width>77</width>
       <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
@@ -185,7 +185,7 @@
       <note>Import &#x2f; Export</note>
       <xloc>726</xloc>
       <yloc>740</yloc>
-      <width>82</width>
+      <width>90</width>
       <heigth>23</heigth>
       <fontname>Microsoft Sans Serif</fontname>
       <fontsize>8</fontsize>
@@ -228,11 +228,10 @@
   <hop> <from>synchronize&#x3f;</from><to>Synchronize</to><enabled>Y</enabled> </hop>
   <hop> <from>Synchronize</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>delete filter</from><to>gen_folder_lines &#x28;if needed&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows &#x28;left&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>filename_without_location origin</from><to>Sort rows &#x28;right&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows &#x28;right&#x29;</from><to>Merge Rows &#x28;diff&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get variables 2</from><to>Write to log</to><enabled>N</enabled> </hop>
+  <hop> <from>Get variables 2</from><to>Write to log</to><enabled>Y</enabled> </hop>
   <hop> <from>Get File Names in origin</from><to>filename_without_location origin</to><enabled>Y</enabled> </hop>
   <hop> <from>Get File Names in destination</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
   <hop> <from>is JCR&#x3f;</from><to>refresh jcr</to><enabled>Y</enabled> </hop>
@@ -248,6 +247,7 @@
   <hop> <from>lk name</from><to>preview fields</to><enabled>Y</enabled> </hop>
   <hop> <from>preview fields</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 2</from><to>lk name</to><enabled>Y</enabled> </hop>
+  <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Block this step until jcr refreshed</name>
@@ -1015,7 +1015,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>filename.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
+<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1041,7 +1041,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>filename.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
+<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
