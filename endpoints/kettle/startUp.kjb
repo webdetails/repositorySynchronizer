@@ -127,8 +127,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>78</xloc>
-      <yloc>151</yloc>
+      <xloc>121</xloc>
+      <yloc>146</yloc>
       </entry>
     <entry>
       <name>Delete libpensol libraries</name>
@@ -145,8 +145,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>710</xloc>
-      <yloc>82</yloc>
+      <xloc>708</xloc>
+      <yloc>99</yloc>
       </entry>
     <entry>
       <name>Create &#x22;repositorySynchronizer&#x22; folder</name>
@@ -157,8 +157,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>204</xloc>
-      <yloc>266</yloc>
+      <xloc>289</xloc>
+      <yloc>43</yloc>
       </entry>
     <entry>
       <name>Copy libpensol</name>
@@ -182,8 +182,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>918</xloc>
-      <yloc>84</yloc>
+      <xloc>909</xloc>
+      <yloc>106</yloc>
       </entry>
     <entry>
       <name>Create a folder</name>
@@ -219,8 +219,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>916</xloc>
-      <yloc>154</yloc>
+      <xloc>915</xloc>
+      <yloc>209</yloc>
       </entry>
     <entry>
       <name>Delete libpensol.properties</name>
@@ -237,8 +237,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>145</yloc>
+      <xloc>721</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -247,8 +247,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1072</xloc>
-      <yloc>95</yloc>
+      <xloc>1067</xloc>
+      <yloc>156</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -276,8 +276,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>418</xloc>
-      <yloc>120</yloc>
+      <xloc>439</xloc>
+      <yloc>97</yloc>
       </entry>
     <entry>
       <name>Checks if files exist 2</name>
@@ -303,8 +303,69 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>585</xloc>
-      <yloc>257</yloc>
+      <xloc>575</xloc>
+      <yloc>145</yloc>
+      </entry>
+    <entry>
+      <name>File Compare libpensol.jar</name>
+      <description/>
+      <type>FILE_COMPARE</type>
+      <filename1>&#x24;&#x7b;libpensol_jar_src&#x7d;</filename1>
+      <filename2>&#x24;&#x7b;libpensol_jar_dst&#x7d;</filename2>
+      <add_filename_result>N</add_filename_result>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>577</xloc>
+      <yloc>24</yloc>
+      </entry>
+    <entry>
+      <name>Set variables</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>N</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>libpensol_jar_dst</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;libpensol-TRUNK-SNAPSHOT.jar</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>libpensol_props_dst</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;libpensol.properties</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>libpensol_jar_src</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;libpensol-TRUNK-SNAPSHOT.jar</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>libpensol_props_src</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;libpensol.properties</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>226</xloc>
+      <yloc>158</yloc>
+      </entry>
+    <entry>
+      <name>File Compare libpensol.properties</name>
+      <description/>
+      <type>FILE_COMPARE</type>
+      <filename1>&#x24;&#x7b;libpensol_props_src&#x7d;</filename1>
+      <filename2>&#x24;&#x7b;libpensol_props_dst&#x7d;</filename2>
+      <add_filename_result>N</add_filename_result>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>569</xloc>
+      <yloc>277</yloc>
       </entry>
   </entries>
   <hops>
@@ -372,15 +433,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Checks if files exist</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Checks if files exist</from>
       <to>Delete libpensol libraries</to>
       <from_nr>0</from_nr>
@@ -388,15 +440,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Checks if files exist 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Checks if files exist 2</from>
@@ -408,7 +451,43 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if files exist 2</from>
+      <from>START</from>
+      <to>Set variables</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>Checks if files exist</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>Checks if files exist 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist</from>
+      <to>File Compare libpensol.jar</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Compare libpensol.jar</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -417,12 +496,39 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if files exist</from>
+      <from>File Compare libpensol.jar</from>
+      <to>Delete libpensol libraries</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Checks if files exist 2</from>
+      <to>File Compare libpensol.properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Compare libpensol.properties</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Compare libpensol.properties</from>
+      <to>Delete libpensol.properties</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
