@@ -129,12 +129,77 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Get data from XML</from><to>clean path</to><enabled>Y</enabled> </hop>
-  <hop> <from>clean path</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>NormalizePath</to><enabled>Y</enabled> </hop>
+  <hop> <from>Environment Substitute</from><to>clean path</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get data from XML</from><to>Environment Substitute</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>NormalizePath</to><enabled>Y</enabled> </hop>
   <hop> <from>NormalizePath</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Environment Substitute</name>
+    <type>UserDefinedJavaClass</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+
+    <definitions>
+        <definition>
+        <class_type>TRANSFORM_CLASS</class_type>
+
+        <class_name>Processor</class_name>
+
+        <class_source><![CDATA[private FieldHelper elementPathOut = null;
+private FieldHelper elementPathIn = null;
+private FieldHelper elementNameOut = null;
+private FieldHelper elementNameIn = null;
+
+public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException
+{
+	Object[] r = getRow();
+	if (r == null) {
+		setOutputDone();
+		return false;
+	}
+
+    if (first)
+    {
+        first = false;
+		elementPathOut = get(Fields.Out,"elementPath");
+		elementPathIn = get(Fields.In,"elementPath");
+		elementNameOut = get(Fields.Out,"elementName");
+		elementNameIn = get(Fields.In,"elementName");
+    }
+	
+	String inputPath = elementPathIn.getString(r);
+	String inputName = elementNameIn.getString(r);
+	// It is always safest to call createOutputRow() to ensure that your output row's Object[] is large
+    // enough to handle any new fields you are creating in this step.
+    r = createOutputRow(r, data.outputRowMeta.size());
+	
+    elementPathOut.setValue(r,parent.environmentSubstitute(inputPath));
+	elementNameOut.setValue(r,parent.environmentSubstitute(inputName));
+	// Send the row on to the next step.
+    putRow(data.outputRowMeta, r);
+
+	return true;
+}
+]]></class_source>
+        </definition>
+    </definitions>
+    <fields>
+    </fields><clear_result_fields>N</clear_result_fields>
+<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>337</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Get data from XML</name>
     <type>getXMLData</type>
@@ -214,34 +279,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>117</xloc>
-      <yloc>89</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>NormalizePath</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>elementPath</field_name>
-<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;elementPath&#x29;.toString&#x28;&#x29;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>elementPath</replace_field>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>682</xloc>
-      <yloc>84</yloc>
+      <xloc>157</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -259,68 +298,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>820</xloc>
-      <yloc>84</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>elementPath</in_stream_name>
-        <out_stream_name>elementPath</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x5c;&#x24;&#x5c;&#x7b;cpk&#x5c;.solution&#x5c;.system&#x5c;.dir&#x5c;&#x7d;</replace_string>
-        <replace_by_string>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>429</xloc>
-      <yloc>87</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>elementName</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>elementPath_1</name>
-        <rename>elementPath</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>551</xloc>
-      <yloc>84</yloc>
+      <xloc>757</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -362,8 +341,41 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>327</xloc>
-      <yloc>89</yloc>
+      <xloc>497</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>NormalizePath</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>elementPath</field_name>
+<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;elementPath&#x29;.toString&#x28;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>elementPath</replace_field>
+</formula>
+       <formula><field_name>elementPath</field_name>
+<formula_string>elementPath.endsWith&#x28;&#x22;&#x2f;&#x22;&#x29;&#x3f;elementPath&#x3a;elementPath&#x2b;&#x22;&#x2f;&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>elementPath</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>632</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

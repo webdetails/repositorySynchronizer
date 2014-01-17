@@ -22,7 +22,7 @@ var synchronizer = {};
 	}
 	myself.getParentFolderLevel = function ( fullPath , sep ){
 		var levels = (fullPath.split(sep)).length;	
-		return levels - 2;
+		return levels;
 	}
 	myself.getParentFolderInfo = function ( fullPath , sep){
 		var infoObj = {};
@@ -50,16 +50,7 @@ var synchronizer = {};
 	}
 
 	myself.checkIfInside = function ( contentPath , containerPath , sep ){
-		var childrenLevel = synchronizer.getParentFolderLevel(containerPath,sep) + 1,
-			contentRoot = [],
-			contentFragments = contentPath.split(sep);
-
-		var i = 0;
-		while( i <= childrenLevel){
-			contentRoot.push(contentFragments[i]);
-			i++;
-		}
-		return (contentRoot.join(sep) === containerPath ? true : false)
+                return contentPath.indexOf(containerPath) === 0;
 	}
 	myself.checkIfChild = function ( contentPath , containerPath , sep ){
 		return (synchronizer.getParentFolderPath(contentPath,sep) === containerPath ? true : false)

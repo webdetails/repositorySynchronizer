@@ -1015,7 +1015,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5e;&#x22;&#x2b;elementPath.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;&#x22;,&#x22;&#x2f;&#x22;&#x29;,&#x22;&#x22;&#x29;</formula_string>
+<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.substring&#x28;elementPath.length&#x28;&#x29;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
