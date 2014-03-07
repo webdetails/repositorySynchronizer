@@ -4,5 +4,14 @@
 		<location path="jcr-solution:http://admin:password@localhost:8080/pentaho!/" name="JCR"/>
 		<location path="${cpk.solution.system.dir}/../repositorySynchronizer" name="File System"/>
 	</locations>
+	<excludes>
+		<!-- Exclude all dot folders and files -->
+		<exclude pattern=".*/\.[^/]*(/.*)?"/>
+		<!-- Exclude sample folders -->
+		<exclude pattern=".*/bi-developers(/.*)?"/>
+		<exclude pattern=".*/cde(/.*)?"/>
+		<exclude pattern=".*/plugin-samples(/.*)?"/>
+		<exclude pattern=".*/Steel\sWheels(/.*)?"/>
+	</excludes>
 	<last_synch>0</last_synch>
 </prs>
