@@ -100,7 +100,6 @@
   <hop> <from>Sort</from><to>discard duplicates</to><enabled>Y</enabled> </hop>
   <hop> <from>input</from><to>folder_full_path</to><enabled>Y</enabled> </hop>
   <hop> <from>discard duplicates</from><to>remove fields</to><enabled>Y</enabled> </hop>
-  <hop> <from>remove fields</from><to>output</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>order</to><enabled>Y</enabled> </hop>
   <hop> <from>order</from><to>Sort</to><enabled>Y</enabled> </hop>
   <hop> <from>Add sequence</from><to>Split path to rows</to><enabled>Y</enabled> </hop>
@@ -114,6 +113,7 @@
   <hop> <from>update status</from><to>remove leading &#x2f;</to><enabled>Y</enabled> </hop>
   <hop> <from>remove leading &#x2f;</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>remove fields</from><to>output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add sequence</name>
@@ -138,8 +138,8 @@
       <max_value>999999999</max_value>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>68</xloc>
-      <yloc>276</yloc>
+      <xloc>64</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -259,8 +259,8 @@
       </remove>      <remove>        <name>n2</name>
       </remove>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>536</xloc>
-      <yloc>276</yloc>
+      <xloc>512</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -331,8 +331,8 @@
    <delimiter_is_regex>N</delimiter_is_regex>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>185</xloc>
-      <yloc>276</yloc>
+      <xloc>160</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -357,32 +357,6 @@
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>834</xloc>
-      <yloc>84</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>update status</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>status</field_name>
-<formula_string>&#x28;is_clone &#x26;&#x26; &#x21; status.equals&#x28;&#x22;nothing_to_be_updated&#x22;&#x29;&#x29;&#x3f;&#x22;to_be_modified&#x22;&#x3a;status</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>status</replace_field>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>339</xloc>
       <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
@@ -537,8 +511,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>419</xloc>
-      <yloc>276</yloc>
+      <xloc>416</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -584,8 +558,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>834</xloc>
-      <yloc>265</yloc>
+      <xloc>832</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -610,6 +584,38 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>834</xloc>
       <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>remove leading &#x2f;</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x2f;&#x24;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>456</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -694,7 +700,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#xd;&#xa;&#xd;&#xa;var type &#x3d; &#x22;folder&#x22;&#x3b;&#xd;&#xa;var sub_path &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;path_tmp &#x3d; filename&#x3b;&#xd;&#xa;&#xd;&#xa;for &#x28;i&#x3d;0&#x3b; i&#x3c; n2&#x3b; i&#x2b;&#x2b;&#x29; &#x7b;&#xd;&#xa;	position &#x3d; indexOf&#x28;path_tmp,&#x22;&#x2f;&#x22;&#x29;&#x3b;&#xd;&#xa;	sub_path &#x3d; sub_path &#x2b; substr&#x28;path_tmp,0,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;	path_tmp &#x3d; substr&#x28;path_tmp,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>&#xd;&#xa;&#xd;&#xa;var type &#x3d; &#x22;folder&#x22;&#x3b;&#xd;&#xa;var sub_path &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;path_tmp &#x3d; filename&#x3b;&#xd;&#xa;&#xd;&#xa;for &#x28;i&#x3d;0&#x3b; i&#x3c; n2&#x3b; i&#x2b;&#x2b;&#x29; &#x7b;&#xd;&#xa;	position &#x3d; indexOf&#x28;path_tmp,&#x22;&#x2f;&#x22;&#x29;&#x3b;&#xd;&#xa;	sub_path &#x3d; sub_path &#x2b; substr&#x28;path_tmp,0,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;	path_tmp &#x3d; substr&#x28;path_tmp,position&#x2b;1&#x29;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;sub_path &#x2b;&#x3d; &#x27;&#x2f;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>type</name>
         <rename>type</rename>
         <type>String</type>
@@ -709,15 +715,15 @@
         <replace>Y</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>302</xloc>
-      <yloc>276</yloc>
+      <xloc>288</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>remove leading &#x2f;</name>
-    <type>ReplaceString</type>
+    <name>update status</name>
+    <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -726,22 +732,16 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>filename</in_stream_name>
-        <out_stream_name/>
-        <use_regex>yes</use_regex>
-        <replace_string>&#x2f;&#x24;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
+       <formula><field_name>status</field_name>
+<formula_string>&#x28;is_clone &#x26;&#x26; &#x21; status.equals&#x28;&#x22;nothing_to_be_updated&#x22;&#x29;&#x29;&#x3f;&#x22;to_be_modified&#x22;&#x3a;status</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>status</replace_field>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>456</xloc>
+      <xloc>339</xloc>
       <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>

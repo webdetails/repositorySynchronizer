@@ -1,11 +1,10 @@
-
 /********************************** Project namespace *******************************************/
 var synchronizer = {};
 
 (function(myself){
 
 	myself.settings = {};
-	
+
 	myself.settings.repoSettingsExtFileName = "prs.xml";
 
 	myself.settings.statusDictionary = {
@@ -21,9 +20,13 @@ var synchronizer = {};
 		return levelsArray.join(sep);
 	}
 	myself.getParentFolderLevel = function ( fullPath , sep ){
-		var levels = (fullPath.split(sep)).length;	
-		return levels;
-	}
+    //var levels = _.reduce( fullPath.split(sep), function(memo, p){return memo + (p.length > 0 ? 1 : 0);}, 0);
+		//return levels;
+    return myself.getParentFolders( fullPath , sep ).length;
+  }
+	myself.getParentFolders = function ( fullPath , sep ){
+		return _.filter( fullPath.split(sep), function(s){return s.length > 0;} );
+  }
 	myself.getParentFolderInfo = function ( fullPath , sep){
 		var infoObj = {};
 		infoObj.path = synchronizer.getParentFolderPath(fullPath,sep);
@@ -53,10 +56,10 @@ var synchronizer = {};
                 return contentPath.indexOf(containerPath) === 0;
 	}
 	myself.checkIfChild = function ( contentPath , containerPath , sep ){
-		return (synchronizer.getParentFolderPath(contentPath,sep) === containerPath ? true : false)
+		return (synchronizer.getParentFolderPath(contentPath,sep) === containerPath ? true : false);
 	}
 	myself.checkIfGandchild = function ( contentPath , containerPath , sep ){
-		return (( synchronizer.checkIfInside(contentPath,containerPath,sep) && !synchronizer.checkIfChild(contentPath,containerPath,sep) ) ? true : false)
+		return (( synchronizer.checkIfInside(contentPath,containerPath,sep) && !synchronizer.checkIfChild(contentPath,containerPath,sep) ) ? true : false);
 	}
 
   	myself.createTableEmptyRawData = function() {
@@ -95,8 +98,8 @@ var synchronizer = {};
 	      	resultset: []
     	}
     	return emptyData;
-  	}  
-	 
+  	}
+
 	myself.runEndpoint = function ( pluginId , endpoint , opts ){
 
 	    if ( !pluginId && !endpoint){
@@ -153,7 +156,7 @@ var synchronizer = {};
 
 	myself.incUpdateEvent = function ( eventName ){
 	    var updateCnt = parseInt(Dashboards.getParameterValue(eventName));
-	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());		
+	    Dashboards.fireChange(eventName,(updateCnt += 1).toString());
 	}
 
 	myself.toggleStringifiedBoolean = function ( status ){
@@ -172,7 +175,7 @@ var synchronizer = {};
 
 	myself.getCamelCase = function ( string , sep ){
 		var capitalizeString = function ( string ){
-				return (string.substring(0,1).toUpperCase()).concat(string.substring(1)); 
+				return (string.substring(0,1).toUpperCase()).concat(string.substring(1));
 			},
 			workedPartsArr = $.map( string.split(sep) , function(ele,idx){
 				return (idx === 0 ? ele : capitalizeString(ele));
@@ -199,7 +202,7 @@ var synchronizer = {};
 			var val = (ele[typeColIdx] === "folder" ? "Y" : "");
 			data.resultset[idx].push(val);
 		});
-	
+
 		return data;
 	}
 
@@ -287,9 +290,9 @@ var synchronizer = {};
         		cssClass = synchronizer.getCamelCase(text,opt.sep),
         		dirValue = st.tableData[st.rowIdx][opt.dirColIdx],
         		dirClass = ( dirValue === "File System" ? "fs2jcr" : "jcr2fs" );
-        
+
             $(tgt).parent().addClass(cssClass+" "+dirClass);
-         	$(tgt).empty().append(text);      
+         	$(tgt).empty().append(text);
     	}
 	};
 	Dashboards.registerAddIn("Table", "colType", new AddIn(synchModification));
@@ -307,29 +310,29 @@ var synchronizer = {};
 	        $.fn.dataTableExt.oSort[this.name+'-asc'] = $.fn.dataTableExt.oSort['string-asc'];
 	        $.fn.dataTableExt.oSort[this.name+'-desc'] = $.fn.dataTableExt.oSort['string-desc'];
 	    },
-    
+
 	    implementation: function(tgt, st, opt){
 	    	var type = st.tableData[st.rowIdx][opt.typeColIdx],
-	    		mainFullPath = st.rawData.resultset[st.rowIdx][st.colIdx];
+	    		mainFullPath = st.rawData.resultset[st.rowIdx][st.colIdx],
+            $tgt = $(tgt);
 
-	    	var elementsArr = mainFullPath.split(opt.sep),
+	    	var elementsArr = synchronizer.getParentFolders(mainFullPath, opt.sep),
 		      	label = elementsArr[(elementsArr.length-1)],
-		      	$cont = $("<div class='cellCont' /div>").text(/*opt.sep+*/label);
-	    	$(tgt).empty().append($cont);
-	    	var level = synchronizer.getParentFolderLevel(mainFullPath,opt.sep)
-	    	$(tgt).css("padding-left",level * 20);
-	    	$(tgt).parent().addClass(type);
-
+		      	$cont = $("<div />").addClass('cellCont').text(/*opt.sep+*/label);
+	    	$tgt.empty().append($cont);
+	    	var level = synchronizer.getParentFolderLevel(mainFullPath,opt.sep);
+	    	$tgt.css("padding-left",level * 20);
+	    	$tgt.parent().addClass(type);
 	    	if(st.tableData[st.rowIdx][opt.typeColIdx] === "folder"){
-	    		$(tgt).addClass("semiBold");
-	    		$(tgt).click(function(){
+	    		$tgt.addClass("semiBold");
+	    		$tgt.click(function(){
 	    			/* toggle row isOpen value */
 	    			var isOpen = st.tableData[st.rowIdx][opt.isOpenColIdx];
 	    			st.tableData[st.rowIdx][opt.isOpenColIdx] = synchronizer.toggleStringifiedBoolean(isOpen);
 	    			/* toggle row close css-class*/
-	    			$(tgt).parent().toggleClass("closed");
+	    			$tgt.parent().toggleClass("closed");
 	    			var thisRowIdx = st.rowIdx+1,
-	    				$thisTgtRow = $(tgt).parent().next(),
+	    				$thisTgtRow = $tgt.parent().next(),
 	    				rowsQty = st.rawData.resultset.length,
 	    				thisValue = ( thisRowIdx < rowsQty ? st.rawData.resultset[thisRowIdx][st.colIdx] : "dummy" );
 	    			while( synchronizer.checkIfInside(thisValue,mainFullPath,opt.sep) && thisRowIdx < rowsQty ){
@@ -355,12 +358,13 @@ var synchronizer = {};
 	    				}
 	    				$thisTgtRow = $thisTgtRow.next();
 	    			}
-	    		$thisCellBody = $(tgt).parents(".WDdataCellBody").removeClass("delay");
-	    		synchronizer.updateCellBodyHeight($thisCellBody);
+	    			$thisCellBody = $tgt.parents(".WDdataCellBody").removeClass("delay");
+	    			synchronizer.updateCellBodyHeight($thisCellBody);
 	    		});
-	    	}      	
+	    	}
+
 	    }
     };
     Dashboards.registerAddIn("Table", "colType", new AddIn(synchMainColumn));
-  
+
 })();
