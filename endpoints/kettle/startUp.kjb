@@ -129,7 +129,7 @@
       <create_destination_folder>N</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;</source_filefolder>
           <destination_filefolder>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;</destination_filefolder>
           <wildcard>libpensol.&#x2a;&#x5c;.jar</wildcard>
         </field>
@@ -137,8 +137,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>909</xloc>
-      <yloc>106</yloc>
+      <xloc>896</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Copy libpensol.properties</name>
@@ -213,14 +213,14 @@
       <filename/>
       <fields>
         <field>
-          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;libpensol-TRUNK-SNAPSHOT.jar</name>
+          <name>&#x24;&#x7b;libpensol_jar_dst&#x7d;</name>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>439</xloc>
-      <yloc>97</yloc>
+      <xloc>416</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Checks if files exist 2</name>
@@ -276,18 +276,8 @@
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
-          <variable_name>libpensol_props_dst</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;libpensol.properties</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-        <field>
           <variable_name>libpensol_jar_src</variable_name>
           <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;libpensol-TRUNK-SNAPSHOT.jar</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>libpensol_props_src</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;libpensol.properties</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
