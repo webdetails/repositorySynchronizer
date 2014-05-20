@@ -10,13 +10,13 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
-            <name>new_value</name>
-            <default_value>&#x3c;last_synch&#x3e;0&#x3c;&#x2f;last_synch&#x3e;</default_value>
+            <name>cpk.plugin.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
-            <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <name>new_value</name>
+            <default_value>&#x3c;last_synch&#x3e;0&#x3c;&#x2f;last_synch&#x3e;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -272,7 +272,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -357,7 +357,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;prs.xml</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -401,5 +401,11 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>
