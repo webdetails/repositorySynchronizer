@@ -10,13 +10,18 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>&#x24;&#x7b;pluginDir&#x7d;&#x2f;..&#x2f;</default_value>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -86,8 +91,19 @@
   <order>
   <hop> <from>Environment Substitute</from><to>clean path</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Environment Substitute</to><enabled>Y</enabled> </hop>
-  <hop> <from>clean path</from><to>NormalizePath</to><enabled>Y</enabled> </hop>
-  <hop> <from>NormalizePath</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>append &#x2f; 2</to><enabled>N</enabled> </hop>
+  <hop> <from>append &#x2f; 2</from><to>is JCR&#x3f;</to><enabled>N</enabled> </hop>
+  <hop> <from>JCR</from><to>NormalizePath</to><enabled>N</enabled> </hop>
+  <hop> <from>is JCR&#x3f;</from><to>JCR</to><enabled>Y</enabled> </hop>
+  <hop> <from>is JCR&#x3f;</from><to>Get File Names</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>append &#x2f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>append &#x2f;</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>is JCR&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>JCR</from><to>append &#x2f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>NormalizePath</from><to>append &#x2f;</to><enabled>N</enabled> </hop>
+  <hop> <from>clean path</from><to>JCR</to><enabled>N</enabled> </hop>
+  <hop> <from>append &#x2f;</from><to>Write to log 2</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Environment Substitute</name>
@@ -149,8 +165,47 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </fields><clear_result_fields>N</clear_result_fields>
 <info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>337</xloc>
-      <yloc>48</yloc>
+      <xloc>224</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get File Names</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>N</isaddresult>
+    <filefield>Y</filefield>
+    <rownum_field/>
+    <filename_Field>elementPath</filename_Field>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -180,7 +235,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -234,8 +289,27 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>157</xloc>
-      <yloc>48</yloc>
+      <xloc>96</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>JCR</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -258,17 +332,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value_precision>-1</value_precision>
 <replace_field>elementPath</replace_field>
 </formula>
-       <formula><field_name>elementPath</field_name>
-<formula_string>elementPath.endsWith&#x28;&#x22;&#x2f;&#x22;&#x29;&#x3f;elementPath&#x3a;elementPath&#x2b;&#x22;&#x2f;&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>elementPath</replace_field>
-</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>632</xloc>
-      <yloc>48</yloc>
+      <xloc>704</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -286,8 +353,120 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>757</xloc>
-      <yloc>48</yloc>
+      <xloc>1005</xloc>
+      <yloc>194</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>elementName</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>uri</name>
+        <rename>elementPath</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>elementName</name>
+        </field>
+      <field>
+        <name>elementPath</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>append &#x2f;</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>elementPath</field_name>
+<formula_string>elementPath.endsWith&#x28;&#x22;&#x2f;&#x22;&#x29;&#x3f;elementPath&#x3a;elementPath&#x2b;&#x22;&#x2f;&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>elementPath</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>append &#x2f; 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>elementPath</field_name>
+<formula_string>elementPath.endsWith&#x28;&#x22;&#x2f;&#x22;&#x29;&#x3f;elementPath&#x3a;elementPath&#x2b;&#x22;&#x2f;&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>elementPath</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -296,7 +475,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <name>clean path</name>
     <type>ReplaceString</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -329,8 +508,37 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>497</xloc>
-      <yloc>48</yloc>
+      <xloc>352</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>is JCR&#x3f;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>JCR</send_true_to>
+<send_false_to>Get File Names</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>elementName</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>JCR</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>672</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -341,6 +549,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
 <attributes><group><name>DataService</name>
-</group></attributes>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>

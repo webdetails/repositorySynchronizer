@@ -10,6 +10,16 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.system.dir</name>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;..</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>delete</name>
             <default_value>N</default_value>
             <description>Y&#x2f;N</description>
@@ -146,7 +156,9 @@
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+          <parameters>       <variablemapping><variable>cpk.plugin.dir</variable><input>&#x24;&#x7b;cpk.plugin.dir&#x7d;</input></variablemapping>
+       <variablemapping><variable>cpk.solution.system.dir</variable><input>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</input></variablemapping>
+    <inherit_all_vars>Y</inherit_all_vars>
     </parameters>
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
@@ -164,5 +176,11 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>
