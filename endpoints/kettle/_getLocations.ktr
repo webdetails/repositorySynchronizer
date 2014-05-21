@@ -19,11 +19,6 @@
             <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
-        <parameter>
-            <name>pluginDir</name>
-            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;</default_value>
-            <description/>
-        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -88,11 +83,11 @@
   </info>
   <notepads>
     <notepad>
-      <note>NormalizePath seems to break within Spoon, but not from within the BA server.&#xa;The path normalization seems to be useful only for the file system representation&#xa;of the JCR, which is why we split the validation and use the step &#x22;Get File Names&#x22;&#xa;to resolve a complex path.&#xa;&#xa;if you are debugging from within Spoon, then disable the path that goes through &#x22;NormalizePath&#x22;</note>
+      <note>The disabled paths were left here to aid debugging&#xa;&#xa;On Windows machines, jcr-solution&#x3a;&#x2f;&#x2f;&#x2f;pentaho&#x21;&#x2f; is transformed to jcr-solution&#x3a;&#x5c;pentaho&#x21;&#x2f;, &#xa;which breaks PRS. The solution is to have an http URI such as&#xa;jcr-solution&#x3a;http&#x3a;&#x2f;&#x2f;someserver&#x2f;pentaho&#x21;&#x2f; &#xa;in prs.xml&#xa;</note>
       <xloc>416</xloc>
       <yloc>416</yloc>
-      <width>461</width>
-      <heigth>76</heigth>
+      <width>416</width>
+      <heigth>87</heigth>
       <fontname>Arial</fontname>
       <fontsize>10</fontsize>
       <fontbold>N</fontbold>
@@ -112,16 +107,17 @@
   <order>
   <hop> <from>Environment Substitute</from><to>clean path</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Environment Substitute</to><enabled>Y</enabled> </hop>
-  <hop> <from>JCR</from><to>NormalizePath</to><enabled>Y</enabled> </hop>
-  <hop> <from>is JCR&#x3f;</from><to>JCR</to><enabled>Y</enabled> </hop>
-  <hop> <from>is JCR&#x3f;</from><to>Get File Names</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>append &#x2f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>JCR</from><to>NormalizePath</to><enabled>N</enabled> </hop>
+  <hop> <from>is JCR&#x3f;</from><to>JCR</to><enabled>N</enabled> </hop>
+  <hop> <from>is JCR&#x3f;</from><to>Get File Names</to><enabled>N</enabled> </hop>
+  <hop> <from>Get File Names</from><to>Select values</to><enabled>N</enabled> </hop>
+  <hop> <from>Select values</from><to>append &#x2f;</to><enabled>N</enabled> </hop>
   <hop> <from>append &#x2f;</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  <hop> <from>clean path</from><to>is JCR&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>is JCR&#x3f;</to><enabled>N</enabled> </hop>
   <hop> <from>JCR</from><to>append &#x2f;</to><enabled>N</enabled> </hop>
   <hop> <from>NormalizePath</from><to>append &#x2f;</to><enabled>Y</enabled> </hop>
   <hop> <from>append &#x2f;</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>clean path</from><to>NormalizePath</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Environment Substitute</name>
@@ -326,8 +322,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>544</xloc>
-      <yloc>256</yloc>
+      <xloc>608</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
