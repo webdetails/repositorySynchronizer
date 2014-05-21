@@ -21,7 +21,7 @@
         </parameter>
         <parameter>
             <name>location</name>
-            <default_value>File System</default_value>
+            <default_value>JCR</default_value>
             <description>&#x22;File System&#x22; or &#x22;JCR&#x22;</description>
         </parameter>
     </parameters>
@@ -153,7 +153,7 @@
   </notepads>
   <order>
   <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>Block this step until jcr refreshed</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>Block this step until jcr refreshed</from><to>Get File Names in destination</to><enabled>N</enabled> </hop>
   <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Calculator</to><enabled>Y</enabled> </hop>
@@ -166,9 +166,10 @@
   <hop> <from>Sort rows &#x28;left&#x29;</from><to>Write to log</to><enabled>N</enabled> </hop>
   <hop> <from>lk destination</from><to>Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
   <hop> <from>Switch &#x2f; Case</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>refresh jcr</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Block this step until jcr refreshed</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>refresh jcr</to><enabled>N</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Block this step until jcr refreshed</to><enabled>N</enabled> </hop>
   <hop> <from>Switch &#x2f; Case</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Block this step until jcr refreshed</name>
