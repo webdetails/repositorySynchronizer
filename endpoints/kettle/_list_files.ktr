@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_list_files</name>
+    <name>_list_files_multi</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -152,50 +152,18 @@
     </notepad>
   </notepads>
   <order>
-  <hop> <from>getLocations</from><to>lk destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>Block this step until jcr refreshed</from><to>Get File Names in destination</to><enabled>N</enabled> </hop>
   <hop> <from>filename_without_location destination</from><to>Sort rows &#x28;left&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>filename_without_location destination</to><enabled>Y</enabled> </hop>
   <hop> <from>Get data from XML</from><to>Calculator</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculator</from><to>Group by</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names in destination</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Group by</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get locations</from><to>lk destination</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows &#x28;left&#x29;</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows &#x28;left&#x29;</from><to>Write to log</to><enabled>N</enabled> </hop>
-  <hop> <from>lk destination</from><to>Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
-  <hop> <from>Switch &#x2f; Case</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>refresh jcr</to><enabled>N</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Block this step until jcr refreshed</to><enabled>N</enabled> </hop>
-  <hop> <from>Switch &#x2f; Case</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>INPUT</from><to>Get locations</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get locations</from><to>Join&#x3a; location and exclusion list</to><enabled>Y</enabled> </hop>
+  <hop> <from>Join&#x3a; location and exclusion list</from><to>Get File Names in destination</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names in destination</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by</from><to>Join&#x3a; location and exclusion list</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Block this step until jcr refreshed</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <steps>
-      <step>
-        <name>refresh jcr</name>
-        <CopyNr>0</CopyNr>
-        </step>
-      </steps>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
@@ -251,27 +219,8 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
-      <yloc>96</yloc>
+      <xloc>192</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -299,7 +248,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
+      <xloc>224</xloc>
       <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
@@ -324,7 +273,7 @@
     <isaddresult>N</isaddresult>
     <filefield>Y</filefield>
     <rownum_field/>
-    <filename_Field>elementPath</filename_Field>
+    <filename_Field>location</filename_Field>
     <wildcard_Field>wildcard</wildcard_Field>
     <exclude_wildcard_Field/>
     <dynamic_include_subfolders>Y</dynamic_include_subfolders>
@@ -338,7 +287,7 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>384</xloc>
+      <xloc>320</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -408,8 +357,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>32</xloc>
-      <yloc>352</yloc>
+      <xloc>96</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -418,7 +367,7 @@
     <name>Get locations</name>
     <type>GetVariable</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -426,18 +375,6 @@
            <schema_name/>
            </partitioning>
     <fields>
-      <field>
-        <name>name</name>
-        <variable>&#x24;&#x7b;location&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
       <field>
         <name>wildcard</name>
         <variable>.&#x2a;</variable>
@@ -453,7 +390,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
+      <xloc>256</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -490,14 +427,42 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>352</yloc>
+      <xloc>288</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Join Rows &#x28;cartesian product&#x29;</name>
+    <name>INPUT</name>
+    <type>MappingInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>location</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+        <select_unspecified>N</select_unspecified>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>96</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join&#x3a; location and exclusion list</name>
     <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -510,7 +475,7 @@
       <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>out</prefix>
       <cache_size>500</cache_size>
-      <main/>
+      <main>Group by</main>
     <compare>
 <condition>
  <negated>N</negated>
@@ -521,8 +486,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>384</xloc>
-      <yloc>352</yloc>
+      <xloc>416</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -540,7 +505,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
+      <xloc>704</xloc>
       <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
@@ -574,38 +539,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
+      <xloc>576</xloc>
       <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Switch &#x2f; Case</name>
-    <type>SwitchCase</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<fieldname>name</fieldname>
-<use_contains>N</use_contains>
-<case_value_type>String</case_value_type>
-<case_value_format/>
-<case_value_decimal/>
-<case_value_group/>
-<default_target_step>refresh jcr</default_target_step>
-<cases><case><value>JCR</value>
-<target_step>Dummy &#x28;do nothing&#x29;</target_step>
-</case><case><value>File System</value>
-<target_step>Get File Names in destination</target_step>
-</case></cases>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>384</xloc>
-      <yloc>96</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -628,64 +563,16 @@
       <logmessage/>
     <fields>
       <field>
-        <name>name</name>
-        </field>
-      <field>
-        <name>wildcard</name>
-        </field>
-      <field>
-        <name>elementPath</name>
-        </field>
-      <field>
-        <name>filename</name>
-        </field>
-      <field>
-        <name>short_filename</name>
-        </field>
-      <field>
-        <name>path</name>
-        </field>
-      <field>
-        <name>type</name>
-        </field>
-      <field>
-        <name>exists</name>
-        </field>
-      <field>
-        <name>ishidden</name>
-        </field>
-      <field>
-        <name>isreadable</name>
-        </field>
-      <field>
-        <name>iswriteable</name>
-        </field>
-      <field>
-        <name>lastmodifiedtime</name>
-        </field>
-      <field>
-        <name>size</name>
-        </field>
-      <field>
-        <name>extension</name>
+        <name>location</name>
         </field>
       <field>
         <name>uri</name>
         </field>
-      <field>
-        <name>rooturi</name>
-        </field>
-      <field>
-        <name>filter_regex</name>
-        </field>
-      <field>
-        <name>filename_without_location</name>
-        </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>416</yloc>
+      <xloc>704</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -702,7 +589,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>filename_without_location</field_name>
-<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.substring&#x28;elementPath.length&#x28;&#x29;&#x29;</formula_string>
+<formula_string>org.pentaho.di.core.vfs.KettleVFS.getInstance&#x28;&#x29;.getFileObject&#x28;filename&#x29;.toString&#x28;&#x29;.substring&#x28;location.length&#x28;&#x29;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -710,147 +597,8 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>672</xloc>
+      <xloc>416</xloc>
       <yloc>352</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>getLocations</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_getLocations.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>       <variablemapping><variable>cpk.solution.system.dir</variable><input>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</input></variablemapping>
-       <variablemapping><variable>cpk.plugin.dir</variable><input>&#x24;&#x7b;cpk.plugin.dir&#x7d;</input></variablemapping>
-    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>lk destination</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <from>getLocations</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>name</name>
-        <field>elementName</field>
-      </key>
-      <value>
-        <name>elementPath</name>
-        <rename>elementPath</rename>
-        <default/>
-        <type>String</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>refresh jcr</name>
-    <type>UserDefinedJavaClass</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-
-    <definitions>
-        <definition>
-        <class_type>TRANSFORM_CLASS</class_type>
-
-        <class_name>Processor</class_name>
-
-        <class_source><![CDATA[import org.apache.commons.vfs.FileObject;
-import org.pentaho.di.core.vfs.KettleVFS;
-
-public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws KettleException { 
-	try {
-		
-		// First, get a row from the default input hop
-		Object[] r = getRow();
-
-    	// If the row object is null, we are done processing.
-		if (r == null) {
-			setOutputDone();
-			return false;
-		}
-      	
-		String fileName = get(Fields.In, "elementPath").getString(r);
-		FileObject jcrObject = KettleVFS.getFileObject( fileName );
-//System.out.println(fileName);
-//		FileObject jcrObject = KettleVFS.getFileObject( "jcr-solution:http://admin:password@localhost:8080/pentaho!/" );
-
-		if ( jcrObject != null && jcrObject.exists() ) {
-			KettleVFS.getInstance().getFileSystemManager().closeFileSystem(jcrObject.getFileSystem());
-			KettleVFS.getInstance().getFileSystemManager().getFilesCache().close();
-		}
-
-		return true;
-	
-	} catch ( Exception e ){
-		throw new KettleException( e );
-	}
-}
-]]></class_source>
-        </definition>
-    </definitions>
-    <fields>
-    </fields><clear_result_fields>Y</clear_result_fields>
-<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>672</xloc>
-      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

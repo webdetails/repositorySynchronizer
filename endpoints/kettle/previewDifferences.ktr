@@ -10,6 +10,26 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
+            <name>_cacheFilename</name>
+            <default_value>_cache.csv</default_value>
+            <description>where we store the file listings</description>
+        </parameter>
+        <parameter>
+            <name>bypassCache</name>
+            <default_value>N</default_value>
+            <description>Y&#x2f;N</description>
+        </parameter>
+        <parameter>
+            <name>cacheDurationInSeconds</name>
+            <default_value>120</default_value>
+            <description>seconds</description>
+        </parameter>
+        <parameter>
+            <name>checksumMethod</name>
+            <default_value>none</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>cpk.plugin.dir</name>
             <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
@@ -28,6 +48,11 @@
             <name>destinationRepoLocation</name>
             <default_value>File System</default_value>
             <description/>
+        </parameter>
+        <parameter>
+            <name>enforceCache</name>
+            <default_value>N</default_value>
+            <description>Y&#x2f;N</description>
         </parameter>
         <parameter>
             <name>originRepoLocation</name>
@@ -109,8 +134,10 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>list_and_compare</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  <hop> <from>Generate Rows</from><to>list_and_compare</to><enabled>Y</enabled> </hop>
+  <hop> <from>Generate Rows</from><to>_previewDifferences</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>_previewDifferences</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Generate Rows</from><to>Write to log</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Generate Rows</name>
@@ -126,15 +153,15 @@
     <fields>
       <field>
         <name>line</name>
-        <type>Integer</type>
+        <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>1</nullif>
+        <nullif/>
         <length>-1</length>
         <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
+        <set_empty_string>Y</set_empty_string>
       </field>
     </fields>
     <limit>1</limit>
@@ -144,7 +171,7 @@
     <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
+      <xloc>32</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
@@ -163,15 +190,51 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
+      <xloc>576</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>list_and_compare</name>
-    <type>Mapping</type>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>file</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>modification_status</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dest</name>
+        <rename>direction</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>type</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>416</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>_previewDifferences</name>
+    <type>JobExecutor</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -181,36 +244,80 @@
            <schema_name/>
            </partitioning>
     <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_list_and_compare.ktr</filename>
+    <job_object_id/>
+    <job_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_previewDifferences.kjb</filename>
     <directory_path/>
-    <mappings>
-      <input>
-      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>       <variablemapping><variable>cpk.plugin.dir</variable><input>&#x24;&#x7b;cpk.plugin.dir&#x7d;</input></variablemapping>
-       <variablemapping><variable>cpk.solution.system.dir</variable><input>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</input></variablemapping>
-       <variablemapping><variable>delete</variable><input>&#x24;&#x7b;delete&#x7d;</input></variablemapping>
-       <variablemapping><variable>overwrite</variable><input>&#x24;&#x7b;overwrite&#x7d;</input></variablemapping>
-       <variablemapping><variable>originRepoLocation</variable><input>&#x24;&#x7b;originRepoLocation&#x7d;</input></variablemapping>
-       <variablemapping><variable>destinationRepoLocation</variable><input>&#x24;&#x7b;destinationRepoLocation&#x7d;</input></variablemapping>
-       <variablemapping><variable>selectedAction</variable><input>&#x24;&#x7b;selectedAction&#x7d;</input></variablemapping>
+    <group_size>1</group_size>
+    <group_field/>
+    <group_time/>
+          <parameters>       <variablemapping><variable>_cacheFilename</variable><field/><input>&#x24;&#x7b;_cacheFilename&#x7d;</input></variablemapping>
+       <variablemapping><variable>bypassCache</variable><field/><input>&#x24;&#x7b;bypassCache&#x7d;</input></variablemapping>
+       <variablemapping><variable>cacheDurationInSeconds</variable><field/><input>&#x24;&#x7b;cacheDurationInSeconds&#x7d;</input></variablemapping>
+       <variablemapping><variable>cpk.plugin.dir</variable><field/><input>&#x24;&#x7b;cpk.plugin.dir&#x7d;</input></variablemapping>
+       <variablemapping><variable>cpk.solution.system.dir</variable><field/><input>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</input></variablemapping>
+       <variablemapping><variable>delete</variable><field/><input>&#x24;&#x7b;delete&#x7d;</input></variablemapping>
+       <variablemapping><variable>destinationRepoLocation</variable><field/><input>&#x24;&#x7b;destinationRepoLocation&#x7d;</input></variablemapping>
+       <variablemapping><variable>enforceCache</variable><field/><input>&#x24;&#x7b;enforceCache&#x7d;</input></variablemapping>
+       <variablemapping><variable>originRepoLocation</variable><field/><input>&#x24;&#x7b;originRepoLocation&#x7d;</input></variablemapping>
+       <variablemapping><variable>overwrite</variable><field/><input>&#x24;&#x7b;overwrite&#x7d;</input></variablemapping>
+       <variablemapping><variable>selectedAction</variable><field/><input>&#x24;&#x7b;selectedAction&#x7d;</input></variablemapping>
+       <variablemapping><variable>checksumMethod</variable><field/><input>&#x24;&#x7b;checksumMethod&#x7d;</input></variablemapping>
     <inherit_all_vars>Y</inherit_all_vars>
     </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
+    <execution_result_target_step/>
+    <execution_time_field>ExecutionTime</execution_time_field>
+    <execution_result_field>ExecutionResult</execution_result_field>
+    <execution_errors_field>ExecutionNrErrors</execution_errors_field>
+    <execution_lines_read_field>ExecutionLinesRead</execution_lines_read_field>
+    <execution_lines_written_field>ExecutionLinesWritten</execution_lines_written_field>
+    <execution_lines_input_field>ExecutionLinesInput</execution_lines_input_field>
+    <execution_lines_output_field>ExecutionLinesOutput</execution_lines_output_field>
+    <execution_lines_rejected_field>ExecutionLinesRejected</execution_lines_rejected_field>
+    <execution_lines_updated_field>ExecutionLinesUpdated</execution_lines_updated_field>
+    <execution_lines_deleted_field>ExecutionLinesDeleted</execution_lines_deleted_field>
+    <execution_files_retrieved_field>ExecutionFilesRetrieved</execution_files_retrieved_field>
+    <execution_exit_status_field>ExecutionExitStatus</execution_exit_status_field>
+    <execution_log_text_field>ExecutionLogText</execution_log_text_field>
+    <execution_log_channelid_field>ExecutionLogChannelId</execution_log_channelid_field>
+    <result_rows_target_step>Select values</result_rows_target_step>
+      <result_rows_field><name>file</name><type>String</type><length>-1</length><precision>-1</precision></result_rows_field>
+      <result_rows_field><name>modification_status</name><type>String</type><length>-1</length><precision>-1</precision></result_rows_field>
+      <result_rows_field><name>source</name><type>String</type><length>-1</length><precision>-1</precision></result_rows_field>
+      <result_rows_field><name>dest</name><type>String</type><length>-1</length><precision>-1</precision></result_rows_field>
+      <result_rows_field><name>type</name><type>String</type><length>-1</length><precision>-1</precision></result_rows_field>
+    <result_files_target_step/>
+    <result_files_file_name_field>FileName</result_files_file_name_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
+      <xloc>224</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23; Pentaho Repository Synchronizer &#x3a; previewDifferences&#xa;&#xa;Input parameters&#x3a;&#xa;&#xa;cpk.plugin.dir &#x3d; &#x24;&#x7b;cpk.plugin.dir&#x7d;&#xa;cpk.solution.system.dir	&#x3d; &#x24;&#x7b;cpk.solution.system.dir&#x7d;&#xa;&#xa;selectedAction &#x3d; &#x24;&#x7b;selectedAction&#x7d;&#xa;delete         &#x3d; &#x24;&#x7b;delete&#x7d;&#xa;overwrite      &#x3d; &#x24;&#x7b;overwrite&#x7d;&#xa;originRepoLocation      &#x3d; &#x24;&#x7b;originRepoLocation&#x7d;	&#xa;destinationRepoLocation &#x3d; &#x24;&#x7b;destinationRepoLocation&#x7d;&#xa;&#xa;bypassCache  &#x3d; &#x24;&#x7b;bypassCache&#x7d;&#xa;enforceCache &#x3d; &#x24;&#x7b;enforceCache&#x7d;&#xa;</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>160</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -221,10 +328,6 @@
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
 <attributes><group><name>DataService</name>
-<attribute><key>name</key>
-<value/>
-</attribute><attribute><key>stepname</key>
-<value/>
-</attribute></group></attributes>
+</group></attributes>
 
 </transformation>
