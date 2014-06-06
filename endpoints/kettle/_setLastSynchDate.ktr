@@ -270,7 +270,7 @@
     <rownum_field/>
     <format>mixed</format>
     <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
+    <add_to_result_filenames>N</add_to_result_filenames>
     <file>
       <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
@@ -402,10 +402,6 @@
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
 <attributes><group><name>DataService</name>
-<attribute><key>name</key>
-<value/>
-</attribute><attribute><key>stepname</key>
-<value/>
-</attribute></group></attributes>
+</group></attributes>
 
 </transformation>
