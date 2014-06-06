@@ -6132,6 +6132,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -6208,6 +6228,26 @@
       "name": "expression",
       "value": "function f(){\n    var isButtonEnabled = !$(\"#\"+this.htmlObject).find(\"button\").hasClass(\"disabled\");\n    \n    /* if button is enabled, do the job */\n    if( isButtonEnabled ){\n            \n        var pluginId = \"repositorySynchronizer\",\n            endpoint = \"syncRepositories\",\n            endpointOpts = {\n                params:{}    \n            },\n            dialog = Dashboards.getComponentByName(\"${c:dialogComponent}\"),\n            $dialogBodyCont = $(\"<div class='dialogContentContainer'></div>\"),\n            deleteStatus = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n    \n        var files2updateList = Dashboards.getParameterValue(\"${p:synchToBeUpdatedList}\");\n        if(files2updateList.length > 0){\n            $dialogMessage = $(\"<div class='dialogMessage toBeUpdated'>\"+files2updateList.length + \" files will be updated\"+\"</div>\");\n            $dialogMessage.appendTo($dialogBodyCont);\n        }\n    \n        var files2createList = Dashboards.getParameterValue(\"${p:synchToBeCreatedList}\");\n        if(files2createList.length > 0){\n            $dialogMessage = $(\"<div class='dialogMessage toBeCreated'>\"+files2createList.length + \" files will be created\"+\"</div>\");\n            $dialogMessage.appendTo($dialogBodyCont);\n        }\n        if( deleteStatus === \"Y\"){\n            var files2deleteList = Dashboards.getParameterValue(\"${p:synchToBeDeletedList}\");\n            if(files2deleteList.length > 0){\n                $dialogMessage = $(\"<div class='dialogMessage toBeDeleted'>\"+files2deleteList.length + \" files will be deleted\"+\"</div>\");\n                $dialogMessage.appendTo($dialogBodyCont);\n                $dialogTable = $(\"<div class='dialogTable'></div>\");\n                $.each(files2deleteList,function(idx,ele){\n                    $(\"<div class='dialogTableRow'>\"+ele+\"</div>\").appendTo($dialogTable);   \n                });\n                $dialogTable.appendTo($dialogBodyCont);\n            }\n        }\n        \n        endpointOpts.params[\"delete\"] = Dashboards.getParameterValue(\"${p:synchDeleteParam}\");\n        endpointOpts.params[\"selectedAction\"] = \"S\";\n        endpointOpts.params[\"originRepoLocation\"] = \"JCR\";    \n        endpointOpts.params[\"destinationRepoLocation\"] = \"File System\";\n        \n        var successCallback = function () {\n                synchronizer.incUpdateEvent(\"${p:updateDashboardContentEvent}\");\n                Dashboards.decrementRunningCalls();\n            },\n            errorCallback = function () {\n                synchronizer.incUpdateEvent(\"${p:updateDashboardContentEvent}\");\n                Dashboards.decrementRunningCalls();\n            };\n            \n        var okCallback = function () {\n                dialog.close();\n                Dashboards.incrementRunningCalls();\n                synchronizer.runEndpoint(pluginId,endpoint,$.extend(endpointOpts,{\n                    success: successCallback,\n                    error: errorCallback\n                }));\n            },\n            cancelCallback = function () {\n                dialog.close();\n            };\n        \n        dialog.open({\n            content:$dialogBodyCont,\n            buttons:[\n                { text: \"Cancel\", click: cancelCallback, \"class\":\"cancel\" },\n                { text: \"OK\", click: okCallback, \"class\": \"ok\" }\n            ],\n            width: 355\n        });\n    }\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -6288,6 +6328,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -6366,11 +6426,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"jcr2fsDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -6401,9 +6456,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"jcr2fsDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"],[\"bypassCache\",\"\\\"Y\\\"\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -6436,6 +6491,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -6451,14 +6511,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -6502,7 +6562,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"jcr2fs\";\n\n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"jcr2fs\";\n\n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        operationType: \"E\",\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6564,11 +6624,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"synchDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -6599,9 +6654,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"synchDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -6634,6 +6689,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -6649,18 +6709,18 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
      },
      {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
+     },
+     {
       "name": "priority",
-      "value": 5,
+      "value": "6",
       "type": "Integer"
      },
      {
@@ -6700,7 +6760,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"synch\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"synch\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        operationType: \"S\",\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -6762,11 +6822,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"fs2jcrDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -6797,9 +6852,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "parameters",
+      "value": "[[\"originRepoLocation\",\"originRepoLocationParam\"],[\"destinationRepoLocation\",\"destinationRepoLocationParam\"],[\"delete\",\"fs2jcrDeleteParam\"],[\"selectedAction\",\"selectedActionParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -6832,6 +6887,11 @@
       "type": "Boolean"
      },
      {
+      "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -6847,18 +6907,18 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
      },
      {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
+     },
+     {
       "name": "priority",
-      "value": 5,
+      "value": "7",
       "type": "Integer"
      },
      {
@@ -6898,7 +6958,7 @@
      },
      {
       "name": "postFetch",
-      "value": "function f(data){\n    var myself = this,\n        actionType = \"fs2jcr\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
+      "value": "function f(data){\n    var myself = this,\n        actionType = \"fs2jcr\";\n    \n    /* Get info ready for postFetch work */\n    var listParamObj = {};\n    listParamObj.files2deleteParam = \"${p:\"+actionType+\"ToBeDeletedList}\";\n    listParamObj.files2updateParam = \"${p:\"+actionType+\"ToBeUpdatedList}\";\n    listParamObj.files2createParam = \"${p:\"+actionType+\"ToBeCreatedList}\";\n    listParamObj.filesWillNotBeUpdatedParam = \"${p:\"+actionType+\"WillNotBeUpdatedList}\";\n    listParamObj.fileCounterParam = \"${p:\"+actionType+\"FileCounterParam}\";\n    /* Do postFetch work */\n    data = synchronizer.tablePostChangeProcedure(data,listParamObj);\n    \n    /* Get info relevant for addIns */\n    var directionIdx = synchronizer.getColIndexFromColName(data.metadata,\"direction\"),\n        isOpenIdx = synchronizer.getColIndexFromColName(data.metadata,\"isOpen\"),\n        typeIdx = synchronizer.getColIndexFromColName(data.metadata,\"type\");\n    /* Register addIns */\n    myself.setAddInOptions(\"colType\",\"synchModification\",{\n        dirColIdx: directionIdx,\n        operationType: \"I\",\n        sep: \" \"\n    });\n    myself.setAddInOptions(\"colType\",\"synchMainColumn\",{\n        typeColIdx: typeIdx,\n        isOpenColIdx: isOpenIdx,\n        sep: \"/\"\n    });\n\n    /* set respective action button enabled-disabled css class */\n    var comp = Dashboards.getComponentByName(\"${c:\"+actionType+\"TransferButton}\"),\n        $button = $(\"#\"+comp.htmlObject).find(\"button\"),\n        $infoBox = $(\"#\"+myself.htmlObject).siblings(\".tableInfoBox\"),\n        $tableExtHeaderRow = $(\"#\"+myself.htmlObject).siblings(\".tableExternalHeaderRow\"),\n        $deleteCheckboxContainer = $(\"#\"+myself.htmlObject).siblings(\".actionRow\").find(\".deleteCont\");\n        \n    /*reset infoBox styling*/\n    $infoBox.removeClass(\"WDhidden\");\n    $infoBox.removeClass(\"allTransf\");\n    $tableExtHeaderRow.removeClass(\"WDhidden\");\n    $deleteCheckboxContainer.removeClass(\"WDhidden\");\n    $.each($infoBox.find(\".textRow\"),function(idx,ele){\n        $(ele).addClass(\"WDhidden\")\n    });\n    \n    if( synchronizer.isActionEnabled(listParamObj) ){\n        $button.removeClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length == 0 && Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length == 0 ){\n            $infoBox.addClass(\"WDhidden\");    \n        } else {\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeUpdatedList}\").length !== 0){\n                $infoBox.find(\".textRow.update\").removeClass(\"WDhidden\");\n            }\n            if( Dashboards.getParameterValue(\"${p:\"+actionType+\"ToBeDeletedList}\").length !== 0){\n                $infoBox.find(\".textRow.delete\").removeClass(\"WDhidden\");\n            }\n        }\n    } else {\n        $button.addClass(\"disabled\");\n        if( Dashboards.getParameterValue(\"${p:\"+actionType+\"FileCounterParam}\") === 0 ){\n            $infoBox.find(\".textRow.allFilesTransfered\").removeClass(\"WDhidden\");\n            $infoBox.addClass(\"allTransf\");\n            $tableExtHeaderRow.addClass(\"WDhidden\");\n            $deleteCheckboxContainer.addClass(\"WDhidden\");\n        } else {\n            $infoBox.find(\".textRow.noFiles2Transfer\").removeClass(\"WDhidden\");\n        }\n    }\n    \n    return data;\n}",
       "type": "JavaScript"
      },
      {
@@ -7308,6 +7368,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -7386,6 +7466,26 @@
       "type": "JavaScript"
      },
      {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
@@ -7462,6 +7562,26 @@
       "name": "expression",
       "value": "function f(){\n    var $deleteOverallCont =$('#' + this.htmlObject).parents(\".deleteCont\"),\n        deleteStatus = Dashboards.getParameterValue(\"${p:fs2jcrDeleteParam}\");\n    deleteStatus = synchronizer.toggleStringifiedBoolean(deleteStatus);\n    Dashboards.fireChange('${p:fs2jcrDeleteParam}', deleteStatus);\n    if( deleteStatus === \"Y\" ){\n        $deleteOverallCont.addClass('checked');\n    } else {\n        $deleteOverallCont.removeClass('checked');        \n    }\n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -7681,6 +7801,26 @@
       "name": "expression",
       "value": "function f(){\n    location.reload();    \n}",
       "type": "JavaScript"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "Datasource",
+      "value": "",
+      "type": "Datasource"
      },
      {
       "name": "priority",
@@ -8420,6 +8560,16 @@
       "name": "name",
       "value": "diffTableQuery",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -8436,6 +8586,16 @@
       "name": "name",
       "value": "checkRepositoriesValidityQuery",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
