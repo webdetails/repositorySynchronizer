@@ -619,20 +619,21 @@ div.container *{
    5. TABLES
    ========================================================================== */
 
-.WDdataCellBody table {
+.WDdataCellBody table.dataTable {
   font-size: 14px;
   font-weight: lighter;
   padding-bottom: 10px;
+  border: none;
 }
 
 
 /* Header */
-.WDdataCellBody  thead {
+.WDdataCellBody  table.dataTable thead {
   display: none;
 }
-.WDdataCellBody thead tr {
+.WDdataCellBody table.dataTable thead tr {
 }
-.WDdataCellBody  thead th {
+.WDdataCellBody  table.dataTable thead th {
   background: #8AB3C6;
   color: #FFFFFF;
   font-weight: normal;
@@ -640,46 +641,46 @@ div.container *{
   text-align: left;
   height: 12px;
 }
-.WDdataCellBody  thead th:first-child {
+.WDdataCellBody  table.dataTable thead th:first-child {
   border-right: solid 10px #FFFFFF;
 }
-.WDdataCellBody thead th.sorting{
+.WDdataCellBody table.dataTable thead th.sorting{
 }
-.WDdataCellBody thead th.sorting_asc{
+.WDdataCellBody table.dataTable thead th.sorting_asc{
 }
-.WDdataCellBody  thead th.sorting_desc{
+.WDdataCellBody table.dataTable thead th.sorting_desc{
 }
-.WDdataCellBody  thead th:first-child {
+.WDdataCellBody table.dataTable thead th:first-child {
 }
 
 /* Body */
-.WDdataCellBody  tbody {}
-.WDdataCellBody  tbody tr {
+.WDdataCellBody  table.dataTable tbody {}
+.WDdataCellBody  table.dataTable tbody tr {
   background: #FFFFFF;
   height: 17px;
 }
-.WDdataCellBody  tbody tr.toBeCreated {
+.WDdataCellBody  table.dataTable tbody tr.toBeCreated {
   color: #333333;
 }
-.WDdataCellBody  tbody tr.toBeUpdated {
+.WDdataCellBody  table.dataTable tbody tr.toBeUpdated {
   color: #39B54A;
   background: #F5FBF6;
 }
-.WDdataCellBody  tbody tr.toBeDeleted {
+.WDdataCellBody  table.dataTable tbody tr.toBeDeleted {
   color: #FF0000;
   background: #FFF2F2;
 }
-.WDdataCellBody  tbody tr.wontBeUpdated {
+.WDdataCellBody  table.dataTable tbody tr.wontBeUpdated {
   color: #808080;
 }
 
-.WDdataCellBody  tbody td{
+.WDdataCellBody  table.dataTable tbody td{
   border-top: solid 1px #FFFFFF;
   border-bottom: solid 2px #FFFFFF;
   text-align: left;
   background: transparent;
 }
-.WDdataCellBody  tbody td.synchModification{
+.WDdataCellBody  table.dataTable tbody td.synchModification{
   padding-left: 35px;
   width: 17%;
 }
