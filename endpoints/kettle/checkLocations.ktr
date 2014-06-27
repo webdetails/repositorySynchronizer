@@ -6,8 +6,19 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
+        <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.system.dir</name>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;..</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -145,10 +156,8 @@
   <hop> <from>valid url&#x3f;</from><to>invalid url</to><enabled>Y</enabled> </hop>
   <hop> <from>invalid url</from><to>Select values JCR</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values JCR</from><to>JCR output</to><enabled>Y</enabled> </hop>
-  <hop> <from>JCR output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>check server folders and credentials</from><to>parse log</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values FS</from><to>FS output</to><enabled>Y</enabled> </hop>
-  <hop> <from>FS output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values FS</from><to>FS validation</to><enabled>Y</enabled> </hop>
   <hop> <from>http status codes</from><to>lk status code</to><enabled>Y</enabled> </hop>
   <hop> <from>parse log</from><to>status not null</to><enabled>Y</enabled> </hop>
   <hop> <from>status not null</from><to>lk status code</to><enabled>Y</enabled> </hop>
@@ -160,13 +169,37 @@
   <hop> <from>valid url&#x3f;</from><to>check server folders and credentials</to><enabled>Y</enabled> </hop>
   <hop> <from>status not null</from><to>remove non useful log text</to><enabled>Y</enabled> </hop>
   <hop> <from>remove non useful log text</from><to>elementName</to><enabled>Y</enabled> </hop>
-  <hop> <from>JCR&#x3f;</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>parse jcr</to><enabled>Y</enabled> </hop>
-  <hop> <from>fake http status code</from><to>reason 2</to><enabled>Y</enabled> </hop>
   <hop> <from>reason 2</from><to>Select values JCR 0</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>fake http status code</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values JCR 0</from><to>JCR output</to><enabled>Y</enabled> </hop>
+  <hop> <from>fake http status code</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>local operation</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>reason 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>local operation</to><enabled>Y</enabled> </hop>
+  <hop> <from>JCR output</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>FS validation</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>JCR&#x3f;</from><to>jcr-solution&#x3a;http&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>jcr-solution&#x3a;http&#x3f;</from><to>local operation</to><enabled>Y</enabled> </hop>
+  <hop> <from>jcr-solution&#x3a;http&#x3f;</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>150</xloc>
+      <yloc>406</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>FS</name>
     <type>Janino</type>
@@ -201,7 +234,7 @@
     </step>
 
   <step>
-    <name>FS output</name>
+    <name>FS validation</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -215,35 +248,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1076</xloc>
       <yloc>175</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>parse jcr</send_true_to>
-<send_false_to>fake http status code</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>elementPath</leftvalue>
- <function>STARTS WITH</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>jcr-solution&#x3a;http</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>32</xloc>
-      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -278,7 +282,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Filter rows</send_true_to>
+<send_true_to>jcr-solution&#x3a;http&#x3f;</send_true_to>
 <send_false_to>element exists&#x3f;</send_false_to>
     <compare>
 <condition>
@@ -291,14 +295,45 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>36</xloc>
-      <yloc>174</yloc>
+      <yloc>173</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join Rows &#x28;cartesian product&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>32</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
     <name>OUTPUT</name>
-    <type>RowsToResult</type>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -309,8 +344,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1076</xloc>
-      <yloc>611</yloc>
+      <xloc>1066</xloc>
+      <yloc>601</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -642,8 +677,8 @@
     </data>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>32</xloc>
-      <yloc>416</yloc>
+      <xloc>152</xloc>
+      <yloc>513</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -652,7 +687,7 @@
     <name>getLocations</name>
     <type>Mapping</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -674,7 +709,9 @@
     <rename_on_output>N</rename_on_output>
     <description/>
     </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+          <parameters>       <variablemapping><variable>cpk.plugin.dir</variable><input>&#x24;&#x7b;cpk.plugin.dir&#x7d;</input></variablemapping>
+       <variablemapping><variable>cpk.solution.system.dir</variable><input>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</input></variablemapping>
+    <inherit_all_vars>Y</inherit_all_vars>
     </parameters>
     </mappings>
     <allow_multiple_input>N</allow_multiple_input>
@@ -857,6 +894,35 @@
     </step>
 
   <step>
+    <name>jcr-solution&#x3a;http&#x3f;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
+<send_false_to>local operation</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>elementPath</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>jcr-solution&#x3a;http</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>34</xloc>
+      <yloc>316</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>lk status code</name>
     <type>StreamLookup</type>
     <description/>
@@ -900,6 +966,25 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>800</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>local operation</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>32</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1115,7 +1200,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>32</xloc>
-      <yloc>544</yloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1215,5 +1300,7 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+</group></attributes>
 
 </transformation>

@@ -10,7 +10,7 @@
     <directory>&#x2f;</directory>
     <parameters>
         <parameter>
-            <name>pluginDir</name>
+            <name>cpk.plugin.dir</name>
             <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
@@ -106,7 +106,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x24;&#x7b;pluginDir&#x7d;&#x2f;prs.xml</name>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;prs.xml</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -175,5 +175,11 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>
