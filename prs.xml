@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prs>
+	<locations>
+		<location path="jcr-solution:http://127.0.0.1:8080/pentaho!/" name="JCR"/>
+		<location path="${cpk.solution.system.dir}/../repositorySynchronizer" name="File System"/>
+	</locations>
+	<excludes>
+		<!-- Exclude all dot folders and files -->
+		<exclude pattern=".*/\.[^/]*(/.*)?"/>
+		<!-- Exclude sample folders -->
+		<exclude pattern=".*/bi-developers(/.*)?"/>
+		<exclude pattern=".*/pentaho-operations-mart(/.*)?"/>
+		<exclude pattern=".*/plugin-samples(/.*)?"/>
+		<exclude pattern=".*/Steel\sWheels(/.*)?"/>
+	</excludes>
+	<last_synch>0</last_synch>
+</prs>

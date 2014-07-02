@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin title="repositorysynchronizer" loader="DEFAULT">
-	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
-	<static-paths>
-		<static-path url="/repositorysynchronizer/static" localFolder="static"/>
-		<static-path url="/repositorysynchronizer/resources" localFolder="resources"/>
-	</static-paths>
-	<content-types>
-		<content-type>
-			<title>Pentaho Repository Synchronizer</title>
-			<description>Pentaho Plugin allowing synchronization between JCR and the File System</description>
-			<company name="Webdetails" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
-		</content-type>
-	</content-types>
-	<content-generator
-		id="repositorysynchronizer"
-		title="Pentaho Repository Synchronizer"
-		type="repositorysynchronizer"
-		class="pt.webdetails.cpk.CpkContentGenerator"/>
-	<!-- Menu entry -->
-	<menu-items>
-		<menu-item id="repositorysynchronizer_main" anchor="tools-submenu" label="Pentaho Repository Synchronizer" command="content/repositorysynchronizer/" type="MENU_ITEM" how="LAST_CHILD"/>
-	</menu-items>
+<plugin title="repositorySynchronizer" loader="DEFAULT">
+    <overlays>
+	<overlay id="startup.repositorySynchronizer" resourcebundle="content/repositorySynchronizer/resources/lang/messages">
+	    <menubar id="toolsmenu">
+	        <menuitem id="repositorySynchronizer" label="${Launcher.repositorySynchronizer}" command="mantleXulHandler.openUrl('${Launcher.repositorySynchronizer}','${Launcher.repositorySynchronizer_TOOLTIP}','plugin/repositorySynchronizer/api/default')"/>
+	    </menubar>
+	</overlay>
+    </overlays>
+    <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+    <static-paths>
+	<static-path url="/repositorySynchronizer/static" localFolder="static"/>
+	<static-path url="/repositorySynchronizer/resources" localFolder="resources"/>
+    </static-paths>
+    <content-types>
+	<content-type>
+	    <title>Pentaho Repository Synchronizer</title>
+	    <description>Pentaho Plugin allowing synchronization between JCR and the File System</description>
+	    <company name="Webdetails" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+	</content-type>
+    </content-types>
+    <content-generator
+	id="repositorySynchronizer"
+	title="Pentaho Repository Synchronizer"
+	type="repositorySynchronizer"
+	class="pt.webdetails.cpk.CpkContentGenerator"/>
+    <!-- Menu entry -->
+    <menu-items>
+	<menu-item id="repositorySynchronizer_main" anchor="tools-submenu" label="Pentaho Repository Synchronizer" command="content/repositorySynchronizer/" type="MENU_ITEM" how="LAST_CHILD"/>
+    </menu-items>
 </plugin>

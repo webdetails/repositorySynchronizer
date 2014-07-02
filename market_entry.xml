@@ -1,0 +1,36 @@
+<market_entry>
+  <id>repositorySynchronizer</id>
+  <type>Platform</type>
+  <name>Pentaho Repository Synchronizer</name>
+  <description>Pentaho plugin that allows you to interact with the solution repository of Pentaho 5.0 by keeping the disk-based file structure synchronized with the Pentaho internal solution repository (JCR).</description>
+  <documentation_url>http://www.webdetails.pt</documentation_url>
+  <author>Webdetails</author>
+  <author_url>http://www.webdetails.pt</author_url>
+  <author_logo>http://www.webdetails.pt/images/wdlogo.png</author_logo>
+
+  <img></img>
+  <small_img></small_img>
+  <installation_notes>Install Notes</installation_notes>
+
+  <!-- The BA Server currently supports multiple versions of the same plugin with branches, Kettle currently does not,
+       only the first is read,  -->
+  <versions>
+    <version>
+      <branch>Trunk</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
+      <version>1.0</version> <!-- The version of the plugin (Both) -->
+      <name>TRUNK</name> <!-- A User friendly name for the plugin (BA Server only) -->
+      <package_url>http://ci.pentaho.com/job/RepositorySynchronizer/lastSuccessfulBuild/artifact/dist/repositorySynchronizer-TRUNK-SNAPSHOT.zip</package_url> <!-- The download URL of the actual plugin (Both) -->
+      <samples_url></samples_url> <!-- The download URL of samples for this plugin (BA Server only) -->
+      <description>Pilot release</description> <!-- the description of the specific version (BA Server only) -->
+      <changelog>Pilot release</changelog> <!-- a list of changes since the last update (BA Server only) -->
+      <build_id>0</build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) -->
+
+      <!-- In the BA Server, if you specify min and max parent versions, the plugin will only appear in the
+           marketplace if the BA Server is within range of those versions. -->
+
+      <min_parent_version>5.0</min_parent_version> <!-- the minimum system version this plugin is compatible with (BA Server only) -->
+      <max_parent_version></max_parent_version> <!-- the maximum system version this plugin is compatible with (BA Server only) -->
+    </version>
+  </versions>
+
+</market_entry>
