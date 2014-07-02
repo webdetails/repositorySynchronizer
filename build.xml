@@ -37,7 +37,11 @@
         <exclude name="dist/"/>
         <exclude name="bin/"/>
         <exclude name="dev-lib/"/>
+        <exclude name=".git/"/>
+        <exclude name=".gitignore"/>
+        <exclude name="market_entry.xml"/>
         <exclude name="**/.DS_Store"/>
+        <exclude name="**/Thumbs.db"/>
       </fileset>
     </copy>
     <!-- create sequential build id -->
