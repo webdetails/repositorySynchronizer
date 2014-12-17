@@ -1,17 +1,17 @@
-<project name="Pentaho Plugin allowing synchronization between JCR and the File System" basedir="." default="dist"
+<project name="Pentaho Repository Synchronizer" basedir="." default="dist"
          xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <description>
     This build file is used to create the Pentaho Repository Synchronizer project.
   </description>
-  
+
   <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
 
   <echo>project = ${project.id}</echo>
   <echo>stage = ${project.stage}</echo>
   <echo>version = ${project.version}</echo>
   <echo>revision = ${project.revision}</echo>
-    
+
   <!--=======================================================================
       dist (override)
 
@@ -60,18 +60,32 @@
       <version>
         <branch>${project.stage}</branch>
         <version>${project.revision}</version>
-        <name>${project.stage}</name>
-        <package_url></package_url>
-        <description></description>
+        <name>${marketplace.metadata.version.name}</name>
+        <package_url>
+          ${marketplace.metadata.package_url}
+        </package_url>
+        <samples_url>
+          ${marketplace.metadata.samples_url}
+        </samples_url>
+        <description>
+          ${marketplace.metadata.version.description}
+        </description>
         <build_id>${sequential.build.id}</build_id>
+        <min_parent_version>${marketplace.metadata.min_parent_version}</min_parent_version>
+        <max_parent_version>${marketplace.metadata.max_parent_version}</max_parent_version>
+        <development_stage>
+          <lane>${marketplace.metadata.development_stage.lane}</lane>
+          <phase>${marketplace.metadata.development_stage.phase}</phase>
+        </development_stage>
       </version>
     </echoxml>
+
   </target>
 
   <!--=======================================================================
       install-plugin
 
-      Installs the plugin in a local BA server installation (use an 'override.properties' 
+      Installs the plugin in a local BA server installation (use an 'override.properties'
       file to define 'baserver.system.dir' = full path to system dir on local BA server)
       ====================================================================-->
   <target name="install-plugin" depends="clean, dist-plugin" description="Installs the plugin locally">
