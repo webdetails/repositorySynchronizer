@@ -1,22 +1,22 @@
 /*
- * WDStyleGuide Template CSS  
+ * WDStyleGuide Template CSS
  *
- * Use this as a template to format the styles of specific projects. Most of 
+ * Use this as a template to format the styles of specific projects. Most of
  * the most commonly used classes/rules are already written here. The file is
  * divided in the following sections:
  *
  *    Fonts
  *    Style Resets
- *    1. BACKGROUND 
- *    2. HEADER 
+ *    1. BACKGROUND
+ *    2. HEADER
  *    3. FILTER CELLS
  *    4. DATA CELLS
  *    5. TABLES
- *    6. CHARTS 
+ *    6. CHARTS
  *    7. SELECTORS AND BUTTONS
  *    8. SITE MAP
- *    Other 
- *    Project Specific Items  
+ *    Other
+ *    Project Specific Items
  *
  */
 
@@ -39,8 +39,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 /*margin: 0;
@@ -65,28 +65,28 @@ html{
 
 
 /* =============================================================================
-   1. BACKGROUND 
+   1. BACKGROUND
    ========================================================================== */
 
 /* Window Background */
 body{
-  background: #EAF2F5; 
+  background: #EAF2F5;
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 50px 0px 50px 0px;
 }
 div.container *{
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /* =============================================================================
-   2. HEADER 
+   2. HEADER
    ========================================================================== */
 .WDheader {
   width: 100%;
@@ -99,8 +99,8 @@ div.container *{
 .WDheader .headerTitle{
   width: 30%;
   padding-bottom: 5px;
-  border-bottom: solid 4px #F2CE16; 
-  float: left; 
+  border-bottom: solid 4px #F2CE16;
+  float: left;
 }
 .WDheader .refreshButtonCont{
   width: 70%;
@@ -259,7 +259,7 @@ div.container *{
 .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
 }
 .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{
-} 
+}
 
 
 /* Multi Select */
@@ -336,7 +336,7 @@ div.container *{
   -o-transition:      all 0ms ease-out;
   transition:         all 0ms ease-out;
 
-} 
+}
 .WDdataCell.active{
   background: #FFFFFF;
 }
@@ -348,7 +348,7 @@ div.container *{
   -moz-transition-delay: 600ms;
   -ms-transition-delay: 600ms;
   -o-transition-delay: 600ms;
-  transition-delay: 600ms;  
+  transition-delay: 600ms;
 }
 
 /* Data Cells header*/
@@ -379,7 +379,7 @@ div.container *{
   -moz-transition-delay: 600ms;
   -ms-transition-delay: 600ms;
   -o-transition-delay: 600ms;
-  transition-delay: 600ms;  
+  transition-delay: 600ms;
 }
 .WDdataCellHeader:hover{
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EAF2F5));
@@ -397,7 +397,7 @@ div.container *{
   background: -moz-linear-gradient(top, #EAF2F5, #FFFFFF);
   background: -ms-linear-gradient(top, #EAF2F5, #FFFFFF);
   background: -o-linear-gradient(top, #EAF2F5, #FFFFFF);
-  background: -ms-linear-gradient(top, #EAF2F5 0%, #FFFFFF 100%);  
+  background: -ms-linear-gradient(top, #EAF2F5 0%, #FFFFFF 100%);
 }
 
 .no-svg   .WDdataCellHeader {
@@ -452,7 +452,7 @@ div.container *{
 .WDdataCellBody{
   width: 100%;
   height: 0px;
-  padding: 0px 10px 0px 10px;  
+  padding: 0px 10px 0px 10px;
 
   -webkit-transition: height 600ms ease-out;
   -moz-transition:    height 600ms ease-out;
@@ -467,7 +467,7 @@ div.container *{
   -moz-transition-delay: 700ms;
   -ms-transition-delay: 700ms;
   -o-transition-delay: 700ms;
-  transition-delay: 700ms;  
+  transition-delay: 700ms;
 }
 .WDdataCellBody.active{
 /*  height: auto;
@@ -670,7 +670,7 @@ div.container *{
   color: #333333;
 }
 .WDdataCellBody  tbody tr.toBeUpdated,
-.WDdataCellBody  table.dataTable tbody tr.toBeUpdated {  
+.WDdataCellBody  table.dataTable tbody tr.toBeUpdated {
   color: #39B54A;
   background: #F5FBF6;
 }
@@ -778,7 +778,7 @@ div.container *{
 .WDdataCellBody  tbody td:first-child{
 }
 .WDdataCellBody  tbody td,
-  .WDdataCellBody  tbody td.numeric, 
+  .WDdataCellBody  tbody td.numeric,
   .WDdataCellBody  tbody td.string {
 }
 
@@ -813,7 +813,7 @@ div.container *{
 }
 /* Pagination and Page Info */
 
-.WDdataCellBody   .dataTables_info{    
+.WDdataCellBody   .dataTables_info{
 }
 
 .WDdataCellBody  .dataTables_paginate{
@@ -853,8 +853,8 @@ div.container *{
 .WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:active {
 }
 .WDdataCellBody   .dataTables_paginate .paginate_disabled_previous,
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous, 
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_next, 
+.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous,
+.WDdataCellBody   .dataTables_paginate .paginate_disabled_next,
 .WDdataCellBody  .dataTables_paginate .paginate_enabled_next {
 }
 
@@ -880,14 +880,14 @@ div.container *{
 
 
 /* =============================================================================
-   6. CHARTS 
+   6. CHARTS
    ========================================================================== */
 
 
 
 
 /* =============================================================================
-   7. SELECTORS AND BUTTONS 
+   7. SELECTORS AND BUTTONS
    ========================================================================== */
 .WDfilterCell select{
 }
@@ -996,7 +996,7 @@ button span {
 .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
 }
 .chzn-container-single .chzn-single-with-drop div b{
-} 
+}
 
 
 /* Multi Select */
@@ -1041,7 +1041,7 @@ button span {
 
 
 /* =============================================================================
-   Other 
+   Other
    ========================================================================== */
 
 /***** Dialog native-css customization  *****/
@@ -1167,10 +1167,12 @@ button span {
   padding: 4px 0px 5px 18px;
   background: url('../img/file-red.png') no-repeat left center transparent;
 }
+
+/* disable close button */
+.ui-dialog.confirmationDialog .ui-dialog-titlebar-close{
+  display: none;
+}
+
 /* =============================================================================
-   Project Specific Items 
+   Project Specific Items
    ========================================================================== */
-
-
-
-
