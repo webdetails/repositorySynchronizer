@@ -31,6 +31,26 @@
             <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
             <description/>
         </parameter>
+        <parameter>
+            <name>libpensol_jar_dst</name>
+            <default_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;&#x24;&#x7b;libpensol_jar_file&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>libpensol_jar_file</name>
+            <default_value>libpensol-6.0.0.0-353.jar</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>libpensol_jar_src</name>
+            <default_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;&#x24;&#x7b;libpensol_jar_file&#x7d;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>repositorySynchronizer_dir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;repositorySynchronizer</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -51,17 +71,6 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
-<checkpoint-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<max_nr_retries/>
-<run_retry_period/>
-<namespace_parameter/>
-<save_parameters/>
-<save_result_rows/>
-<save_result_files/>
-<field><id>ID_JOB_RUN</id><enabled>Y</enabled><name>ID_JOB_RUN</name></field><field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>NAMESPACE</id><enabled>Y</enabled><name>NAMESPACE</name></field><field><id>CHECKPOINT_NAME</id><enabled>Y</enabled><name>CHECKPOINT_NAME</name></field><field><id>CHECKPOINT_COPYNR</id><enabled>Y</enabled><name>CHECKPOINT_COPYNR</name></field><field><id>ATTEMPT_NR</id><enabled>Y</enabled><name>ATTEMPT_NR</name></field><field><id>JOB_RUN_START_DATE</id><enabled>Y</enabled><name>JOB_RUN_START_DATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>RESULT_XML</id><enabled>Y</enabled><name>RESULT_XML</name></field><field><id>PARAMETER_XML</id><enabled>Y</enabled><name>PARAMETER_XML</name></field></checkpoint-log-table>
    <pass_batchid>N</pass_batchid>
    <shared_objects_file/>
   <entries>
@@ -82,8 +91,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>121</xloc>
-      <yloc>146</yloc>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
       </entry>
     <entry>
       <name>Delete libpensol libraries</name>
@@ -100,20 +109,20 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>708</xloc>
-      <yloc>99</yloc>
+      <xloc>224</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>Create &#x22;repositorySynchronizer&#x22; folder</name>
       <description/>
       <type>CREATE_FOLDER</type>
-      <foldername>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;repositorySynchronizer</foldername>
+      <foldername>&#x24;&#x7b;repositorySynchronizer_dir&#x7d;</foldername>
       <fail_of_folder_exists>N</fail_of_folder_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>320</yloc>
+      <xloc>304</xloc>
+      <yloc>304</yloc>
       </entry>
     <entry>
       <name>Copy libpensol</name>
@@ -130,58 +139,17 @@
       <fields>
         <field>
           <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;</source_filefolder>
+          <source_configuration_name>STATIC-SOURCE-FILE-0</source_configuration_name>
           <destination_filefolder>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;</destination_filefolder>
+          <destination_configuration_name>STATIC-DEST-FILE-0</destination_configuration_name>
           <wildcard>libpensol.&#x2a;&#x5c;.jar</wildcard>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>96</yloc>
-      </entry>
-    <entry>
-      <name>Copy libpensol.properties</name>
-      <description/>
-      <type>COPY_FILES</type>
-      <copy_empty_folders>Y</copy_empty_folders>
-      <arg_from_previous>N</arg_from_previous>
-      <overwrite_files>N</overwrite_files>
-      <include_subfolders>Y</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>N</destination_is_a_file>
-      <create_destination_folder>N</create_destination_folder>
-      <fields>
-        <field>
-          <source_filefolder>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;lib&#x2f;</source_filefolder>
-          <destination_filefolder>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;</destination_filefolder>
-          <wildcard>libpensol&#x5c;.properties</wildcard>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>915</xloc>
-      <yloc>209</yloc>
-      </entry>
-    <entry>
-      <name>Delete libpensol.properties</name>
-      <description/>
-      <type>DELETE_FILES</type>
-      <arg_from_previous>N</arg_from_previous>
-      <include_subfolders>N</include_subfolders>
-      <fields>
-        <field>
-          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;</name>
-          <filemask>libpensol&#x5c;.properties</filemask>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>721</xloc>
-      <yloc>208</yloc>
+      <xloc>400</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -190,8 +158,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1067</xloc>
-      <yloc>156</yloc>
+      <xloc>560</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -203,8 +171,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1010</xloc>
-      <yloc>17</yloc>
+      <xloc>560</xloc>
+      <yloc>304</yloc>
       </entry>
     <entry>
       <name>Checks if files exist</name>
@@ -219,24 +187,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>96</yloc>
-      </entry>
-    <entry>
-      <name>Checks if files exist 2</name>
-      <description/>
-      <type>FILES_EXIST</type>
-      <filename/>
-      <fields>
-        <field>
-          <name>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;classes&#x2f;libpensol.properties</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>438</xloc>
-      <yloc>211</yloc>
+      <xloc>224</xloc>
+      <yloc>64</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -246,8 +198,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>575</xloc>
-      <yloc>145</yloc>
+      <xloc>560</xloc>
+      <yloc>64</yloc>
       </entry>
     <entry>
       <name>File Compare libpensol.jar</name>
@@ -259,51 +211,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>577</xloc>
-      <yloc>24</yloc>
-      </entry>
-    <entry>
-      <name>Set variables</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>N</replacevars>
-      <filename/>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-        <field>
-          <variable_name>libpensol_jar_dst</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;WEB-INF&#x2f;lib&#x2f;libpensol-TRUNK-SNAPSHOT.jar</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>libpensol_jar_src</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;_lib_&#x2f;libpensol-TRUNK-SNAPSHOT.jar</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>repositorySynchronizer_dir</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;repositorySynchronizer</variable_value>
-          <variable_type>CURRENT_JOB</variable_type>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>160</yloc>
-      </entry>
-    <entry>
-      <name>File Compare libpensol.properties</name>
-      <description/>
-      <type>FILE_COMPARE</type>
-      <filename1>&#x24;&#x7b;libpensol_props_src&#x7d;</filename1>
-      <filename2>&#x24;&#x7b;libpensol_props_dst&#x7d;</filename2>
-      <add_filename_result>N</add_filename_result>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>569</xloc>
-      <yloc>277</yloc>
+      <xloc>400</xloc>
+      <yloc>64</yloc>
       </entry>
     <entry>
       <name>Checks if files exist 3</name>
@@ -318,8 +227,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>320</yloc>
+      <xloc>80</xloc>
+      <yloc>304</yloc>
       </entry>
   </entries>
   <hops>
@@ -333,25 +242,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete libpensol.properties</from>
-      <to>Copy libpensol.properties</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Copy libpensol</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Copy libpensol.properties</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -376,42 +267,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Checks if files exist 2</from>
-      <to>Delete libpensol.properties</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Set variables</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set variables</from>
-      <to>Checks if files exist</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set variables</from>
-      <to>Checks if files exist 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Checks if files exist</from>
@@ -441,42 +296,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if files exist 2</from>
-      <to>File Compare libpensol.properties</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>File Compare libpensol.properties</from>
-      <to>Abort job</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>File Compare libpensol.properties</from>
-      <to>Delete libpensol.properties</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set variables</from>
-      <to>Checks if files exist 3</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Checks if files exist 3</from>
       <to>Create &#x22;repositorySynchronizer&#x22; folder</to>
       <from_nr>0</from_nr>
@@ -484,6 +303,24 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Checks if files exist</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Checks if files exist 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
